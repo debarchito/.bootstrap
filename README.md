@@ -1,19 +1,24 @@
 ## 0. What is this repo about?
 
-`.bootstrap` implements a bespoke bootstrapping framework (hence the name)
-around
+`.bootstrap` implements a bootstrapping framework (hence the name) around
 [flake-parts's flakeModules](https://flake.parts/options/flake-parts-flakemodules)
 using the [Dendritic](https://github.com/mightyiam/dendritic) pattern. It
-implements almost everything as host-agnostic ["features"](/modules/features)
-options making them portable and reusable across any `.bootstrap` project. It
-also implements [packages](/modules/packages) that can be directly built and
-consumed via `nix build` and `nix run` commands e.g.
-`nix run sourcehut:~debarchito/.bootstrap#blender` for CUDA-enabled Blender
-(since upstream nixpkgs doesn't enable CUDA by default). It also standardizes
-global [overlays](/modules/overlays) in one place among many other things.
+implements almost everything as host-agnostic
+[feature options](/modules/features) making them portable and reusable across
+any `.bootstrap` project. It also standardizes a convention to implements
+[packages](/modules/packages) that can be directly built and consumed via
+`nix build` and `nix run` commands. For e.g.
 
-`.bootstrap` builds a subset of the packages on GitHub Actions and uploads the
-artifacts to my Cachix cache registry @
+```fish
+# Run CUDA-enabled Blender; upstream nixpkgs doesn't enable CUDA by default
+nix run sourcehut:~debarchito/.bootstrap#blender
+```
+
+It also standardizes global [overlays](/modules/overlays) in one place among
+many other things.
+
+`.bootstrap` builds a subset of packages on GitHub Actions and uploads the
+artifacts to my cache registry at
 [debarchito.cachix.org](https://debarchito.cachix.org). You can take a look at
 what's built every commit [here](/.github/workflows/build.yml). If you want to
 use these packages, add my cachix as a substituter:
@@ -29,8 +34,9 @@ nix.settings = {
 
 Alternatively, the
 [options-trustedSubstituters](/modules/features/trusted-substituters.nix)
-feature module can be enabled to set this up among others. This module is part
-of the `nixos` class and will not work inside a `homeManager` class.
+feature module can be enabled to set this up among others substituters. This
+module is part of the `nixos` class and will not work inside a `homeManager`
+class.
 
 ## 1. Preparation (TODO)
 
@@ -45,9 +51,9 @@ run0 nix --extra-experimental-features 'nix-command flakes' \
   ./modules/hosts/<host>/_raw/disko-configuration.nix
 ```
 
-> NOTE: Disko is not yet integrated with the broader configuration. It's part of
-> a future plan.\
-> TODO: I need to write more steps...
+> NOTE: Disko isn't automatically integrated at the moment of writing. Although,
+> it can already be used to apply the layout. This will be addressed in future
+> revisions. \
 
 ## 2. Applying the configurations
 
