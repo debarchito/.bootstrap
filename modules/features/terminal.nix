@@ -115,6 +115,7 @@
           hunk = {
             enable = true;
             enableGitIntegration = true;
+            enableJujutsuIntegration = true;
             settings = {
               theme = "auto";
               mode = "stack";
@@ -127,10 +128,8 @@
               ui = {
                 default-command = "log";
                 conflict-marker-style = "snapshot";
-                diff-formatter = ":git";
                 diff-editor = "oyui";
                 diff-instructions = false;
-                pager = config.programs.git.settings.core.pager;
               };
               git = {
                 colocate = true;
