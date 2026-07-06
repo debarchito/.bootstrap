@@ -45,8 +45,8 @@
               hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
             };
             dockerManager = {
-              rev = "e25fed8ef704620656981ef2f0709f51ca58823d";
-              hash = "sha256-vkwo4bMdtiCMVHcx1RFRvNxIIzoKuuAzPTcZBMRHKD8=";
+              rev = "255f46794b6e3a5f5e842fe1330db3869deddc09";
+              hash = "sha256-YDCwXF0dyuNy07voKvkLlKfHFfPkhSS4oGopn+EnM+0=";
             };
             dankBitwarden = {
               rev = "6fd83d8b6ab54d2d6a996bed7291b70316c99965";
@@ -93,8 +93,8 @@
           dadanDMSPluginsRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dadan-dms-plugins";
-            rev = "cb23b2590038ba47db3f27eca5101a8ac864da7d";
-            hash = "sha256-8knIOnc0+LDsgusCzEz3CJBksvVrn3ytDHMfRAPEUhY=";
+            rev = "c28a61c0612aea396c7670861e954c777d292900";
+            hash = "sha256-b0+u/3J8LqlvIVHbyN4/pZJLF/S44NLk4uCbpzw47Rs=";
           };
 
           dadanDMSPlugins = [

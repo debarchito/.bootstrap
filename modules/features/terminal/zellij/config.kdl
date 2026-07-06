@@ -6,7 +6,7 @@ theme_dir "/home/@USERNAME@/.config/zellij/themes";
 
 simplified_ui  true;
 default_layout "compact";
-pane_frames    true;
+pane_frames    false;
 
 copy_command   "wl-copy";
 copy_on_select false;
