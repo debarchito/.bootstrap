@@ -21,6 +21,10 @@ output_path = "~/.config/ghostty/themes/dankcolors"
 input_path = "~/.config/matugen/templates/helix/dankcolors.toml"
 output_path = "~/.config/helix/themes/dankcolors.toml"
 
+[templates.hunk]
+input_path = "~/.config/matugen/templates/hunk/config.toml"
+output_path = "~/.config/hunk/config.toml"
+
 [templates.kdeglobals]
 input_path = "~/.config/matugen/templates/kdeglobals/dankcolors"
 output_path = "~/.config/kdeglobals"

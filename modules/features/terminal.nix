@@ -116,10 +116,6 @@
             enable = true;
             enableGitIntegration = true;
             enableJujutsuIntegration = true;
-            settings = {
-              theme = "auto";
-              mode = "stack";
-            };
           };
 
           jujutsu = {
