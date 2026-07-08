@@ -1,5 +1,18 @@
 ## 0. What is this repo about?
 
+> [!TIP]
+>
+> You can now _bootstrap_ your own `.bootstrap` projects! For example:
+>
+> ```fish
+> nix run \
+>   sourcehut:~debarchito/.bootstrap#generate bootstrap ~/.bootstrap \
+>   host="laptop" system="x86_64-linux" stateVersion="26.05" \
+>   user="demo"
+> ```
+>
+> This is rather experimental. Please report bugs if you end up using it!
+
 `.bootstrap` implements a bootstrapping framework (hence the name) around
 [flake-parts's flakeModules](https://flake.parts/options/flake-parts-flakemodules)
 using the [Dendritic](https://github.com/mightyiam/dendritic) pattern. It

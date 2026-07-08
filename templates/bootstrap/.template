@@ -1,0 +1,2 @@
+description = "A .boostrap template to get you started with the Dendritic pattern using .bootstrap conventions"
+params = ["host", "system", "stateVersion", "user"]

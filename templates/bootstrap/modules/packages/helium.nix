@@ -1,3 +1,4 @@
+# This is actually a fully working example on how to do packages.
 {
   perSystem =
     {
@@ -20,6 +21,7 @@
       };
     in
     {
+      # Export as packages.<package> and it should be available via self'.packages.<package>!
       packages = lib.optionalAttrs (sources ? ${system}) {
         helium =
           let
