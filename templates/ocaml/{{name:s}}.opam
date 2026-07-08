@@ -7,8 +7,8 @@ authors: ["Debarchito Nath <debarchiton@proton.me>"]
 homepage: "https://git.sr.ht/~debarchito/{{name:k}}"
 bug-reports: "https://todo.sr.ht/~debarchito/{{name:k}}"
 depends: [
-  "dune" {>= "3.22"}
-  "ocaml" {>= "5.4.1"}
+  "dune" {>= "3.24"}
+  "ocaml" {>= "5.5.0"}
 ]
 build: [
   ["dune" "subst"] {dev}
