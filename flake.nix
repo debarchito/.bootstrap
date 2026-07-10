@@ -12,7 +12,7 @@
       url = "github:AvengeMedia/dankcalendar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+    determinate.url = "github:DeterminateSystems/determinate/fdef7e382e042b1fe418f65770c3acda5933b155";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
