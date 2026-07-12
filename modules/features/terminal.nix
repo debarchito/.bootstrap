@@ -6,8 +6,8 @@
 }:
 {
   flake-file.inputs = {
-    hunk = {
-      url = lib.mkDefault "github:modem-dev/hunk";
+    lumen = {
+      url = lib.mkDefault "github:jnsahaj/lumen";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     oyui = {
@@ -25,10 +25,6 @@
       ...
     }:
     {
-      imports = [
-        inputs.hunk.homeManagerModules.default
-      ];
-
       options.terminal = lib.mkOption {
         type = lib.types.submodule {
           options = {
@@ -43,6 +39,7 @@
           (_: _: {
             oyui = inputs.oyui.packages.${system}.default;
           })
+          inputs.lumen.overlays.default
         ];
 
         programs = {
@@ -111,12 +108,6 @@
           git-cliff.enable = true;
 
           gpg.enable = true;
-
-          hunk = {
-            enable = true;
-            enableGitIntegration = true;
-            enableJujutsuIntegration = true;
-          };
 
           jujutsu = {
             enable = true;
@@ -187,6 +178,7 @@
             jc
             koji
             libqalculate
+            lumen
             numbat
             oyui
             sd

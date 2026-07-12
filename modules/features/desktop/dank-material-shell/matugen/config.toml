@@ -13,17 +13,9 @@ output_path = "~/.cache/emacs/themes/dankcolors-theme.el"
 input_path = "~/.config/matugen/templates/fish/dankcolors.fish"
 output_path = "~/.config/fish/conf.d/dankcolors.fish"
 
-[templates.ghostty]
-input_path = "~/.config/matugen/templates/ghostty/dankcolors"
-output_path = "~/.config/ghostty/themes/dankcolors"
-
 [templates.helix]
 input_path = "~/.config/matugen/templates/helix/dankcolors.toml"
 output_path = "~/.config/helix/themes/dankcolors.toml"
-
-[templates.hunk]
-input_path = "~/.config/matugen/templates/hunk/config.toml"
-output_path = "~/.config/hunk/config.toml"
 
 [templates.kdeglobals]
 input_path = "~/.config/matugen/templates/kdeglobals/dankcolors"
