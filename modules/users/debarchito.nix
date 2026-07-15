@@ -177,7 +177,7 @@ in
                 ;
             }
           ));
-        file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
+        file.".julia/config/startup.jl".source = ../_links/julia/startup.jl;
         activation.plasma-application-menu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
           XDG_MENU_PREFIX=plasma- ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6 --noincremental
         '';

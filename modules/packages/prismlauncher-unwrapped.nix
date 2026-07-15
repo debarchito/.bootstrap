@@ -4,7 +4,7 @@
     {
       packages.prismlauncher-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs (oldAttrs: {
         patches = (oldAttrs.patches or [ ]) ++ [
-          ../../patches/prismlauncher-unwrapped.patch
+          ./_patches/prismlauncher-unwrapped.patch
         ];
       });
     };
