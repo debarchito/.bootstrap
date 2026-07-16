@@ -69,8 +69,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "f4583449f12920e0a2f16808b00a860c27f0173d";
-            hash = "sha256-QkQPqP7Wmo5DLRyKNSY5NuOau4LSaSfz3DYdHDLxluA=";
+            rev = "ec1685daf791c5c9d30fd0f3bd7aeafcb063dddd";
+            hash = "sha256-NjhR54elmw+O6cFX2rC2xZXFJk45QzQjabyJXIcV+6A=";
           };
 
           officialDMSPlugins = [
@@ -93,8 +93,8 @@
           dadanDMSPluginsRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dadan-dms-plugins";
-            rev = "c28a61c0612aea396c7670861e954c777d292900";
-            hash = "sha256-b0+u/3J8LqlvIVHbyN4/pZJLF/S44NLk4uCbpzw47Rs=";
+            rev = "31d53741f7582bfef16f415b0390369aec87ffb8";
+            hash = "sha256-3tNAADFRhIDDFLxxVBPsXG/saXGO5+HTlWSzZa7DeKc=";
           };
 
           dadanDMSPlugins = [

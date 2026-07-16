@@ -155,7 +155,7 @@ in
               generate
               krita
               libreoffice-qt-fresh
-              # nix-alien
+              nix-alien
               nix-output-monitor
               nix-prefetch-github
               pear-desktop
