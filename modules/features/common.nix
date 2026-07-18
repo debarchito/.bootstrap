@@ -72,7 +72,10 @@
             };
 
             environment.systemPackages = builtins.attrValues {
-              inherit (pkgs) cups-pk-helper;
+              inherit (pkgs)
+                cups-pk-helper
+                normcap
+                ;
             };
           })
         ]

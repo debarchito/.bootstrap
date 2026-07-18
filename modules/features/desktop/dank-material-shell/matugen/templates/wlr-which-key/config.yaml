@@ -83,6 +83,9 @@ menu:
       - key: a
         desc: Capture all outputs combined
         cmd: dms screenshot all --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
+      - key: o
+        desc: Capture for OCR
+        cmd: normcap
   - key: w
     desc: Wallpaper
     submenu:
