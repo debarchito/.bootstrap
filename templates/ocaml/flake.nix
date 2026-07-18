@@ -91,6 +91,7 @@
 
           devShells.default = pkgs.mkShell {
             name = "{{name:k}}-dev";
+
             inputsFrom = [ scope.{{name:s}} ];
             nativeBuildInputs = devPackages;
           };
