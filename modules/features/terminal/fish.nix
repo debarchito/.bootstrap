@@ -190,6 +190,10 @@
             };
             npu = {
               setCursor = "%";
+              expansion = "nix-prefetch-url % | tr -d '\\n'";
+            };
+            npuc = {
+              setCursor = "%";
               expansion = "nix-prefetch-url % | tr -d '\\n' | wl-copy";
             };
             npgr = {
@@ -201,6 +205,10 @@
               expansion = "nix-prefetch-github % | jq -r '.hash' | tr -d '\\n' | wl-copy";
             };
             nhc = {
+              setCursor = "%";
+              expansion = "nix hash convert --to sri --hash-algo sha256 % | tr -d '\\n'";
+            };
+            nhcc = {
               setCursor = "%";
               expansion = "nix hash convert --to sri --hash-algo sha256 % | tr -d '\\n' | wl-copy";
             };
