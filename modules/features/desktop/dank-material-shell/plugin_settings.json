@@ -1,4 +1,7 @@
 {
+  "batteryPlus": {
+    "enabled": true
+  },
   "dockerManager": {
     "enabled": true,
     "dockerBinary": "podman",

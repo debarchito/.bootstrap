@@ -32,6 +32,10 @@
       config =
         let
           dankPlugins = {
+            batteryPlus = {
+              rev = "4e653d09174e1edc260f279c42ec2477b6fb2e24";
+              hash = "sha256-XEAvnTisFTPs55+uVCDeHXSJthtkE0CU6No29TDyAYY=";
+            };
             calculator = {
               rev = "1db5865419a40a33171a475855a59e0b8bf7187f";
               hash = "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=";
