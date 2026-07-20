@@ -86,3 +86,12 @@ menu:
       - key: o
         desc: Capture for OCR
         cmd: normcap
+  - key: z
+    desc: Scratchpad
+    submenu:
+      - key: t
+        desc: Toggle Terminal
+        cmd: piri scratchpads terminal toggle
+      - key: m
+        desc: Toggle Manager
+        cmd: piri scratchpads manager toggle

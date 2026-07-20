@@ -90,6 +90,10 @@
       url = "github:debarchito/dankpinentry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    piri = {
+      url = "github:Asthestarsfalll/piri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     quickshell = {
       url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -144,6 +144,7 @@ binds {
     Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";     }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";     }
     Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";     }
+    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad"               { spawn "wlr-which-key" "--initial-keys" "z";     }
     Shift+Print repeat=false hotkey-overlay-title="Take Screenshot"           { screenshot; /* A backup */                      }
     Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "dms" "ipc" "wallpaperCarousel" "toggle"; }
 
@@ -209,4 +210,9 @@ layer-rule {
     background-effect {
         blur true;
     }
+}
+
+window-rule {
+    match app-id="scratchpad-kitty"
+    open-floating true
 }

@@ -1252,6 +1252,26 @@
         "type": "github"
       }
     },
+    "piri": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784263890,
+        "narHash": "sha256-a4Luc90uGF8vzkS9FvqO9DLH4fMMwsm1uli0RkBbmoE=",
+        "owner": "Asthestarsfalll",
+        "repo": "piri",
+        "rev": "8b100e8c2881ba0e04d6ff981a6125ebc355b0e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Asthestarsfalll",
+        "repo": "piri",
+        "type": "github"
+      }
+    },
     "quickshell": {
       "inputs": {
         "nixpkgs": [
@@ -1302,6 +1322,7 @@
         "nur": "nur",
         "oyui": "oyui",
         "pinentry-dms": "pinentry-dms",
+        "piri": "piri",
         "quickshell": "quickshell",
         "starship-jj": "starship-jj",
         "treefmt-nix": "treefmt-nix",

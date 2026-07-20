@@ -202,7 +202,7 @@ in
       };
 
       editors = {
-        # doom-emacs.enable = true;
+        doom-emacs.enable = true;
         zed-editor.enable = true;
       };
 

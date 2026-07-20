@@ -1,0 +1,27 @@
+[niri]
+
+[piri.plugins]
+scratchpads = true
+sticky = true
+
+[piri.scratchpad]
+default_size = "70% 70%"
+default_margin = 50
+
+[scratchpads.terminal]
+direction = "fromRight"
+command = "kitty --app-id=scratchpad-terminal"
+app_id = "scratchpad-terminal"
+size = "70% 70%"
+margin = 50
+sticky = true
+auto_hide_on_focus_loss = true
+
+[scratchpads.manager]
+direction = "fromRight"
+command = "kitty --app-id=scratchpad-manager --directory /home/@USERNAME@ yazi"
+app_id = "scratchpad-manager"
+size = "70% 70%"
+margin = 50
+sticky = true
+auto_hide_on_focus_loss = true

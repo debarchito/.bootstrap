@@ -14,12 +14,19 @@
       url = lib.mkDefault "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
+    piri = {
+      url = lib.mkDefault "github:Asthestarsfalll/piri";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
   };
 
   flake.modules.nixos.options-desktop =
     { config, pkgs, ... }:
     {
-      imports = [ inputs.niri.nixosModules.niri ];
+      imports = [
+        inputs.niri.nixosModules.niri
+        inputs.piri.nixosModules.piri
+      ];
 
       config = lib.mkIf config.desktop.niri.enable {
         nixpkgs.overlays = [
@@ -32,9 +39,12 @@
           package = pkgs.niri-unstable;
         };
 
-        services.gvfs = {
-          enable = true;
-          package = pkgs.gnome.gvfs;
+        services = {
+          piri.enable = true;
+          gvfs = {
+            enable = true;
+            package = pkgs.gnome.gvfs;
+          };
         };
 
         environment.systemPackages = builtins.attrValues {
@@ -76,6 +86,7 @@
             "matugen".source = ./dank-material-shell/matugen;
             "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./qt5ct/qt5ct.conf vars;
             "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./qt6ct/qt6ct.conf vars;
+            "niri/piri.toml".source = pkgs.replaceVars ./piri/piri.toml vars;
           };
 
         fonts.fontconfig = {
@@ -147,7 +158,7 @@
             inherit (pkgs.kdePackages) breeze;
             inherit (pkgs.libsForQt5) qt5ct;
           };
-          activation.poppins-install =
+          activation.papirus-install =
             lib.hm.dag.entryAfter [ "writeBoundary" ]
               # bash
               ''
