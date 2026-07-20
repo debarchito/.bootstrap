@@ -22,6 +22,8 @@
           enable = true;
           client.enable = true;
         };
+
+        xdg.configFile."emacs/init.el".source = ./emacs/init.el;
       };
     };
 }
