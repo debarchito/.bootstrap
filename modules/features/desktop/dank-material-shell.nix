@@ -64,6 +64,10 @@
               rev = "f2c0b0fc0325e3299257cc5d1895069a3d49247f";
               hash = "sha256-uKNiqr/DiX28dePBqsEfBPaCB/kmVDzjayXHdIwGkZQ=";
             };
+            wallpaperCarousel = {
+              rev = "c08fbb92c39d4d778bb08e520cfd96e395594440";
+              hash = "sha256-t70CBhiEBYHa9HvPpCZnfA8eCOWhUlXc6SUa9VprFNE=";
+            };
             webSearch = {
               rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
               hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";

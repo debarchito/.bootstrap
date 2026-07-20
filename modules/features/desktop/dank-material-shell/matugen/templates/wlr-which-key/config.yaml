@@ -86,12 +86,3 @@ menu:
       - key: o
         desc: Capture for OCR
         cmd: normcap
-  - key: w
-    desc: Wallpaper
-    submenu:
-      - key: n
-        desc: Next
-        cmd: dms ipc call wallpaper nextFor $(dms ipc call outputs current | jq -r .[0])
-      - key: p
-        desc: Previous
-        cmd: dms ipc call wallpaper prevFor $(dms ipc call outputs current | jq -r .[0])

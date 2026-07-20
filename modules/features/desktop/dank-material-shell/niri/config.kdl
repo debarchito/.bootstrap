@@ -139,13 +139,13 @@ binds {
     Mod+Shift+8 repeat=false hotkey-overlay-title="Move Column to Workspace 8" { move-column-to-workspace 8; }
     Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" { move-column-to-workspace 9; }
 
-    Mod+T repeat=false hotkey-overlay-title="Open Terminal"                   { spawn "kitty";                                }
-    Mod+B repeat=false hotkey-overlay-title="Open Browser"                    { spawn "wlr-which-key" "--initial-keys" "b";   }
-    Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";   }
-    Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";   }
-    Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";   }
-    Shift+Print repeat=false hotkey-overlay-title="Take Screenshot"           { screenshot; /* A backup */                    }
-    Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "wlr-which-key" "--initial-keys" "w";   }
+    Mod+T repeat=false hotkey-overlay-title="Open Terminal"                   { spawn "kitty";                                  }
+    Mod+B repeat=false hotkey-overlay-title="Open Browser"                    { spawn "wlr-which-key" "--initial-keys" "b";     }
+    Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";     }
+    Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";     }
+    Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";     }
+    Shift+Print repeat=false hotkey-overlay-title="Take Screenshot"           { screenshot; /* A backup */                      }
+    Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "dms" "ipc" "wallpaperCarousel" "toggle"; }
 
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                      { spawn "dms" "ipc" "notepad" "toggle";                   }
     Mod+N repeat=false hotkey-overlay-title="Toggle Notifications"                { spawn "dms" "ipc" "notifications" "toggle";             }
