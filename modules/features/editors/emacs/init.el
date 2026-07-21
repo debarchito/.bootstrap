@@ -70,6 +70,10 @@
    '("<escape>" . ignore))
 
   (meow-leader-define-key
+   '("d" . xref-find-definitions)
+   '("b" . xref-go-back)
+   '("r" . xref-find-references)
+   '("k" . eldoc-doc-buffer)
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
    '("3" . meow-digit-argument)
@@ -81,7 +85,13 @@
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
    '("/" . meow-keypad-describe-key)
-   '("?" . meow-cheatsheet))
+   '("?" . meow-cheatsheet)
+   '("f" . find-file)
+   '("s" . switch-to-buffer)
+   '("x" . kill-current-buffer)
+   '("a" . eglot-code-actions)
+   '("e" . eglot-rename)
+   '("=" . eglot-format))
 
   (meow-normal-define-key
    '("0" . meow-expand-0)
@@ -149,3 +159,14 @@
 (require 'meow)
 (meow-setup)
 (meow-global-mode 1)
+
+;; Setup eglot and other diagnostics thingies.
+(require 'eglot)
+
+(add-hook 'prog-mode-hook #'eglot-ensure)
+(setq flymake-show-diagnostics-at-end-of-line t)
+
+;; Change default language servers.
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '((nix-mode nix-ts-mode) . ("nixd"))))
