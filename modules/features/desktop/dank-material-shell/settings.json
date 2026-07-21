@@ -880,7 +880,7 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "frameLauncherEdgeHover": true,
+  "frameLauncherEdgeHover": false,
   "frameMode": "connected",
   "barInsetPaddingShared": -1,
   "barInsetPaddingSyncAll": false,
