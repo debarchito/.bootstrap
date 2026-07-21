@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; dankcolors-theme.el --- Enhanced theme using Matugen SCSS variables with dank16 colors
 
 ;; Copyright (C) 2025

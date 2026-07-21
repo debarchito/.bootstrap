@@ -1,4 +1,10 @@
+{ lib, inputs, ... }:
 {
+  flake-file.inputs.emacs-overlay = {
+    url = lib.mkDefault "github:nix-community/emacs-overlay";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+  };
+
   flake.modules.homeManager.options-editors =
     {
       lib,
@@ -8,19 +14,39 @@
     }:
     {
       config = lib.mkIf config.editors.emacs.enable {
+        nixpkgs.overlays = [
+          (import inputs.emacs-overlay)
+        ];
+
         programs.emacs = {
           enable = true;
-          package = pkgs.emacs-pgtk;
-          extraPackages = epkgs: [
-            epkgs.meow
-            epkgs.treesit-grammars.with-all-grammars
-            epkgs.clojure-ts-mode
-            epkgs.fish-mode
-            epkgs.haskell-mode
-            epkgs.kdl-mode
-            epkgs.nix-ts-mode
-            epkgs.ocaml-ts-mode
-          ];
+          package = pkgs.emacs-git-pgtk;
+          extraPackages =
+            epkgs:
+            builtins.attrValues {
+              inherit (epkgs.treesit-grammars)
+                with-all-grammars
+                ;
+            }
+            ++ builtins.attrValues {
+              inherit (epkgs)
+                meow
+                vertico
+                orderless
+                consult
+                corfu
+                cape
+                avy
+                eat
+                envrc
+                clojure-ts-mode
+                fish-mode
+                haskell-mode
+                kdl-mode
+                nix-ts-mode
+                ocaml-ts-mode
+                ;
+            };
         };
 
         services.emacs = {

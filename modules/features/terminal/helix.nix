@@ -297,11 +297,11 @@
                         "--ext"
                         "sql"
                       ];
-                      language-servers = [
-                        "spellcheck"
-                        "completion"
-                      ];
                     };
+                    language-servers = [
+                      "spellcheck"
+                      "completion"
+                    ];
                   }
                   // common-options
                 )

@@ -1,13 +1,20 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; Clean the slate.
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (column-number-mode 1)
-(setq ring-bell-function 'ignore)
-(setq inhibit-startup-screen t)
 
-;; Base UI modifications.
+(setq ring-bell-function 'ignore
+      inhibit-startup-screen t
+      use-short-answers t)
+
+;; Base modifications.
 (set-face-attribute 'default nil :height 140)
+
+(which-key-mode 1)
+
 (setq display-line-numbers-type 'relative)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
@@ -60,6 +67,77 @@
                )
               auto-mode-alist))
 
+;; Minibuffer completions.
+(use-package vertico
+  :init
+  (vertico-mode 1)
+  :custom
+  (vertico-cycle t))
+
+;; Fuzzy matching.
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion)))))
+
+;; Buffer navigation.
+(use-package consult
+  :custom
+  (consult-async-min-input 1)
+  (consult-async-input-throttle 0.1))
+
+;; In-buffer code completion.
+(use-package corfu
+  :init
+  (global-corfu-mode 1)
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.1)
+  (corfu-auto-prefix 2)
+  (corfu-cycle t)
+  (corfu-preselect 'prompt))
+
+(use-package cape
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-file))
+
+;; Jump and jump!
+(use-package avy
+  :custom
+  (avy-timeout-seconds 0.3))
+
+;; A nice terminal.
+(use-package eat
+  :init
+  (setq eat-shell (or (executable-find "fish") "/usr/bin/env fish"))
+  :custom
+  (eat-kill-buffer-on-exit t))
+
+;; Direnv support.
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
+
+;; Eglot and diagnostics.
+(use-package eglot
+  :hook ((prog-mode . eglot-ensure)
+         (before-save . (lambda ()
+           (when (eglot-managed-p)
+           (eglot-format-buffer)))))
+  :custom
+  (eglot-sync-connect nil)
+  :config
+  (add-to-list 'eglot-server-programs '((nix-mode nix-ts-mode) . ("nixd"))))
+
+(setq flymake-show-diagnostics-at-end-of-line t)
+
+(custom-set-faces
+ '(flymake-error ((t (:height 1.0 :weight bold))))
+ '(flymake-warning ((t (:height 1.0 :weight bold))))
+ '(flymake-note ((t (:height 1.0 :weight bold))))
+ '(flymake-error-echo ((t (:height 1.0))))
+ '(flymake-warning-echo ((t (:height 1.0)))))
+
 ;; Meow keybindings setup.
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
@@ -74,6 +152,15 @@
    '("b" . xref-go-back)
    '("r" . xref-find-references)
    '("k" . eldoc-doc-buffer)
+   '("a" . eglot-code-actions)
+   '("e" . eglot-rename)
+   '("=" . eglot-format)
+   '("f" . consult-fd)
+   '("p" . consult-ripgrep)
+   '("s" . consult-buffer)
+   '("x" . kill-current-buffer)
+   '("g" . avy-goto-char-timer)
+   '("t" . eat)
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
    '("3" . meow-digit-argument)
@@ -85,13 +172,7 @@
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
    '("/" . meow-keypad-describe-key)
-   '("?" . meow-cheatsheet)
-   '("f" . find-file)
-   '("s" . switch-to-buffer)
-   '("x" . kill-current-buffer)
-   '("a" . eglot-code-actions)
-   '("e" . eglot-rename)
-   '("=" . eglot-format))
+   '("?" . meow-cheatsheet))
 
   (meow-normal-define-key
    '("0" . meow-expand-0)
@@ -156,17 +237,7 @@
    '("'" . repeat)
    '("<escape>" . ignore)))
 
-(require 'meow)
-(meow-setup)
-(meow-global-mode 1)
-
-;; Setup eglot and other diagnostics thingies.
-(require 'eglot)
-
-(add-hook 'prog-mode-hook #'eglot-ensure)
-(setq flymake-show-diagnostics-at-end-of-line t)
-
-;; Change default language servers.
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               '((nix-mode nix-ts-mode) . ("nixd"))))
+(use-package meow
+  :config
+  (meow-setup)
+  (meow-global-mode 1))
