@@ -14,7 +14,12 @@
           extraPackages = epkgs: [
             epkgs.meow
             epkgs.treesit-grammars.with-all-grammars
+            epkgs.clojure-ts-mode
+            epkgs.fish-mode
+            epkgs.haskell-mode
+            epkgs.kdl-mode
             epkgs.nix-ts-mode
+            epkgs.ocaml-ts-mode
           ];
         };
 
