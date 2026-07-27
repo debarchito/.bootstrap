@@ -86,9 +86,7 @@
               packages = builtins.attrValues {
                 inherit (pkgs.nur.repos.rycee.firefox-addons)
                   bitwarden
-                  canvasblocker
                   darkreader
-                  fastforwardteam
                   pywalfox
                   tridactyl
                   ublock-origin
