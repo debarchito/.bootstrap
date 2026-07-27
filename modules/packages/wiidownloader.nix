@@ -7,15 +7,15 @@
       ...
     }:
     let
-      version = "2.98";
+      version = "2.99";
       sources = {
         "x86_64-linux" = {
           url = "https://github.com/Xpl0itU/WiiUDownloader/releases/download/v${version}/WiiUDownloader-Linux-x86_64.AppImage";
-          hash = "sha256-9NDrEHMxweTleLcTakfceJEZvwGCzcxfIr2DOkmrAKg=";
+          hash = "sha256-Oi6OfzSiiDCGZgMtaDTbAMUVoMiXpmoq4QEnAtAX8kA=";
         };
         "aarch64-linux" = {
           url = "https://github.com/Xpl0itU/WiiUDownloader/releases/download/v${version}/WiiUDownloader-Linux-aarch64.AppImage";
-          hash = "sha256-9lN4cNoMNentsX/aIEaIAIqZb6ypeVyOiDXdKN10bpk=";
+          hash = "sha256-k/H6UGDbyRgKmvrPz3xsE6RSiDo+XrI3QmGYossityA=";
         };
       };
     in
