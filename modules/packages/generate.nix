@@ -13,12 +13,13 @@
 
         def show_help():
             print("Usage:")
-            print("  generate <template> <target-dir> [<key>=<value> ...]")
             print("  generate list")
+            print("  generate <template> <target-dir> [<key>=<value> ...]")
             print("\nArguments:")
-            print("  <template>           Name of the template")
-            print("  <target-dir>         Directory to generate into")
-            print("  [<key>=<value> ...]  One or more substitution variables")
+            print("  list                 List all available templates.")
+            print("  <template>           Name of the template.")
+            print("  <target-dir>         Directory to generate into.")
+            print("  [<key>=<value> ...]  One or more substitution variables.")
             print("\nPlaceholders:")
             print("  {{key}}         Raw                   e.g. my lib")
             print("  {{key:f}}       flatcase              e.g. mylib")
@@ -140,7 +141,7 @@
 
 
         def cmd_list():
-            print("Templates:")
+            print("All available templates:\n")
             for name in sorted(os.listdir(TEMPLATES_PATH)):
                 tpath = os.path.join(TEMPLATES_PATH, name)
                 if not os.path.isdir(tpath):
@@ -150,19 +151,19 @@
                     desc, params = parse_template_meta(meta)
                     print(f"  {name}")
                     print(f"    description: {desc}")
-                    print(f"    params:      {', '.join(params)}")
+                    print(f"    params:      {', '.join(params)}\n")
                 else:
-                    print(f"  {name}")
+                    print(f"  {name}\n")
 
 
         def cmd_generate(template_name, target_dir, kvargs):
             template_path = os.path.join(TEMPLATES_PATH, template_name)
             if not os.path.isdir(template_path):
-                print(f"[!] Template '{template_name}' not found")
+                print(f"[!] Template '{template_name}' not found.")
                 sys.exit(1)
 
             if target_dir != "." and os.path.exists(target_dir):
-                print(f"[!] Target '{target_dir}' already exists")
+                print(f"[!] Target '{target_dir}' already exists.")
                 sys.exit(1)
 
             meta_path = os.path.join(template_path, ".template")
@@ -172,7 +173,7 @@
                 missing = [p for p in expected if p not in provided]
                 if missing:
                     for m in missing:
-                        print(f"[!] Missing required param: {m}")
+                        print(f"[!] Missing required param: {m}.")
                     sys.exit(1)
 
             if target_dir == ".":
@@ -207,7 +208,7 @@
 
             rename_paths(target_dir, rules)
             remove_empty_dirs(target_dir)
-            print(f"[+] Generated {template_name} -> {target_dir}")
+            print(f"[+] Generated {template_name} -> {target_dir}.")
 
 
         def main():

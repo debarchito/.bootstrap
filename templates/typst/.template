@@ -1,2 +1,2 @@
-description = "A Typst + Sioyek template"
+description = "A Typst template with Sioyek integrated."
 params = ["name"]

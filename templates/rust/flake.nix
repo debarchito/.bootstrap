@@ -20,8 +20,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
-    inputs@{
+    {
       nixpkgs,
       flake-parts,
       crane,
@@ -29,7 +30,7 @@
       advisory-db,
       treefmt-nix,
       ...
-    }:
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         flake-parts.flakeModules.easyOverlay

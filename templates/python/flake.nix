@@ -28,14 +28,14 @@
   };
 
   outputs =
-    inputs@{
+    {
       flake-parts,
       pyproject-nix,
       uv2nix,
       pyproject-build-systems,
       treefmt-nix,
       ...
-    }:
+    }@inputs:
     let
       workspace = uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./.; };
       overlay = workspace.mkPyprojectOverlay { sourcePreference = "wheel"; };

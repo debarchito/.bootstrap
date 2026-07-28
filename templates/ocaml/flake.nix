@@ -7,7 +7,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
     opam-nix = {
-      url = "github:debarchito/opam-nix";
+      url = "github:tweag/opam-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     opam-repository = {

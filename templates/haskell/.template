@@ -1,0 +1,2 @@
+description = "A haskell-flake powered Haskell template."
+params = ["name", "synopsis", "description"]

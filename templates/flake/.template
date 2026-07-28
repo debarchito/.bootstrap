@@ -1,2 +1,2 @@
-description = "A generic flake-parts template"
+description = "A generic flake-parts template to get you started."
 params = ["name"]

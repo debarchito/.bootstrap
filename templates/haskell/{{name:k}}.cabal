@@ -1,0 +1,45 @@
+cabal-version:      3.12
+
+name:               {{name:k}}
+version:            0.1.0.0
+synopsis:           {{synopsis}}
+description:        {{description}}
+
+author:             Debarchito Nath
+maintainer:         debarchiton@proton.me
+homepage:           https://git.sr.ht/~debarchito/{{name:k}}
+-- license:         
+-- license-file:    
+-- category:        
+
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    hs-source-dirs:   lib
+    exposed-modules:  {{name:P}}Lib
+    default-language: GHC2024
+    build-depends:    base ^>=4.20.0.0
+
+executable {{name:k}}
+    import:           warnings
+    hs-source-dirs:   app
+    main-is:          Main.hs
+    default-language: GHC2024
+    build-depends:
+        base ^>=4.20.0.0,
+        {{name:k}}
+
+test-suite {{name:k}}-test
+    import:           warnings
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    default-language: GHC2024
+    type:             exitcode-stdio-1.0
+    build-depends:
+        base ^>=4.20.0.0,
+        {{name:k}}
