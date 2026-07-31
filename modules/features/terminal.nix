@@ -6,8 +6,8 @@
 }:
 {
   flake-file.inputs = {
-    lumen = {
-      url = lib.mkDefault "github:jnsahaj/lumen";
+    tuicr = {
+      url = lib.mkDefault "github:agavra/tuicr";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     oyui = {
@@ -37,9 +37,9 @@
       config = lib.mkIf config.terminal.common.enable {
         nixpkgs.overlays = [
           (_: _: {
+            tuicr = inputs.tuicr.packages.${system}.default;
             oyui = inputs.oyui.packages.${system}.default;
           })
-          inputs.lumen.overlays.default
         ];
 
         programs = {
@@ -178,10 +178,10 @@
             jc
             koji
             libqalculate
-            lumen
             numbat
             oyui
             sd
+            tuicr
             ueberzugpp
             wl-clipboard
             ;

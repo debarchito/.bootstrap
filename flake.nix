@@ -43,10 +43,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
-    lumen = {
-      url = "github:jnsahaj/lumen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     mfctl = {
       url = "sourcehut:~debarchito/mfctl";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -104,6 +100,10 @@
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    tuicr = {
+      url = "github:agavra/tuicr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     waydroid-script.url = "github:casualsnek/waydroid_script";
