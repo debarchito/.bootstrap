@@ -6,15 +6,6 @@
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          (final: prev: {
-            openimagedenoise = prev.openimagedenoise.overrideAttrs (old: {
-              preConfigure = (old.preConfigure or "") + ''
-                export CUDAToolkit_ROOT="${prev.lib.getBin prev.cudaPackages.cuda_nvcc}"
-              '';
-            });
-          })
-        ];
       };
     };
 

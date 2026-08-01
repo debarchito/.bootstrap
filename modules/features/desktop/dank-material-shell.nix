@@ -97,8 +97,8 @@
           dadanDMSPluginsRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dadan-dms-plugins";
-            rev = "31d53741f7582bfef16f415b0390369aec87ffb8";
-            hash = "sha256-3tNAADFRhIDDFLxxVBPsXG/saXGO5+HTlWSzZa7DeKc=";
+            rev = "63fe6b87c497f1f7c2ea61432716817db1c5c3a4";
+            hash = "sha256-/iIqBej8dFwOQpvO9PXFvnDwZMSA7IykzaQjl5xoJUs=";
           };
 
           dadanDMSPlugins = [
