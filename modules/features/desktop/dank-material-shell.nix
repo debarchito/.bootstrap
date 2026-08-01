@@ -52,10 +52,6 @@
               rev = "255f46794b6e3a5f5e842fe1330db3869deddc09";
               hash = "sha256-YDCwXF0dyuNy07voKvkLlKfHFfPkhSS4oGopn+EnM+0=";
             };
-            dankBitwarden = {
-              rev = "6fd83d8b6ab54d2d6a996bed7291b70316c99965";
-              hash = "sha256-ukcJy4ecyOiqSm9FO87hsq8BZ37EQVuduhDfoDw0LE4=";
-            };
             emojiLauncher = {
               rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
               hash = "sha256-NQ14YenDiNK2VqXQ3z7jAkatbSRtYJHhOhvv7AJlUD8=";

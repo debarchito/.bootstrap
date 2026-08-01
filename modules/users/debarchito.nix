@@ -307,14 +307,6 @@ in
           ];
         };
 
-        rbw = {
-          enable = true;
-          settings = {
-            email = "debarchitonath@gmail.com";
-            pinentry = pkgs.pinentry-dms;
-          };
-        };
-
         thunderbird.enable = true;
 
         vesktop.enable = true;

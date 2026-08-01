@@ -8,12 +8,6 @@
     "terminalApp": "kitty",
     "shellPath": "/home/@USERNAME@/.nix-profile/bin/fish"
   },
-  "dankBitwarden": {
-    "enabled": true,
-    "noTrigger": false,
-    "trigger": "@",
-    "copyToClipboard": true
-  },
   "dankKDEConnect": {
     "enabled": true,
     "selectedDeviceId": "e100d420_afce_4f41_bb37_58887ccfc478"
