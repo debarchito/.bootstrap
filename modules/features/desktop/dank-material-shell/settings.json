@@ -129,9 +129,9 @@
   "controlCenterShowIdleInhibitorIcon": false,
   "controlCenterShowDoNotDisturbIcon": false,
   "showPrivacyButton": true,
-  "privacyShowMicIcon": false,
-  "privacyShowCameraIcon": false,
-  "privacyShowScreenShareIcon": false,
+  "privacyShowMicIcon": true,
+  "privacyShowCameraIcon": true,
+  "privacyShowScreenShareIcon": true,
   "controlCenterWidgets": [
     {
       "id": "brightnessSlider",
@@ -465,11 +465,6 @@
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
-  "brightnessDevicePins": {},
-  "wifiNetworkPins": {},
-  "bluetoothDevicePins": {},
-  "audioInputDevicePins": {},
-  "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
@@ -563,6 +558,8 @@
   "enableU2f": false,
   "u2fMode": "or",
   "lockPamPath": "",
+  "lockScreenSecurityKeyShortcut": "Ctrl+Q",
+  "lockScreenSecurityKeyShortcutEnabled": false,
   "lockPamInlineFprint": false,
   "lockPamInlineU2f": false,
   "lockPamExternallyManaged": false,
@@ -724,10 +721,6 @@
           "showInGb": true
         },
         {
-          "id": "batteryPlus",
-          "enabled": true
-        },
-        {
           "id": "controlCenterButton",
           "enabled": true,
           "showNetworkIcon": true,
@@ -737,13 +730,19 @@
           "showVpnIcon": true,
           "showBrightnessIcon": false,
           "showBrightnessPercent": false,
-          "showMicIcon": true,
+          "showMicIcon": false,
           "showMicPercent": false,
           "showBatteryIcon": false,
-          "showPrinterIcon": false
+          "showPrinterIcon": true,
+          "showIdleInhibitorIcon": true,
+          "showDoNotDisturbIcon": false
         },
         {
           "id": "privacyIndicator",
+          "enabled": true
+        },
+        {
+          "id": "batteryPlus",
           "enabled": true
         }
       ],
@@ -904,5 +903,5 @@
   "barInsetPaddingShared": -1,
   "barInsetPaddingSyncAll": false,
   "frameBarInsetPadding": -1,
-  "configVersion": 12
+  "configVersion": 13
 }
