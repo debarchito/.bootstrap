@@ -149,7 +149,6 @@ in
               aseprite
               bibata-cursors
               blender
-              bottles
               duckdb
               ffmpeg
               generate

@@ -30,7 +30,6 @@
         (_: prev: {
           inherit (self'.packages)
             blender
-            bottles
             generate
             helium
             neuralrack
