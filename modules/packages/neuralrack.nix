@@ -4,13 +4,12 @@
     {
       packages.neuralrack = pkgs.stdenv.mkDerivation rec {
         pname = "neuralrack";
-        version = "0.3.3";
+        version = "0.4.1";
 
-        src = pkgs.fetchFromGitHub {
-          owner = "brummer10";
-          repo = "NeuralRack";
+        src = pkgs.fetchgit {
+          url = "https://github.com/brummer10/NeuralRack.git";
           tag = "v${version}";
-          hash = "sha256-N1U3ekTAZqu+aQE/WIL3RHxDQGSxDecFKak5KScioCY=";
+          hash = "sha256-60b18rAj4Za0H1lzPzvRYQdLFMYCBkKGMmSYJGBOaIQ=";
           fetchSubmodules = true;
         };
 

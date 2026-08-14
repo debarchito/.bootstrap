@@ -164,7 +164,7 @@
               ''
                 ICON_DIR="$HOME/.local/share/icons"
                 REPO_URL='https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git'
-                REPO_REV='b03ccf6ac078ca8242c1d22d00a0f419b26d84e4'
+                REPO_REV='5f8b701d7521e27b4859d7e4f9b0da4c423c036c'
                 GIT='${lib.getExe pkgs.git}'
 
                 if [ -d "$ICON_DIR/Papirus" ]; then

@@ -146,7 +146,7 @@ in
           builtins.attrValues {
             inherit (pkgs)
               android-tools
-              aseprite
+              # aseprite
               bibata-cursors
               blender
               duckdb
@@ -255,6 +255,8 @@ in
             # conf
             ''
               include themes/dankcolors.conf
+              map ctrl+shift+t launch --type=tab --cwd=current fish
+              map ctrl+shift+enter launch --type=window --cwd=current fish
             '';
         };
 
