@@ -40,7 +40,7 @@ colors_to_compare = [
   { name = "adwaita", color = "#93C0EA" },
   { name = "blue", color = "#5294E2" },
   { name = "breeze", color = "#57B8EC" },
-  { name = "carmine", color = "#A30002" },
+  { name = "red", color = "#A30002" },
   { name = "darkcyan", color = "#45ABB7" },
   { name = "green", color = "#87B158" },
   { name = "indigo", color = "#5C6BC0" },
