@@ -30,21 +30,22 @@
             }
             ++ builtins.attrValues {
               inherit (epkgs)
-                meow
-                vertico
-                orderless
+                avy
+                cape
+                clojure-ts-mode
                 consult
                 corfu
-                cape
-                avy
                 eat
                 envrc
-                clojure-ts-mode
                 fish-mode
                 haskell-mode
+                indent-bars
                 kdl-mode
+                meow
                 nix-ts-mode
                 ocaml-ts-mode
+                orderless
+                vertico
                 ;
             };
         };
