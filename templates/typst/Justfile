@@ -1,0 +1,22 @@
+git_root := `git rev-parse --show-toplevel`
+
+# Alias for `just --list`.
+default:
+    @just --list
+
+# Build the Typst document into a PDF.
+build:
+    @mkdir -p {{git_root}}/_build
+    typst compile {{git_root}}/src/{{name:TS}}.typ {{git_root}}/_build/{{name:TS}}.pdf
+
+# Run the Typst development server and invoke Sioyek for live preview.
+develop:
+    #!/usr/bin/env sh
+    mkdir -p {{git_root}}/_build
+    
+    typst watch {{git_root}}/src/{{name:TS}}.typ {{git_root}}/_build/{{name:TS}}.pdf &
+    TYPST_PID=$!
+
+    trap 'kill $TYPST_PID 2>/dev/null' EXIT INT TERM
+    
+    sioyek {{git_root}}/_build/{{name:TS}}.pdf > /dev/null 2>&1

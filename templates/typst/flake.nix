@@ -38,30 +38,33 @@
             '';
           });
 
-          build =
-            pkgs.writers.writeFishBin "build" { }
-              # fish
-              ''
-                ${lib.getExe' pkgs.coreutils "mkdir"} -p $ROOT/_build
+          pdf = pkgs.stdenvNoCC.mkDerivation {
+            pname = "{{name:k}}";
+            version = "0.1.0";
 
-                ${lib.getExe pkgs.typst} compile $ROOT/src/{{name:TS}}.typ $ROOT/_build/{{name:TS}}.pdf
-              '';
+            src = lib.cleanSource ./.;
+            nativeBuildInputs = [ pkgs.typst ];
 
-          develop =
-            pkgs.writers.writeFishBin "develop" { }
-              # fish
-              ''
-                ${lib.getExe' pkgs.coreutils "mkdir"} -p $ROOT/_build
+            buildPhase = ''
+              runHook preBuild
+              typst compile src/{{name:TS}}.typ output.pdf
+              runHook postBuild
+            '';
 
-                ${lib.getExe pkgs.typst} watch $ROOT/src/{{name:TS}}.typ $ROOT/_build/{{name:TS}}.pdf &
-                set TYPST_PID $last_pid
-
-                ${lib.getExe sioyek} $ROOT/_build/{{name:TS}}.pdf
-
-                kill $TYPST_PID
-              '';
+            installPhase = ''
+              runHook preInstall
+              mkdir -p $out
+              cp output.pdf $out/{{name:TS}}.pdf
+              runHook postInstall
+            '';
+          };
         in
         {
+          packages = rec {
+            default = pdf;
+            {{name:k}} = default;
+          };
+
           treefmt = {
             projectRootFile = "flake.nix";
             programs = {
@@ -76,20 +79,13 @@
             packages =
               builtins.attrValues {
                 inherit (pkgs)
+                  just
+                  tinymist
                   typst
                   typstyle
-                  tinymist
                   ;
               }
-              ++ [
-                sioyek
-                build
-                develop
-              ];
-
-            shellHook = ''
-              export ROOT=$(${lib.getExe pkgs.git} rev-parse --show-toplevel 2>/dev/null || pwd)
-            '';
+              ++ [ sioyek ];
           };
         };
     };
