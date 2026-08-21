@@ -230,8 +230,8 @@
           file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "parfait";
-            rev = "581be2d5f5793c5c664c002e800c0a3d372a0bd8";
-            hash = "sha256-jRX9gqHMuktQDeS8Rr/IEC3jXb8ba5/wzsuwAd4bJy0=";
+            rev = "016a0f7e9efbaaee5db377dd041c4d076bc6a477";
+            hash = "sha256-7RZntDeQEddmjXA6ksWX7UfB3EOrhN/HSWevmm5dau8=";
           };
           activation.pywalfox-native-install-librewolf =
             lib.hm.dag.entryAfter [ "writeBoundary" ]
