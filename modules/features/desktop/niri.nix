@@ -6,7 +6,7 @@
       flake = false;
     };
     niri = {
-      url = lib.mkDefault "github:sodiboo/niri-flake/6bb99ff875919f03ea6054026619d999061e1170";
+      url = lib.mkDefault "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
       inputs.niri-unstable.follows = lib.mkDefault "niri-source";
     };

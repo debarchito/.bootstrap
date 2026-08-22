@@ -53,10 +53,10 @@ in
       routing.enable = true;
       bluetooth.enable = true;
       optimizations.enable = true;
-      streaming.server = {
-        enable = true;
-        autostart = false;
-      };
+      # streaming.server = {
+      #   enable = true;
+      #   autostart = false;
+      # };
     };
     hardware.bluetooth.settings.Policy.AutoEnable = false;
 
@@ -152,6 +152,7 @@ in
               duckdb
               ffmpeg
               generate
+              gnome-network-displays
               krita
               libreoffice-qt-fresh
               nix-alien
