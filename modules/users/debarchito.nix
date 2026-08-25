@@ -146,7 +146,7 @@ in
           builtins.attrValues {
             inherit (pkgs)
               android-tools
-              # aseprite
+              aseprite
               bibata-cursors
               blender
               duckdb
@@ -154,7 +154,7 @@ in
               generate
               gnome-network-displays
               krita
-              libreoffice-qt-fresh
+              libreoffice-qt-stable
               nix-alien
               nix-output-monitor
               nix-prefetch-github
@@ -170,10 +170,11 @@ in
           ++ (map wrapKDEMenuPrefix (
             builtins.attrValues {
               inherit (pkgs.kdePackages)
+                ark
                 dolphin
+                filelight
                 gwenview
                 okular
-                ark
                 ;
             }
           ));

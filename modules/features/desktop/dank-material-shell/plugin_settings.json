@@ -16,11 +16,6 @@
     "enabled": true,
     "style": "github-dark"
   },
-  "easyEffects": {
-    "enabled": true,
-    "currentOutputIndex": -1,
-    "currentInputIndex": -1
-  },
   "calculator": {
     "enabled": true,
     "trigger": "=",
@@ -87,20 +82,5 @@
   },
   "dankPinentry": {
     "enabled": true
-  },
-  "wallpaperCarousel": {
-    "enabled": true,
-    "wallpaperDirectory": "/home/@USERNAME@/Pictures/Wallpapers",
-    "itemWidth": 300,
-    "itemHeight": 420,
-    "expandMultiplier": 116,
-    "carouselMode": "infinite",
-    "overlayOpacity": 100,
-    "borderWidth": 0,
-    "cornerRadius": 5,
-    "selectedScale": 110,
-    "expandSelected": "false",
-    "enableHoldExpand": "false",
-    "holdExpandRatio": 33
   }
 }
