@@ -16,19 +16,17 @@
 `.bootstrap` implements a bootstrapping framework (hence the name) around
 [flake-parts's flakeModules](https://flake.parts/options/flake-parts-flakemodules)
 using the [Dendritic](https://github.com/mightyiam/dendritic) pattern. It
-implements almost everything as host-agnostic
-[feature options](/modules/features) making them portable and reusable across
-any `.bootstrap` project. It also standardizes a convention to implements
-[packages](/modules/packages) that can be directly built and consumed via
-`nix build` and `nix run` commands. For e.g.
+implements everything as host-agnostic [feature options](/modules/features)
+making them portable and reusable across any `.bootstrap` project. It also
+standardizes a convention to implements [packages](/modules/packages) that can
+be directly consumed via `nix build` and `nix run`. For example:
 
 ```fish
 # Run CUDA-enabled Blender; upstream nixpkgs doesn't enable CUDA by default
 nix run sourcehut:~debarchito/.bootstrap#blender
 ```
 
-It also standardizes global [overlays](/modules/overlays) in one place among
-many other things.
+It also standardizes globally shared [overlays](/modules/overlays).
 
 `.bootstrap` builds a subset of packages on GitHub Actions and uploads the
 artifacts to my cache registry at
@@ -46,12 +44,11 @@ nix.settings = {
 ```
 
 Alternatively, the
-[options-trustedSubstituters](/modules/features/trusted-substituters.nix)
-feature module can be enabled to set this up among others substituters. This
-module is part of the `nixos` class and will not work inside a `homeManager`
-class.
+[options-trustedSubstituters](/modules/features/trusted-substituters.nix) module
+can be enabled to set this up automatically. To note, this module is part of the
+`nixos` class and is not importable inside a `homeManager` class.
 
-## 1. Preparation (TODO)
+## 1. Preparation
 
 Apply the disk layout using [disko](https://github.com/nix-community/disko):
 
@@ -66,7 +63,7 @@ run0 nix --extra-experimental-features 'nix-command flakes' \
 
 > NOTE: Disko isn't automatically integrated at the moment of writing. Although,
 > it can already be used to apply the layout. This will be addressed in future
-> revisions. \
+> revisions.
 
 ## 2. Applying the configurations
 
@@ -88,8 +85,7 @@ cp /etc/nixos/hardware-configuration.nix ~/.bootstrap/modules/hosts/<host>/_raw/
 # DO NOT REPLACE ~/.bootstrap/modules/hosts/<host>/hardware-configuration.nix by mistake! Notice the "_raw".
 ```
 
-When applying the NixOS configuration for the _first time_, pass these options
-temporarily:
+When applying the NixOS configuration for the _first time_, pass these options:
 
 ```fish
 cd ~/.bootstrap
@@ -102,19 +98,19 @@ run0 nixos-rebuild switch --flake .#<host> \
     'cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc='
 ```
 
-This is 'cause the configuration depends on
+This configuration depends on
 [Determinate Nix](https://docs.determinate.systems/determinate-nix) and the
 CachyOS kernel from
 [xddxdd/nix-cachyos-kernel](https://github.com/xddxdd/nix-cachyos-kernel).
 Substituters are required to avoid compiling these packages locally.
 
-Once done, subsequent applications can be triggered using:
+Once done, subsequent builds can be applied using:
 
 ```fish
 run0 nixos-rebuild switch --flake .#<host>
 ```
 
-The [nh](https://github.com/nix-community/nh) utility is also available as an
+This also enables the [nh](https://github.com/nix-community/nh) as an
 alternative ([NH_FLAKE](https://github.com/nix-community/nh#nixos) is set to
 `~/.bootstrap`):
 
@@ -122,7 +118,7 @@ alternative ([NH_FLAKE](https://github.com/nix-community/nh#nixos) is set to
 nh os switch -c <host>
 ```
 
-Now, apply the Home-Manager configuration using:
+Now, apply the Home-Manager build using:
 
 ```fish
 home-manager switch --flake .#<user>@<host>
@@ -130,9 +126,9 @@ home-manager switch --flake .#<user>@<host>
 nh home switch -c <user>@<host>
 ```
 
-The first activation is going to take a bit of time since it installs the
+The
 [Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git)
-during this stage.
+is installed during the _first_ activation; so it's fine in case it looks stuck!
 
 ## 3. Templates
 
@@ -143,15 +139,18 @@ templates. Get started using:
 nix run sourcehut:~debarchito/.bootstrap#generate
 ```
 
-Initialize a template (e.g Rust) using:
+Initialize a template (e.g. OCaml) using:
 
 ```fish
 nix run sourcehut:~debarchito/.bootstrap#generate \
-    rust ./hello-world \
-    name="hello-world" description="Say hello to the world!"
+    ocaml \
+    ./hello-world \
+    name="hello-world" \
+    synopsis="The first program" \
+    description="The first program that says hello to the world!"
 ```
 
-Then run using:
+Now, you can run it using:
 
 ```fish
 nix run ./hello-world
