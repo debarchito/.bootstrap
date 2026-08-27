@@ -1,12 +1,21 @@
-{ inputs, lib, ... }:
+{
+  inputs,
+  lib,
+  moduleWithSystem,
+  ...
+}:
 {
   flake-file.inputs = {
     dms = {
-      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
+      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell/3b527f1f7f4feb288fb2a003ed183b9e0ad9baff";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     quickshell = {
       url = lib.mkDefault "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
+    dgop = {
+      url = lib.mkDefault "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dsearch = {
@@ -19,7 +28,8 @@
     };
   };
 
-  flake.modules.homeManager.options-desktop =
+  flake.modules.homeManager.options-desktop = moduleWithSystem (
+    { system, ... }:
     { config, pkgs, ... }:
     {
       imports = [
@@ -104,6 +114,9 @@
         lib.mkIf (config.desktop.niri.enable && config.desktop.niri.dms.enable) {
           nixpkgs.overlays = [
             inputs.quickshell.overlays.default
+            (_: _: {
+              dgop = inputs.dgop.packages.${system}.default;
+            })
           ];
 
           programs = {
@@ -136,6 +149,12 @@
             };
           };
 
+          home.packages = builtins.attrValues {
+            inherit (pkgs)
+              dgop
+              ;
+          };
+
           xdg.configFile =
             let
               vars.USERNAME = config.home.username;
@@ -146,5 +165,6 @@
                 pkgs.replaceVars ./dank-material-shell/plugin_settings.json vars;
             };
         };
-    };
+    }
+  );
 }

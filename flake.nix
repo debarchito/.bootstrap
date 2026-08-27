@@ -13,12 +13,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
+      url = "github:AvengeMedia/DankMaterialShell/3b527f1f7f4feb288fb2a003ed183b9e0ad9baff";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dsearch = {
@@ -43,6 +47,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
+    lumen = {
+      url = "github:jnsahaj/lumen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mfctl = {
       url = "sourcehut:~debarchito/mfctl";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,10 +108,6 @@
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    tuicr = {
-      url = "github:agavra/tuicr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     waydroid-script.url = "github:casualsnek/waydroid_script";
