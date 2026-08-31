@@ -146,7 +146,7 @@ binds {
     Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";     }
     Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";     }
     Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad"               { spawn "wlr-which-key" "--initial-keys" "z";     }
-    Shift+Print repeat=false hotkey-overlay-title="Take Screenshot"           { screenshot; /* A backup */                      }
+    Ctrl+Print repeat=false hotkey-overlay-title="Take Screenshot"            { screenshot; /* A backup */                      }
 
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                      { spawn "dms" "ipc" "notepad" "toggle";                   }
     Mod+N repeat=false hotkey-overlay-title="Toggle Notifications"                { spawn "dms" "ipc" "notifications" "toggle";             }

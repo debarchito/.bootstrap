@@ -146,7 +146,7 @@ in
           builtins.attrValues {
             inherit (pkgs)
               android-tools
-              aseprite
+              # aseprite
               bibata-cursors
               blender
               duckdb
