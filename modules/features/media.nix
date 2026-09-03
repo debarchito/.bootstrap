@@ -123,9 +123,21 @@
 
       config = lib.mkIf config.media.daw.enable {
         home = {
-          packages = builtins.attrValues {
-            inherit (pkgs) reaper yabridge yabridgectl;
-          };
+          packages = [
+            pkgs.yabridge
+            pkgs.yabridgectl
+
+            (pkgs.symlinkJoin {
+              name = "reaper-wrapped";
+              paths = [ pkgs.reaper ];
+              nativeBuildInputs = [ pkgs.makeWrapper ];
+              postBuild = ''
+                wrapProgram $out/bin/reaper \
+                  --prefix GIO_EXTRA_MODULES : "${pkgs.glib-networking}/lib/gio/modules" \
+                  --set SSL_CERT_FILE "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+              '';
+            })
+          ];
 
           file = {
             ".clap/NeuralRack.clap".source = "${pkgs.neuralrack}/lib/clap";
@@ -135,12 +147,14 @@
             ".clap/DragonflyReverb.clap".source = "${pkgs.dragonfly-reverb}/lib/clap";
             ".clap/LSPPlugins.clap".source = "${pkgs.lsp-plugins}/lib/clap";
             ".clap/SurgeXT.clap".source = "${pkgs.surge-xt}/lib/clap";
+            ".clap/TONE3000.clap".source = "${pkgs.tone3000}/lib/clap";
             ".lv2/x42Plugins.lv2".source = "${pkgs.x42-plugins}/lib/lv2";
             ".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3/Stochas.vst3";
           };
         };
 
         xdg.configFile = {
+          "TONE3000/Presets/Factory".source = "${pkgs.tone3000}/presets";
           "REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
             "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
           "REAPER/UserPlugins/reaper_sws-x86_64.so".source =

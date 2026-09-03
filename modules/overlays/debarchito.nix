@@ -42,6 +42,7 @@
             reaper
             sioyek
             starship-jj
+            tone3000
             wiiudownloader
             ;
         })
