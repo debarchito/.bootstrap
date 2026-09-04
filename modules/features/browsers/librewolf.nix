@@ -198,6 +198,7 @@
               "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
               "svg.context-properties.content.enabled" = true;
               "sidebar.revamp" = true;
+              "sidebar.verticalTabs" = true;
               "sidebar.position_start" = true;
               "sidebar.visibility" = "hide-sidebar";
               "parfait.animations.enabled" = true;
@@ -230,8 +231,8 @@
           file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "parfait";
-            rev = "62dc8a2674dc8187cf11dfb55306ab5d3e0f3f6a";
-            hash = "sha256-FLEIBB4vErgPSTR2xWRbm79z+4Qbubzcje7VnJSRKmI=";
+            rev = "b27782a0296b14046c35d029a812fd7b1997949d";
+            hash = "sha256-weAhqkBcoPWXT5f9zOT6HKstRuFeRoZXr/mjucMxcFc=";
           };
           activation.pywalfox-native-install-librewolf =
             lib.hm.dag.entryAfter [ "writeBoundary" ]

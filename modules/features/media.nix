@@ -143,7 +143,7 @@
             ".clap/NeuralRack.clap".source = "${pkgs.neuralrack}/lib/clap";
             ".clap/Ratatouille.clap".source = "${pkgs.ratatouille}/lib/clap";
             ".clap/Plugdata.clap".source = "${pkgs.plugdata}/lib/clap";
-            ".clap/Cardinal.clap".source = "${pkgs.cardinal}/lib/clap/Cardinal.clap";
+            # ".clap/Cardinal.clap".source = "${pkgs.cardinal}/lib/clap/Cardinal.clap";
             ".clap/DragonflyReverb.clap".source = "${pkgs.dragonfly-reverb}/lib/clap";
             ".clap/LSPPlugins.clap".source = "${pkgs.lsp-plugins}/lib/clap";
             ".clap/SurgeXT.clap".source = "${pkgs.surge-xt}/lib/clap";
