@@ -28,7 +28,7 @@
             src = pkgs.fetchurl {
               inherit (sources.${system}) url hash;
             };
-            appimageContents = pkgs.appimageTools.extractType2 {
+            appimageContents = pkgs.appimageTools.extract {
               pname = "helium";
               inherit version src;
             };
