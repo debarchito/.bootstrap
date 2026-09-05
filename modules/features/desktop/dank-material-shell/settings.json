@@ -5,6 +5,7 @@
   "dockTransparency": 0.5,
   "cornerRadius": 7,
   "showWeekNumber": true,
+  "calendarBackend": "dankcal",
   "clockFormat": "24h",
   "motionEffect": 1,
   "blurEnabled": true,
@@ -100,6 +101,8 @@
   "showOccupiedWorkspacesOnly": true,
   "workspaceOccupiedColorMode": "secondaryContainer",
   "workspaceFocusedBorderColor": "secondary",
+  "mediaUseAlbumArtAccent": true,
+  "appleMusicAnimatedArtEnabled": true,
   "audioDeviceScrollVolumeEnabled": true,
   "runningAppsCurrentWorkspace": false,
   "clockDateFormat": "ddd, MMM d",
@@ -110,12 +113,34 @@
   "spotlightSectionViewModes": {
     "apps": "list"
   },
-  "niriOverviewOverlayEnabled": false,
+  "niriOverviewLauncherStyle": "spotlight",
   "dankLauncherV2IncludeFilesInAll": true,
   "dankLauncherV2IncludeFoldersInAll": true,
   "launcherUseOverlayLayer": true,
   "spotlightBarShowModeChips": true,
   "weatherEnabled": false,
+  "dashTabs": [
+    {
+      "id": "overview",
+      "enabled": true
+    },
+    {
+      "id": "media",
+      "enabled": true
+    },
+    {
+      "id": "wallpaper",
+      "enabled": true
+    },
+    {
+      "id": "weather",
+      "enabled": false
+    },
+    {
+      "id": "settings",
+      "enabled": true
+    }
+  ],
   "networkPreference": "ethernet",
   "iconThemeDark": "Papirus",
   "cursorSettings": {
@@ -177,17 +202,18 @@
   "matugenTemplateEmacs": false,
   "matugenTemplateZed": false,
   "showDock": true,
-  "dockAutoHide": true,
+  "dockSmartAutoHide": true,
   "dockGroupByApp": true,
+  "dockSeparatePinnedAndRunningApps": true,
   "dockOpenOnOverview": true,
   "dockPosition": 2,
   "dockMargin": 4,
   "dockIconSize": 30,
   "dockIndicatorStyle": "line",
   "dockLauncherEnabled": true,
-  "dockLauncherLogoMode": "os",
+  "dockLauncherLogoMode": "compositor",
   "dockLauncherLogoColorOverride": "primary",
-  "dockTrashFileManager": "dolphin",
+  "notificationOverlayEnabled": true,
   "notificationPopupPrivacyMode": true,
   "lockScreenNotificationMode": 1,
   "notificationShowTimeoutBar": true,
@@ -354,7 +380,8 @@
       "removeWidgetPadding": false,
       "iconScale": 1,
       "useOverlayLayer": false,
-      "hoverPopouts": false
+      "hoverPopouts": false,
+      "batteryColorMode": "level"
     }
   ],
   "desktopClockCustomColor": {
@@ -391,10 +418,10 @@
       "trigger": "&"
     },
     "dms_power": {
-      "trigger": "pw"
+      "trigger": ";"
     },
     "dms_qr_generator": {
-      "trigger": "qrg"
+      "trigger": "{"
     }
   },
   "clipboardEnterToPaste": true,
@@ -411,5 +438,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 16
+  "configVersion": 18
 }
