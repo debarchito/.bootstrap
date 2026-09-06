@@ -150,7 +150,7 @@ binds {
 
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                      { spawn "dms" "ipc" "notepad" "toggle";                   }
     Mod+N repeat=false hotkey-overlay-title="Toggle Notifications"                { spawn "dms" "ipc" "notifications" "toggle";             }
-    Mod+V repeat=false hotkey-overlay-title="Toggle ClipboardPlus"                { spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"; }
+    Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard"                    { spawn "dms" "ipc" "clipboard" "toggle";                 }
     Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                   { spawn "dms" "ipc" "powermenu" "toggle";                 }
     Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                     { spawn "dms" "ipc" "settings" "toggle";                  }
     Mod+Space repeat=false hotkey-overlay-title="Toggle Spotlight Bar Launcher"   { spawn "dms" "ipc" "spotlight-bar" "toggle";             }
@@ -195,20 +195,11 @@ window-rule {
 layer-rule {
     match layer="top";
     match layer="overlay";
-    match namespace="^dms(-clipboardPlus-panel|:)";
 
     opacity 0.85;
 
     background-effect {
         xray false;
-    }
-}
-
-layer-rule {
-    match namespace="^dms-clipboardPlus-panel";
-
-    background-effect {
-        blur true;
     }
 }
 

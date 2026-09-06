@@ -50,10 +50,6 @@
               rev = "1db5865419a40a33171a475855a59e0b8bf7187f";
               hash = "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=";
             };
-            clipboardPlus = {
-              rev = "46405816d7e69af59026d10447c93262c645296c";
-              hash = "sha256-7B7zyzOQ4vjWjyZv8dAHy+ViT3SjsbcLMO1Y9NFvHxs=";
-            };
             commandRunner = {
               rev = "35277695de06beadaba701cb94cc8b096b233319";
               hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
@@ -99,17 +95,6 @@
           dankPinentryPlugins = [
             "plugin"
           ];
-
-          dadanDMSPluginsRepository = pkgs.fetchFromGitHub {
-            owner = "debarchito";
-            repo = "dadan-dms-plugins";
-            rev = "63fe6b87c497f1f7c2ea61432716817db1c5c3a4";
-            hash = "sha256-/iIqBej8dFwOQpvO9PXFvnDwZMSA7IykzaQjl5xoJUs=";
-          };
-
-          dadanDMSPlugins = [
-            "ClipboardPlus"
-          ];
         in
         lib.mkIf (config.desktop.niri.enable && config.desktop.niri.dms.enable) {
           nixpkgs.overlays = [
@@ -137,9 +122,6 @@
                 }))
                 // (lib.genAttrs dankPinentryPlugins (name: {
                   src = "${dankPinentryRepository}/${name}";
-                }))
-                // (lib.genAttrs dadanDMSPlugins (name: {
-                  src = "${dadanDMSPluginsRepository}/${name}";
                 }));
             };
             dsearch.enable = true;
