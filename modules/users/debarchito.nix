@@ -195,7 +195,10 @@ in
         labwc.dms.enable = true;
       };
 
-      terminal.common.enable = true;
+      terminal = {
+        common.enable = true;
+        lsp.enable = true;
+      };
 
       browsers = {
         helium.enable = true;
