@@ -68,7 +68,7 @@
                 ("\\.heex\\'"                        . heex-ts-mode)
                 ("\\.mli\\'"                         . ocamli-ts-mode)
                 ("\\.ml\\'"                          . ocaml-ts-mode)
-                ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-ts-mode)
+                ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-mode)
                 ("\\.lhs\\'"                         . haskell-literate-mode)
                 ("\\.kdl\\'"                         . kdl-mode)
                 ("\\.nix\\'"                         . nix-ts-mode)
