@@ -1,7 +1,7 @@
 { lib, inputs, ... }:
 {
   flake-file.inputs.emacs-overlay = {
-    url = lib.mkDefault "github:nix-community/emacs-overlay";
+    url = lib.mkDefault "github:nix-community/emacs-overlay/89fc44c828d3400485349580c83143a13734bdca";
     inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
