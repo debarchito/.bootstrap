@@ -30,9 +30,9 @@
             }
             ++ builtins.attrValues {
               inherit (epkgs)
+                astro-ts-mode
                 avy
                 cape
-                clojure-ts-mode
                 consult
                 corfu
                 eat
@@ -43,8 +43,12 @@
                 kdl-mode
                 meow
                 nix-ts-mode
+                nu-ts-mode
                 ocaml-ts-mode
                 orderless
+                proof-general
+                scala-ts-mode
+                svelte-mode
                 vertico
                 ;
             };
@@ -55,7 +59,10 @@
           client.enable = true;
         };
 
-        xdg.configFile."emacs/init.el".source = ./emacs/init.el;
+        "xdg".configFile = {
+          "emacs/init.el".source = ./emacs/init.el;
+          "emacs/early-init.el".source = ./emacs/early-init.el;
+        };
       };
     };
 }

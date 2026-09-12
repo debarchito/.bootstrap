@@ -42,39 +42,33 @@
       '((c-mode          . c-ts-mode)
         (c++-mode        . c++-ts-mode)
         (c-or-c++-mode   . c-or-c++-ts-mode)
-        (js-mode         . js-ts-mode)
-        (javascript-mode . js-ts-mode)
-        (python-mode     . python-ts-mode)
+        (conf-toml-mode  . toml-ts-mode)
         (css-mode        . css-ts-mode)
-        (json-mode       . json-ts-mode)
         (html-mode       . html-ts-mode)
-        (sh-mode         . bash-ts-mode)
-        (conf-toml-mode  . toml-ts-mode)))
+        (java-mode       . java-ts-mode)
+        (javascript-mode . js-ts-mode)
+        (js-json-mode    . json-ts-mode)
+        (js-mode         . js-ts-mode)
+        (lua-mode        . lua-ts-mode)
+        (mhtml-mode      . mhtml-ts-mode)
+        (python-mode     . python-ts-mode)
+        (sh-mode         . bash-ts-mode)))
 
 (setq auto-mode-alist
       (append '(
-                ("\\.rs\\'"                          . rust-ts-mode)
-                ("\\.go\\'"                          . go-ts-mode)
-                ("/go\\.mod\\'"                      . go-mod-ts-mode)
-                ("\\.ts\\'"                          . typescript-ts-mode)
-                ("\\.[tj]sx\\'"                      . tsx-ts-mode)
-                ("\\.java\\'"                        . java-ts-mode)
-                ("\\.toml\\'"                        . toml-ts-mode)
-                ("\\.yaml\\|\\.yml\\'"               . yaml-ts-mode)
-                ("\\.cmake\\|CMakeLists\\.txt\\'"    . cmake-ts-mode)
-                ("Dockerfile.*\\'"                   . dockerfile-ts-mode)
-                ("\\.lua\\'"                         . lua-ts-mode)
-                ("\\.elixir\\|\\.exs?\\'"            . elixir-ts-mode)
-                ("\\.heex\\'"                        . heex-ts-mode)
-                ("\\.mli\\'"                         . ocamli-ts-mode)
-                ("\\.ml\\'"                          . ocaml-ts-mode)
-                ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-mode)
-                ("\\.lhs\\'"                         . haskell-literate-mode)
-                ("\\.kdl\\'"                         . kdl-mode)
-                ("\\.nix\\'"                         . nix-ts-mode)
-                ("\\.cljs\\'"                        . clojure-ts-clojurescript-mode)
-                ("\\.clj[c]?\\'"                     . clojure-ts-mode)
+                ("\\.astro\\'"                       . astro-ts-mode)
                 ("\\.fish\\'"                        . fish-mode)
+                ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-mode)
+                ("\\.kdl\\'"                         . kdl-mode)
+                ("\\.lhs\\'"                         . haskell-literate-mode)
+                ("\\.ml\\|\\.mli\\'"                 . ocaml-ts-mode)
+                ("\\.nix\\'"                         . nix-ts-mode)
+                ("\\.nu\\'"                          . nu-ts-mode)
+                ("\\.scala\\|\\.sbt\\'"              . scala-ts-mode)
+                ("\\.svelte\\'"                      . svelte-mode)
+                ("\\.[tj]sx\\'"                      . tsx-ts-mode)
+                ("\\.ts\\'"                          . typescript-ts-mode)
+                ("\\.v\\'"                           . coq-mode)
                )
               auto-mode-alist))
 
@@ -105,6 +99,10 @@
 (use-package corfu
   :init
   (global-corfu-mode 1)
+  :bind (:map corfu-map
+              ("RET" . corfu-insert)
+              ("<tab>" . corfu-next)
+              ("<backtab>" . corfu-previous))
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0.1)
@@ -132,18 +130,62 @@
 (use-package envrc
   :hook (after-init . envrc-global-mode))
 
-;; Eglot and diagnostics.
+;; Eglot, diagnostics and friends.
+(setq-default indent-tabs-mode nil
+              tab-width 2
+              standard-indent 2
+              c-basic-offset 2
+              c-ts-mode-indent-offset 2
+              java-ts-mode-indent-offset 2
+              js-indent-level 2
+              typescript-ts-mode-indent-offset 2
+              css-indent-offset 2
+              rust-ts-mode-indent-offset 2
+              go-ts-mode-indent-offset 2
+              yaml-indent-offset 2
+              nix-ts-mode-indent-offset 2
+              lua-ts-mode-indent-offset 2
+              cmake-ts-mode-indent-offset 2
+              dockerfile-ts-mode-indent-offset 2
+              sh-basic-offset 2
+              scala-indent:step 2
+              haskell-indentation-layout-offset 2
+              haskell-indentation-starter-offset 2
+              haskell-indentation-left-offset 2)
+
+(defun my/eglot-format-buffer-on-save ()
+  (with-timeout (1.5 nil)
+    (ignore-errors (eglot-format-buffer))))
+
+(defun my/eglot-setup-managed-hooks ()
+  (add-hook 'before-save-hook #'my/eglot-format-buffer-on-save nil t))
+
 (use-package eglot
   :hook ((prog-mode . eglot-ensure)
-         (before-save . (lambda ()
-           (when (eglot-managed-p)
-           (eglot-format-buffer)))))
+         (eglot-managed-mode . my/eglot-setup-managed-hooks))
   :custom
   (eglot-sync-connect nil)
   :config
-  (add-to-list 'eglot-server-programs '((nix-mode nix-ts-mode) . ("nixd"))))
+  (add-to-list 'eglot-server-programs '(astro-ts-mode                 . ("astro-ls" "--stdio")))
+  (add-to-list 'eglot-server-programs '(coq-mode                      . ("coq-lsp")))
+  (add-to-list 'eglot-server-programs '((elixir-ts-mode heex-ts-mode) . ("expert")))
+  (add-to-list 'eglot-server-programs '(fish-mode                     . ("fish-lsp" "start" "--stdio")))
+  (add-to-list 'eglot-server-programs '(nix-ts-mode                   . ("nixd")))
+  (add-to-list 'eglot-server-programs '(nu-ts-mode                    . ("nu" "--lsp")))
+  (add-to-list 'eglot-server-programs '(python-ts-mode                . ("basedpyright-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(scala-ts-mode                 . ("metals")))
+  (add-to-list 'eglot-server-programs '(svelte-mode                . ("svelteserver" "--stdio"))))
 
-(setq flymake-show-diagnostics-at-end-of-line t)
+(setq project-vc-extra-root-markers
+      '("pom.xml" "build.gradle" "build.sbt" "mvnw" "gradlew"
+        "dune-project" "_CoqProject"
+        "Cargo.toml"
+        "package.json" "deno.json"
+        "Makefile" "CMakeLists.txt" "meson.build" "xmake.lua"
+        "pyproject.toml" "requirements.txt"
+        "flake.nix" "cabal.project" "stack.yaml"))
+
+(setq flymake-inline-diagnostics 'fancy)
 
 (custom-set-faces
  '(flymake-error ((t (:height 1.0 :weight bold))))
