@@ -3,7 +3,7 @@
     { pkgs, ... }:
     {
       packages.calculate-hash-section =
-        pkgs.writers.writeFishBin "waydroid-choose-gpu" { }
+        pkgs.writers.writeFishBin "calculate-hash-section" { }
           # fish
           ''
             if test (count $argv) -lt 2
