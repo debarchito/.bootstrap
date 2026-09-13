@@ -7,15 +7,15 @@
       ...
     }:
     let
-      version = "0.0.6";
+      version = "0.0.8";
       sources = {
         "x86_64-linux" = {
           url = "https://github.com/tone-3000/tone3000-plugin/releases/download/v${version}/TONE3000-v${version}-linux-x64.tar.gz";
-          hash = "sha256-xMANySbMJFn8wk1InvWutZWSKbBFVcL9/w2Y9KCiE2Q=";
+          hash = "sha256-qnx8yY9pKJ6jK/5yuVtJmRHXc2/BJkbLM622hdnoyGo=";
         };
         "aarch64-linux" = {
           url = "https://github.com/tone-3000/tone3000-plugin/releases/download/v${version}/TONE3000-v${version}-linux-aarch64.tar.gz";
-          hash = "sha256-cC7v8qTmA2k+yFKg2B5fe1axtt88fKfjPsCmCLR/rvA=";
+          hash = "sha256-ofCwXGO/Xft9+lS13CtDzBjuvz8tM/0WAJ/hHFW5gEk=";
         };
       };
     in

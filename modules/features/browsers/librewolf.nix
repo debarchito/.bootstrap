@@ -79,6 +79,16 @@
                     }
                   ];
                 };
+                "Melpa" = {
+                  definedAliases = [ "@mel" ];
+                  icon = "https://melpa.org/favicon.ico";
+                  updateInterval = 24 * 60 * 60 * 1000;
+                  urls = [
+                    {
+                      template = "https://melpa.org/#/?q={searchTerms}";
+                    }
+                  ];
+                };
               };
               force = true;
             };
@@ -155,7 +165,7 @@
                 }
                 {
                   name = "Sourcehut";
-                  url = "https://sr.ht/~debarchito";
+                  url = "https://git.sr.ht/~debarchito";
                 }
                 {
                   name = "Codeberg";
@@ -231,8 +241,8 @@
           file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "parfait";
-            rev = "b27782a0296b14046c35d029a812fd7b1997949d";
-            hash = "sha256-weAhqkBcoPWXT5f9zOT6HKstRuFeRoZXr/mjucMxcFc=";
+            rev = "ccaf5693a4c2c428608c832b69f4a65078ca6354";
+            hash = "sha256-LenMKuZyzgz3tv7auOntaFsY30Grydqm8GKfgz4XG44=";
           };
           activation.pywalfox-native-install-librewolf =
             lib.hm.dag.entryAfter [ "writeBoundary" ]

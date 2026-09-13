@@ -6,6 +6,9 @@
 (scroll-bar-mode 0)
 (column-number-mode 1)
 
+(setq tab-bar-show 1)
+(tab-bar-mode 1)
+
 (setq ring-bell-function 'ignore
       inhibit-startup-screen t
       use-short-answers t)

@@ -149,6 +149,7 @@ in
               aseprite
               bibata-cursors
               blender
+              calculate-hash-section
               duckdb
               ffmpeg
               generate

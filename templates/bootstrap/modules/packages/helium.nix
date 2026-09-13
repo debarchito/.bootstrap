@@ -8,15 +8,15 @@
       ...
     }:
     let
-      version = "0.16.6.1";
+      version = "0.17.0.1";
       sources = {
         "x86_64-linux" = {
           url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64.AppImage";
-          hash = "sha256-T29e5QpXsFYADvSsNcti2LXqLaCUjB5mLYEnHtpxO/Q=";
+          hash = "sha256-JmqdEwoXP/2GGAMS2gjAq7G2oWFuyUTr5ouMDhSOcHY=";
         };
         "aarch64-linux" = {
           url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-arm64.AppImage";
-          hash = "sha256-CRVOuJhFIWZosPP+WkfCp/WbhjeWzKOA1hr9nVVmIqs=";
+          hash = "sha256-9jdvqMmsbwB/ZCdiNSPTfOIUv3NiwVCiIZD8LxzuszQ=";
         };
       };
     in

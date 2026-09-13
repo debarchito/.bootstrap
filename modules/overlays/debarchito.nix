@@ -30,6 +30,7 @@
         (_: prev: {
           inherit (self'.packages)
             blender
+            calculate-hash-section
             generate
             helium
             neuralrack
