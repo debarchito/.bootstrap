@@ -6,8 +6,10 @@
   "cornerRadius": 7,
   "showWeekNumber": true,
   "calendarBackend": "dankcal",
+  "defaultTaskCalendarId": "bbc366d5-af28-486f-b8eb-ae3a2e50887c",
+  "audioShowStreamDevices": true,
   "clockFormat": "24h",
-  "motionEffect": 1,
+  "motionEffect": 2,
   "blurEnabled": true,
   "blurBorderColor": "primary",
   "blurBorderOpacity": 0.85,
@@ -163,7 +165,6 @@
   "launcherLogoColorOverride": "primary",
   "fontFamily": "Poppins",
   "monoFontFamily": "Maple Mono NF",
-  "textRenderType": 1,
   "notepadFontSize": 16,
   "notificationSummaryFontSize": 14,
   "notificationBodyFontSize": 14,
@@ -188,6 +189,8 @@
   "muxType": "zellij",
   "matugenTemplateHyprland": false,
   "matugenTemplateMangowc": false,
+  "matugenTemplateFcitx5": false,
+  "matugenTemplateQtengine": false,
   "matugenTemplateFirefox": false,
   "matugenTemplateZenBrowser": false,
   "matugenTemplateVesktop": false,
@@ -238,10 +241,16 @@
   "powerMenuGridLayout": true,
   "updaterCheckOnStart": true,
   "updaterIntervalSeconds": 3600,
+  "screenPreferences": {
+    "wallpaper": [
+      "all"
+    ]
+  },
   "connectedFrameBarStyleBackups": {
     "default": {
       "shadowIntensity": 12,
       "squareCorners": true,
+      "attachToScreenEdge": false,
       "gothCornersEnabled": true,
       "borderEnabled": false
     }
@@ -288,10 +297,6 @@
           "id": "systemTray",
           "enabled": true,
           "trayUseInlineExpansion": false
-        },
-        {
-          "id": "clipboardPlus",
-          "enabled": true
         },
         {
           "id": "dankKDEConnect",
@@ -428,7 +433,9 @@
   "clipboardVisibleEntryActions": [
     "edit",
     "delete",
-    "pin"
+    "pin",
+    "copy",
+    "paste"
   ],
   "frameEnabled": true,
   "frameThickness": 5,
