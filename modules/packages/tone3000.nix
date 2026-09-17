@@ -10,11 +10,11 @@
       version = "0.0.9";
       sources = {
         "x86_64-linux" = {
-          url = "https://github.com/tone-3000/tone3000-plugin/releases/download/v$\{version}/TONE3000-v$\{version}-linux-x64.tar.gz";
+          url = "https://github.com/tone-3000/tone3000-plugin/releases/download/v${version}/TONE3000-v${version}-linux-x64.tar.gz";
           hash = "sha256-PiP7Y5ZfMQg0CQwcrgNX6gsnnPwU1pgOO+sLe1pUtUY=";
         };
         "aarch64-linux" = {
-          url = "https://github.com/tone-3000/tone3000-plugin/releases/download/v$\{version}/TONE3000-v$\{version}-linux-aarch64.tar.gz";
+          url = "https://github.com/tone-3000/tone3000-plugin/releases/download/v${version}/TONE3000-v${version}-linux-aarch64.tar.gz";
           hash = "sha256-mrbttnS/ZvQWUX4CWzAjYaXezkYdqxNRe+7enOoLBwA=";
         };
       };

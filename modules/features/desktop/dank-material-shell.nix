@@ -7,7 +7,7 @@
 {
   flake-file.inputs = {
     dms = {
-      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
+      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell/v1.6.2";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     quickshell = {
@@ -55,16 +55,16 @@
               hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
             };
             dockerManager = {
-              rev = "255f46794b6e3a5f5e842fe1330db3869deddc09";
-              hash = "sha256-YDCwXF0dyuNy07voKvkLlKfHFfPkhSS4oGopn+EnM+0=";
+              rev = "9e6a01283e169c46eff7a157202b1b8ab48577b1";
+              hash = "sha256-tJjJaevs4iKfiGMIA05fmNtCCKrH+r+QZyvQRo9Okqg=";
             };
             emojiLauncher = {
               rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
               hash = "sha256-NQ14YenDiNK2VqXQ3z7jAkatbSRtYJHhOhvv7AJlUD8=";
             };
             niriWindows = {
-              rev = "f2c0b0fc0325e3299257cc5d1895069a3d49247f";
-              hash = "sha256-uKNiqr/DiX28dePBqsEfBPaCB/kmVDzjayXHdIwGkZQ=";
+              rev = "411d5ee9f7707029f4c12c824ec3b24ca6756a0d";
+              hash = "sha256-+Ju8cbw1yWWW2K2Gpl7nTdkjINqXBD4ktl5g8OhuIEg=";
             };
             webSearch = {
               rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
@@ -75,8 +75,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "2a0f6c57207545433f26b2af32b7d4e72b4c09e2";
-            hash = "sha256-r8jPExx8Kyhk7XGFL9QxfnwvsNVSMMct/RcNMOukCww=";
+            rev = "bb90a1db7d540e64ae049c5906afba9b24baa865";
+            hash = "sha256-NYmw2wCZYAKNU1xcodKMDXs5wwtAguOUNazRxcLjsUE=";
           };
 
           officialDMSPlugins = [
