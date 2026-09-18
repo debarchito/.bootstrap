@@ -1,51 +1,63 @@
+{ inputs, ... }:
 {
+  flake-file.inputs.wiiudownloader = {
+    url = "github:Xpl0itU/WiiUDownloader";
+    flake = false;
+  };
+
   perSystem =
+    { pkgs, ... }:
     {
-      lib,
-      pkgs,
-      system,
-      ...
-    }:
-    let
-      version = "2.105";
-      sources = {
-        "x86_64-linux" = {
-          url = "https://github.com/Xpl0itU/WiiUDownloader/releases/download/v${version}/WiiUDownloader-Linux-x86_64.AppImage";
-          hash = "sha256-Xptv7iBlf9Hj1wNKnxGe53k0ubZhPK9qPMiwEt+8WKI=";
-        };
-        "aarch64-linux" = {
-          url = "https://github.com/Xpl0itU/WiiUDownloader/releases/download/v${version}/WiiUDownloader-Linux-aarch64.AppImage";
-          hash = "sha256-JuNzpVgvXEqtRjQhSQVJWPrI8tWVV2Pm7v4xf9UMgkU=";
-        };
-      };
-    in
-    {
-      packages = lib.optionalAttrs (sources ? ${system}) {
-        wiiudownloader =
-          let
-            src = pkgs.fetchurl {
-              inherit (sources.${system}) url hash;
-            };
-            appimageContents = pkgs.appimageTools.extract {
-              pname = "WiiUDownloader";
-              inherit version src;
-            };
-          in
-          pkgs.appimageTools.wrapType2 {
-            pname = "WiiUDownloader";
-            inherit version src;
-            extraInstallCommands =
-              # bash
-              ''
-                export INSTALL='${lib.getExe' pkgs.coreutils "install"}'
-
-                "$INSTALL" -m 444 -D ${appimageContents}/WiiUDownloader.desktop $out/share/applications/WiiUDownloader.desktop
-                "$INSTALL" -m 444 -D ${appimageContents}/WiiUDownloader.png $out/share/icons/hicolor/512x512/apps/WiiUDownloader.png
-
-                substituteInPlace $out/share/applications/WiiUDownloader.desktop \
-                  --replace 'Exec=AppRun' 'Exec=WiiUDownloader'
-              '';
+      packages =
+        let
+          db = pkgs.fetchurl {
+            url = "https://napi.v10lator.de/db?t=go";
+            curlOpts = "-HUser-Agent:NUSspliBuilder/2.1 --http1.1";
+            hash = "sha256-q3HzucxMfIGxbO+Vndah47AWrno+Jgsx9ggYqlfp8q0=";
           };
-      };
+        in
+        {
+          wiiudownloader = pkgs.buildGoModule {
+            pname = "WiiUDownloader";
+            version = "main";
+
+            src = inputs.wiiudownloader.outPath;
+            modRoot = "cmd/WiiUDownloader";
+            vendorHash = "sha256-hwpHVGxwX+Lxbi3tAW/XAij5hya9cm+7XGDTjJsVS+k=";
+
+            nativeBuildInputs = with pkgs; [
+              pkg-config
+              wrapGAppsHook4
+            ];
+
+            buildInputs = with pkgs; [
+              gobject-introspection
+              gtk4
+              libadwaita
+            ];
+
+            postPatch = ''
+              cp --no-preserve=mode ${db} db.go
+
+              if grep -q 'var titleEntry =' db.go; then
+                if grep -q 'type TitleEntry struct' db.go; then
+                  sed -i '/type TitleEntry struct/,/}/d' db.go
+                fi
+                sed -i 's/var titleEntry =/func init() { TitleDatabase =/' db.go
+                echo '}' >> db.go
+              fi
+            '';
+
+            subPackages = [ "." ];
+
+            postInstall = ''
+              install -m 444 -D ../../packaging/appimage/WiiUDownloader.desktop $out/share/applications/WiiUDownloader.desktop
+              install -m 444 -D ../../data/WiiUDownloader.png $out/share/icons/hicolor/512x512/apps/WiiUDownloader.png
+
+              substituteInPlace $out/share/applications/WiiUDownloader.desktop \
+                --replace-fail 'Exec=wiiudownloader' "Exec=$out/bin/WiiUDownloader"
+            '';
+          };
+        };
     };
 }

@@ -111,6 +111,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     waydroid-script.url = "github:casualsnek/waydroid_script";
+    wiiudownloader = {
+      url = "github:Xpl0itU/WiiUDownloader";
+      flake = false;
+    };
     xwayland-satellite = {
       url = "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = "nixpkgs";

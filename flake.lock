@@ -1251,6 +1251,7 @@
         "starship-jj": "starship-jj",
         "treefmt-nix": "treefmt-nix",
         "waydroid-script": "waydroid-script",
+        "wiiudownloader": "wiiudownloader",
         "xwayland-satellite": "xwayland-satellite",
         "yazi": "yazi"
       }
@@ -1529,6 +1530,22 @@
       "original": {
         "owner": "casualsnek",
         "repo": "waydroid_script",
+        "type": "github"
+      }
+    },
+    "wiiudownloader": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789587708,
+        "narHash": "sha256-O+ve4cf8wMF+3O4oJTebBbzkHErZNN+6bMgOGxS1mDA=",
+        "owner": "Xpl0itU",
+        "repo": "WiiUDownloader",
+        "rev": "fc423e543f01e896743372845f5096530ae565b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Xpl0itU",
+        "repo": "WiiUDownloader",
         "type": "github"
       }
     },
