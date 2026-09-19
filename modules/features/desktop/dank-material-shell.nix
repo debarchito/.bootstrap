@@ -7,7 +7,7 @@
 {
   flake-file.inputs = {
     dms = {
-      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell/v1.6.2";
+      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     quickshell = {

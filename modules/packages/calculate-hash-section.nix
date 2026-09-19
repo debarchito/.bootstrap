@@ -18,20 +18,14 @@
                 case helium
                     set architectures x86_64-linux aarch64-linux
                     set templates \
-                        'https://github.com/imputnet/helium-linux/releases/download/$\{version}/helium-$\{version}-x86_64.AppImage' \
-                        'https://github.com/imputnet/helium-linux/releases/download/$\{version}/helium-$\{version}-arm64.AppImage'
+                        'https://github.com/imputnet/helium-linux/releases/download/''${version}/helium-''${version}-x86_64.AppImage' \
+                        'https://github.com/imputnet/helium-linux/releases/download/''${version}/helium-''${version}-arm64.AppImage'
 
                 case tone3000
                     set architectures x86_64-linux aarch64-linux
                     set templates \
-                        'https://github.com/tone-3000/tone3000-plugin/releases/download/v$\{version}/TONE3000-v$\{version}-linux-x64.tar.gz' \
-                        'https://github.com/tone-3000/tone3000-plugin/releases/download/v$\{version}/TONE3000-v$\{version}-linux-aarch64.tar.gz'
-
-                case wiiudownloader
-                    set architectures x86_64-linux aarch64-linux
-                    set templates \
-                        'https://github.com/Xpl0itU/WiiUDownloader/releases/download/v$\{version}/WiiUDownloader-Linux-x86_64.AppImage' \
-                        'https://github.com/Xpl0itU/WiiUDownloader/releases/download/v$\{version}/WiiUDownloader-Linux-aarch64.AppImage'
+                        'https://github.com/tone-3000/tone3000-plugin/releases/download/v''${version}/TONE3000-v''${version}-linux-x64.tar.gz' \
+                        'https://github.com/tone-3000/tone3000-plugin/releases/download/v''${version}/TONE3000-v''${version}-linux-aarch64.tar.gz'
 
                 case '*'
                     echo "Error: Unknown package_name '$package_name'" >&2
@@ -59,7 +53,7 @@
                 set arch $architectures[$i]
                 set template $templates[$i]
 
-                set download_url (string replace --all '$\{version}' $package_version $template)
+                set download_url (string replace --all ${"'"}''${version}' $package_version $template)
 
                 set hash (get_sri_hash $download_url)
                 if test -z "$hash"

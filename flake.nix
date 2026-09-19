@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell/v1.6.2";
+      url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dsearch = {
