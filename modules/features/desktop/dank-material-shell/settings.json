@@ -1,14 +1,16 @@
 {
   "currentThemeName": "dynamic",
-  "radiusStrength": 22,
+  "radiusStrength": 20,
+  "fixedRadius": 15,
   "clockFormat": "24h",
-  "animationDuration": 300,
+  "animationDuration": 400,
   "blurBorderColor": "primary",
   "blurBorderOpacity": 0.85,
   "wallpaperFillMode": "Stretch",
   "weatherEnabled": false,
   "fontFamily": "Poppins",
   "monoFontFamily": "Maple Mono NF",
+  "displayFontFamily": "Poppins",
   "powerActionHoldDuration": 0.25,
   "powerMenuActions": [
     "lock",
@@ -34,14 +36,14 @@
       "showOnLastDisplay": true,
       "position": 2,
       "mode": "compact",
-      "taskbarAlign": "start",
+      "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 30,
-      "spacing": 4,
-      "itemSpacing": 4,
+      "spacing": 5,
+      "itemSpacing": 5,
       "margin": 4,
       "bottomGap": 0,
-      "transparency": 0.5,
+      "transparency": 0.85,
       "followInterfaceStyle": false,
       "autoHide": false,
       "smartAutoHide": true,
@@ -58,7 +60,7 @@
       "borderColor": "surfaceText",
       "borderOpacity": 1,
       "borderThickness": 1,
-      "launcherEnabled": true,
+      "launcherEnabled": false,
       "launcherLogoMode": "compositor",
       "launcherLogoCustomPath": "",
       "launcherLogoColorOverride": "primary",
@@ -81,7 +83,12 @@
         {
           "id": "dock_apps",
           "widgetId": "appsDock",
-          "enabled": true
+          "enabled": true,
+          "runningAppsCurrentWorkspace": false,
+          "appsDockHideIndicators": false,
+          "appsDockColorizeActive": true,
+          "appsDockEnlargeOnHover": false,
+          "appsDockIconSizePercentage": 85
         },
         {
           "id": "dock_trash",
@@ -93,12 +100,16 @@
   ],
   "currentThemeCategory": "dynamic",
   "matugenScheme": "scheme-vibrant",
+  "popupTransparency": 0.85,
+  "niriLayoutRadiusOverride": 5,
   "showWeekNumber": true,
   "calendarBackend": "dankcal",
   "defaultTaskCalendarId": "bbc366d5-af28-486f-b8eb-ae3a2e50887c",
   "audioShowStreamDevices": true,
   "motionEffect": 2,
   "blurEnabled": true,
+  "foregroundLayerTransparency": 0.5,
+  "blurLayerOutlineOpacity": 0.2,
   "blurredWallpaperLayer": true,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,
@@ -190,6 +201,7 @@
       "h": 1
     }
   ],
+  "bluetoothMprisEnabled": true,
   "clockDateFormat": "ddd, MMM d",
   "browserPickerViewMode": "list",
   "sortAppsAlphabetically": true,
@@ -199,8 +211,6 @@
     "apps": "list"
   },
   "niriOverviewLauncherStyle": "spotlight",
-  "dankLauncherV2IncludeFilesInAll": true,
-  "dankLauncherV2IncludeFoldersInAll": true,
   "spotlightBarShowModeChips": true,
   "dashTabs": [
     {
@@ -288,6 +298,9 @@
     },
     "disk": {
       "io": true
+    },
+    "wallpaper": {
+      "layout": "carousel"
     }
   },
   "networkPreference": "ethernet",
@@ -529,10 +542,10 @@
       "trigger": ";"
     },
     "dms_qr_generator": {
-      "trigger": "{"
+      "trigger": "qr"
     },
     "dms_vpn": {
-      "trigger": "}"
+      "trigger": "vpn"
     }
   },
   "clipboardEnterToPaste": true,
@@ -543,6 +556,38 @@
     "copy",
     "paste"
   ],
+  "launcherPluginVisibility": {
+    "dms_power": {
+      "allowWithoutTrigger": false
+    },
+    "dms_vpn": {
+      "allowWithoutTrigger": false
+    },
+    "dms_qr_generator": {
+      "allowWithoutTrigger": false
+    },
+    "dms_settings_search": {
+      "allowWithoutTrigger": false
+    },
+    "dms_clipboard_search": {
+      "allowWithoutTrigger": false
+    },
+    "emojiLauncher": {
+      "allowWithoutTrigger": false
+    },
+    "commandRunner": {
+      "allowWithoutTrigger": false
+    },
+    "webSearch": {
+      "allowWithoutTrigger": false
+    },
+    "niriWindows": {
+      "allowWithoutTrigger": false
+    },
+    "calculator": {
+      "allowWithoutTrigger": false
+    }
+  },
   "frameEnabled": true,
   "frameThickness": 5,
   "frameRounding": 5,

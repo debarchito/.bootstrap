@@ -118,9 +118,13 @@
   (add-to-list 'completion-at-point-functions #'cape-file))
 
 ;; Jump and jump!
-(use-package avy
+(use-package flash
   :custom
-  (avy-timeout-seconds 0.3))
+  (flash-multi-window t)
+  :config
+  ;; Enables flash labels during normal isearch
+  (require 'flash-isearch)
+  (flash-isearch-mode 1))
 
 ;; A nice terminal.
 (use-package eat
@@ -218,7 +222,7 @@
    '("p" . consult-ripgrep)
    '("s" . consult-buffer)
    '("x" . kill-current-buffer)
-   '("g" . avy-goto-char-timer)
+   '("g" . flash-jump)
    '("t" . eat)
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)

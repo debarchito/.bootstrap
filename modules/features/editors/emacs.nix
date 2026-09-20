@@ -31,13 +31,13 @@
             ++ builtins.attrValues {
               inherit (epkgs)
                 astro-ts-mode
-                avy
                 cape
                 consult
                 corfu
                 eat
                 envrc
                 fish-mode
+                flash
                 haskell-mode
                 indent-bars
                 kdl-mode
