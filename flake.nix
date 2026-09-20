@@ -71,7 +71,7 @@
       };
     };
     niri-source = {
-      url = "github:niri-wm/niri";
+      url = "github:barrulus/biri";
       flake = false;
     };
     nix-alien = {
@@ -92,10 +92,6 @@
     };
     pinentry-dms = {
       url = "github:debarchito/dankpinentry";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    piri = {
-      url = "github:Asthestarsfalll/piri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {

@@ -2,7 +2,7 @@
 {
   flake-file.inputs = {
     niri-source = {
-      url = lib.mkDefault "github:niri-wm/niri";
+      url = lib.mkDefault "github:barrulus/biri";
       flake = false;
     };
     niri = {
@@ -14,10 +14,6 @@
       url = lib.mkDefault "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
-    piri = {
-      url = lib.mkDefault "github:Asthestarsfalll/piri";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
   };
 
   flake.modules.nixos.options-desktop =
@@ -25,7 +21,6 @@
     {
       imports = [
         inputs.niri.nixosModules.niri
-        inputs.piri.nixosModules.piri
       ];
 
       config = lib.mkIf config.desktop.niri.enable {
@@ -40,7 +35,6 @@
         };
 
         services = {
-          piri.enable = true;
           gvfs = {
             enable = true;
             package = pkgs.gnome.gvfs;
@@ -86,7 +80,6 @@
             "matugen".source = ./dank-material-shell/matugen;
             "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./qt5ct/qt5ct.conf vars;
             "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./qt6ct/qt6ct.conf vars;
-            "niri/piri.toml".source = pkgs.replaceVars ./piri/piri.toml vars;
           };
 
         fonts.fontconfig = {

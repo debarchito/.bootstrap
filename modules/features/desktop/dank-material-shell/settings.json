@@ -1,6 +1,6 @@
 {
   "currentThemeName": "dynamic",
-  "radiusStrength": 20,
+  "radiusStrength": 25,
   "fixedRadius": 15,
   "clockFormat": "24h",
   "animationDuration": 400,
@@ -108,8 +108,8 @@
   "audioShowStreamDevices": true,
   "motionEffect": 2,
   "blurEnabled": true,
-  "foregroundLayerTransparency": 0.5,
-  "blurLayerOutlineOpacity": 0.2,
+  "foregroundLayerTransparency": 0.85,
+  "blurLayerOutlineOpacity": 0.1,
   "blurredWallpaperLayer": true,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,

@@ -53,10 +53,10 @@ in
       routing.enable = true;
       bluetooth.enable = true;
       optimizations.enable = true;
-      # streaming.server = {
-      #   enable = true;
-      #   autostart = false;
-      # };
+      streaming.server = {
+        enable = true;
+        autostart = false;
+      };
     };
     hardware.bluetooth.settings.Policy.AutoEnable = false;
 

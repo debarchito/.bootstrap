@@ -24,6 +24,11 @@ overview {
     workspace-shadow {
         off;
     }
+
+    consolidated-carousel {
+        reveal-zoom 0.48
+        assembled-zoom 0.22
+    }
 }
 
 input {
@@ -111,6 +116,8 @@ binds {
     Mod+Equal repeat=false hotkey-overlay-title="Increase Column Width"                { set-column-width "+10%";                  }
     Mod+BracketLeft repeat=false hotkey-overlay-title="Consume or Expel Window Left"   { consume-or-expel-window-left;             }
     Mod+BracketRight repeat=false hotkey-overlay-title="Consume or Expel Window Right" { consume-or-expel-window-right;            }
+    Mod+S repeat=false hotkey-overlay-title="Toggle Sticky Windows"                    { toggle-window-sticky;                     }
+    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad"                        { toggle-workspace-visibility "scratch";    }
     Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window"                  { fullscreen-window;                        }
     Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating"              { toggle-window-floating;                   }
     Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Floating and Tiling"           { switch-focus-between-floating-and-tiling; }
@@ -145,14 +152,12 @@ binds {
     Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";     }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";     }
     Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";     }
-    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad"               { spawn "wlr-which-key" "--initial-keys" "z";     }
     Ctrl+Print repeat=false hotkey-overlay-title="Take Screenshot"            { screenshot; /* A backup */                      }
 
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                      { spawn "dms" "ipc" "notepad" "toggle";       }
     Mod+N repeat=false hotkey-overlay-title="Toggle Notifications"                { spawn "dms" "ipc" "notifications" "toggle"; }
     Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard"                    { spawn "dms" "ipc" "clipboard" "toggle";     }
     Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                   { spawn "dms" "ipc" "powermenu" "toggle";     }
-    Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                     { spawn "dms" "ipc" "settings" "toggle";      }
     Mod+Space repeat=false hotkey-overlay-title="Toggle Spotlight Bar Launcher"   { spawn "dms" "ipc" "spotlight-bar" "toggle"; }
     Mod+Alt+Space repeat=false hotkey-overlay-title="Toggle Application Launcher" { spawn "dms" "ipc" "spotlight" "toggle";     }
     Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"             { spawn "dms" "ipc" "lock" "lock";            }
@@ -165,6 +170,20 @@ binds {
     XF86AudioRaiseVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "increment" "5";         }
     XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn "dms" "ipc" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true repeat=false   { spawn "dms" "ipc" "brightness" "increment" "5" ""; }
+}
+
+workspace "scratch" {
+    hidden true;
+}
+
+window-rule {
+    match app-id="librewolf$" title="^Picture-in-Picture$"
+    open-sticky true
+    float-above-fullscreen true
+}
+
+output "sunshine" {
+    isolated
 }
 
 blur {
@@ -201,9 +220,4 @@ layer-rule {
     background-effect {
         xray false;
     }
-}
-
-window-rule {
-    match app-id="scratchpad-kitty"
-    open-floating true
 }
