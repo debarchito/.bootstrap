@@ -62,24 +62,6 @@
   "dankHooks": {
     "enabled": true
   },
-  "clipboardPlus": {
-    "enabled": true,
-    "tabOrder": "clipboard,search,category,pinned,todo",
-    "tabOrderEnabled": "clipboard,search,category,pinned,todo",
-    "backgroundOpacity": 20,
-    "showBarWidget": false,
-    "showPanelSeparator": true,
-    "hidePanelBackground": false,
-    "panelOpacityPinned": 20,
-    "listenClipboardWhileOpen": true,
-    "panelOpacityClipboard": 100,
-    "maxPinnedImageMb": 5,
-    "maxPinnedTextMb": 1,
-    "showCloseButton": true,
-    "panelMarginTop": 0,
-    "enableAnimations": true,
-    "closeOnOutsideClick": true
-  },
   "dankPinentry": {
     "enabled": true
   }

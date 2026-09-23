@@ -102,6 +102,8 @@
   "matugenScheme": "scheme-vibrant",
   "popupTransparency": 0.85,
   "niriLayoutRadiusOverride": 5,
+  "mouseAccelProfile": "adaptive",
+  "touchpadAccelProfile": "adaptive",
   "showWeekNumber": true,
   "calendarBackend": "dankcal",
   "defaultTaskCalendarId": "bbc366d5-af28-486f-b8eb-ae3a2e50887c",
@@ -211,6 +213,8 @@
     "apps": "list"
   },
   "niriOverviewLauncherStyle": "spotlight",
+  "dankLauncherV2ShowSourceBadges": false,
+  "dankLauncherV2ShowFooter": false,
   "spotlightBarShowModeChips": true,
   "dashTabs": [
     {
@@ -283,12 +287,15 @@
   ],
   "dashOptions": {
     "media": {
-      "animatedArt": true
+      "animatedArt": true,
+      "playerStyle": "material",
+      "titleFont": "DM Serif Display"
     },
     "clock": {
       "tone": "",
       "date": true,
-      "numbers": true
+      "numbers": true,
+      "seconds": true
     },
     "calendar": {
       "weekends": true
@@ -301,6 +308,9 @@
     },
     "wallpaper": {
       "layout": "carousel"
+    },
+    "weather": {
+      "city": true
     }
   },
   "networkPreference": "ethernet",
@@ -321,8 +331,6 @@
       "cursorHideTimeout": 0
     }
   },
-  "launcherLogoMode": "compositor",
-  "launcherLogoColorOverride": "primary",
   "notepadFontSize": 16,
   "notificationSummaryFontSize": 14,
   "notificationBodyFontSize": 14,
@@ -341,7 +349,6 @@
   "batteryNotifyLow": true,
   "batteryChargeLimitNotificationType": 1,
   "batteryLowNotificationType": 1,
-  "batteryCriticalNotificationType": 0,
   "lowerDisplayRefreshRateOnBattery": true,
   "lockBeforeSuspend": true,
   "muxType": "zellij",
@@ -404,20 +411,25 @@
           "id": "workspaceSwitcher",
           "enabled": true,
           "showWorkspaceIndex": true,
-          "showWorkspaceName": true,
+          "showWorkspaceName": false,
           "showWorkspacePadding": true,
           "showWorkspaceApps": true,
           "maxWorkspaceIcons": 10,
           "workspaceAppIconSizeOffset": 2,
           "showOccupiedWorkspacesOnly": true,
           "workspaceOccupiedColorMode": "secondaryContainer",
-          "workspaceFocusedBorderColor": "secondary"
+          "workspaceFocusedBorderColor": "secondary",
+          "workspaceIndicatorStyle": "cards",
+          "workspaceFollowFocus": false,
+          "groupActiveWorkspaceApps": false,
+          "workspaceActiveAppHighlightEnabled": false
         },
         {
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 0,
-          "focusedWindowCompactMode": true
+          "focusedWindowCompactMode": true,
+          "focusedWindowShowIcon": false
         }
       ],
       "centerWidgets": [
@@ -428,7 +440,8 @@
         },
         {
           "id": "clock",
-          "enabled": true
+          "enabled": true,
+          "clockDateOrder": "timeFirst"
         }
       ],
       "rightWidgets": [
@@ -595,5 +608,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 28
+  "configVersion": 29
 }

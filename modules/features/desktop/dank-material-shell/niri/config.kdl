@@ -108,25 +108,27 @@ binds {
     Mod+Shift+Down repeat=false hotkey-overlay-title="Move Column to Down Monitor"   { move-column-to-monitor-down;   }
     Mod+Shift+Left repeat=false hotkey-overlay-title="Move Column to Left Monitor"   { move-column-to-monitor-left;   }
 
-    Mod+F repeat=false hotkey-overlay-title="Expand Column"                            { expand-column-to-available-width;         }
-    Mod+O repeat=false hotkey-overlay-title="Toggle Overview"                          { toggle-overview;                          }
-    Mod+Q repeat=false hotkey-overlay-title="Quit Current Window"                      { close-window;                             }
-    Mod+R repeat=false hotkey-overlay-title="Switch Preset Column Width"               { switch-preset-column-width;               }
-    Mod+Minus repeat=false hotkey-overlay-title="Decrease Column Width"                { set-column-width "-10%";                  }
-    Mod+Equal repeat=false hotkey-overlay-title="Increase Column Width"                { set-column-width "+10%";                  }
-    Mod+BracketLeft repeat=false hotkey-overlay-title="Consume or Expel Window Left"   { consume-or-expel-window-left;             }
-    Mod+BracketRight repeat=false hotkey-overlay-title="Consume or Expel Window Right" { consume-or-expel-window-right;            }
-    Mod+S repeat=false hotkey-overlay-title="Toggle Sticky Windows"                    { toggle-window-sticky;                     }
-    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad"                        { toggle-workspace-visibility "scratch";    }
-    Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window"                  { fullscreen-window;                        }
-    Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating"              { toggle-window-floating;                   }
-    Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Floating and Tiling"           { switch-focus-between-floating-and-tiling; }
-    Mod+Ctrl+Shift+F repeat=false hotkey-overlay-title="Toggle Windowed Fullscreen"    { toggle-windowed-fullscreen;               }
-    Mod+Shift+R repeat=false hotkey-overlay-title="Switch Preset Window Height"        { switch-preset-window-height;              }
-    Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height"                 { reset-window-height;                      }
-    Mod+Shift+T repeat=false hotkey-overlay-title="Toggle Column Tabbed Display"       { toggle-column-tabbed-display;             }
-    Mod+Shift+Minus repeat=false hotkey-overlay-title="Decrease Window Width"          { set-window-height "-10%";                 }
-    Mod+Shift+Equal repeat=false hotkey-overlay-title="Increase Window Width"          { set-window-height "+10%";                 }
+    Mod+F repeat=false hotkey-overlay-title="Expand Column"                               { expand-column-to-available-width;         }
+    Mod+O repeat=false hotkey-overlay-title="Toggle Overview"                             { toggle-overview;                          }
+    Mod+Q repeat=false hotkey-overlay-title="Quit Current Window"                         { close-window;                             }
+    Mod+R repeat=false hotkey-overlay-title="Switch Preset Column Width"                  { switch-preset-column-width;               }
+    Mod+Minus repeat=false hotkey-overlay-title="Decrease Column Width"                   { set-column-width "-10%";                  }
+    Mod+Equal repeat=false hotkey-overlay-title="Increase Column Width"                   { set-column-width "+10%";                  }
+    Mod+BracketLeft repeat=false hotkey-overlay-title="Consume or Expel Window Left"      { consume-or-expel-window-left;             }
+    Mod+BracketRight repeat=false hotkey-overlay-title="Consume or Expel Window Right"    { consume-or-expel-window-right;            }
+    Mod+S repeat=false hotkey-overlay-title="Toggle Sticky Windows"                       { toggle-window-sticky;                     }
+    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace"                 { toggle-workspace-visibility "scratch";    }
+    Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window"                     { fullscreen-window;                        }
+    Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating"                 { toggle-window-floating;                   }
+    Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Floating and Tiling"              { switch-focus-between-floating-and-tiling; }
+    Mod+Ctrl+Shift+F repeat=false hotkey-overlay-title="Toggle Windowed Fullscreen"       { toggle-windowed-fullscreen;               }
+    Mod+Shift+R repeat=false hotkey-overlay-title="Switch Preset Window Height"           { switch-preset-window-height;              }
+    Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height"                    { reset-window-height;                      }
+    Mod+Shift+T repeat=false hotkey-overlay-title="Toggle Column Tabbed Display"          { toggle-column-tabbed-display;             }
+    Mod+Shift+Minus repeat=false hotkey-overlay-title="Decrease Window Width"             { set-window-height "-10%";                 }
+    Mod+Shift+Equal repeat=false hotkey-overlay-title="Increase Window Width"             { set-window-height "+10%";                 }
+    Mod+Shift+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace and Focus" { toggle-workspace-visibility "scratch";
+                                                                                            focus-workspace "scratch";                }
 
     Mod+1 repeat=false hotkey-overlay-title="Move to Workspace 1"              { focus-workspace 1;          }
     Mod+2 repeat=false hotkey-overlay-title="Move to Workspace 2"              { focus-workspace 2;          }
