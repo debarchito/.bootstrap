@@ -175,7 +175,7 @@
 
           home.packages = builtins.attrValues {
             inherit (pkgs)
-              git-annex
+              # git-annex
               git-filter-repo
               jc
               koji
