@@ -101,6 +101,9 @@
   "currentThemeCategory": "dynamic",
   "matugenScheme": "scheme-vibrant",
   "popupTransparency": 0.85,
+  "dmsWindowsFloatingSeeded": [
+    "niri"
+  ],
   "niriLayoutRadiusOverride": 5,
   "mouseAccelProfile": "adaptive",
   "touchpadAccelProfile": "adaptive",
@@ -216,6 +219,7 @@
   "dankLauncherV2ShowSourceBadges": false,
   "dankLauncherV2ShowFooter": false,
   "spotlightBarShowModeChips": true,
+  "dashTabPosition": "left",
   "dashTabs": [
     {
       "id": "overview",
@@ -306,11 +310,11 @@
     "disk": {
       "io": true
     },
-    "wallpaper": {
-      "layout": "carousel"
-    },
     "weather": {
       "city": true
+    },
+    "wallpaper": {
+      "layout": "carousel"
     }
   },
   "networkPreference": "ethernet",
@@ -541,7 +545,8 @@
       "useOverlayLayer": false,
       "hoverPopouts": false,
       "batteryColorMode": "level",
-      "followInterfaceStyle": false
+      "followInterfaceStyle": false,
+      "widgetFollowInterfaceStyle": false
     }
   ],
   "builtInPluginSettings": {
@@ -608,5 +613,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 29
+  "configVersion": 31
 }
