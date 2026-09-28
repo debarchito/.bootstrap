@@ -11,6 +11,9 @@
   "fontFamily": "Poppins",
   "monoFontFamily": "Maple Mono NF",
   "displayFontFamily": "Poppins",
+  "lockScreenShowProfileImage": false,
+  "lockScreenShowWeather": false,
+  "lockScreenFontFamily": "Poppins",
   "powerActionHoldDuration": 0.25,
   "powerMenuActions": [
     "lock",
@@ -73,6 +76,9 @@
       "showTrash": false,
       "trashFileManager": "default",
       "trashCustomCommand": "",
+      "magnification": false,
+      "magnificationScale": 130,
+      "magnificationProfile": "parabolic",
       "order": [],
       "widgets": [
         {
@@ -120,90 +126,137 @@
   "systemTrayIconTintStrength": 200,
   "controlCenterWidgets": [
     {
+      "id": "user",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "col": 0,
+      "row": 0,
+      "hostname": false
+    },
+    {
       "id": "brightnessSlider",
       "enabled": true,
       "instanceId": "mjs4hyt3p651vwwr22a0asvfts0v0",
       "deviceName": "",
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 1
     },
     {
       "id": "idleInhibitor",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 1
     },
     {
       "id": "volumeSlider",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 2
     },
     {
       "id": "inputVolumeSlider",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 2
     },
     {
       "id": "audioOutput",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 3
     },
     {
       "id": "audioInput",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 3
     },
     {
       "id": "wifi",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 4
     },
     {
       "id": "builtin_vpn",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 4
     },
     {
       "id": "bluetooth",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 5
     },
     {
       "id": "doNotDisturb",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 5
     },
     {
       "id": "darkMode",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 6
     },
     {
       "id": "nightMode",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 6
     },
     {
       "id": "colorPicker",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 4,
+      "row": 7
     },
     {
-      "id": "builtin_cups",
+      "id": "builtin_display_profiles",
       "enabled": true,
       "w": 4,
-      "h": 1
+      "h": 1,
+      "col": 0,
+      "row": 7
+    },
+    {
+      "id": "runningApps",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "small": true,
+      "col": 4,
+      "row": 0,
+      "showCount": true
     }
   ],
   "bluetoothMprisEnabled": true,
@@ -218,6 +271,7 @@
   "niriOverviewLauncherStyle": "spotlight",
   "dankLauncherV2ShowSourceBadges": false,
   "dankLauncherV2ShowFooter": false,
+  "avatarRing": "primary",
   "spotlightBarShowModeChips": true,
   "dashTabPosition": "left",
   "dashTabs": [
@@ -249,57 +303,68 @@
       "h": 1
     },
     {
-      "id": "user",
-      "w": 1,
-      "h": 2
-    },
-    {
       "id": "clock",
-      "w": 1,
-      "h": 2
+      "w": 2,
+      "h": 3,
+      "col": 0,
+      "row": 0
     },
     {
       "id": "cpu",
-      "w": 1,
-      "h": 2
+      "w": 2,
+      "h": 2,
+      "col": 2,
+      "row": 0
     },
     {
       "id": "memory",
-      "w": 1,
-      "h": 2
+      "w": 2,
+      "h": 2,
+      "col": 4,
+      "row": 1
     },
     {
       "id": "disk",
-      "w": 1,
-      "h": 2
+      "w": 2,
+      "h": 1,
+      "col": 2,
+      "row": 2
     },
     {
       "id": "network",
-      "w": 1,
-      "h": 2
+      "w": 2,
+      "h": 1,
+      "col": 4,
+      "row": 0
     },
     {
       "id": "calendar",
-      "w": 3,
-      "h": 3
+      "w": 4,
+      "h": 3,
+      "col": 0,
+      "row": 3
     },
     {
       "id": "media",
-      "w": 3,
-      "h": 3
+      "w": 2,
+      "h": 3,
+      "col": 4,
+      "row": 3
     }
   ],
   "dashOptions": {
     "media": {
       "animatedArt": true,
+      "titleFont": "DM Serif Display",
       "playerStyle": "material",
-      "titleFont": "DM Serif Display"
+      "artStyle": "slanted"
     },
     "clock": {
-      "tone": "",
       "date": true,
-      "numbers": true,
-      "seconds": true
+      "style": "analog",
+      "tone": "",
+      "seconds": true,
+      "numbers": true
     },
     "calendar": {
       "weekends": true
@@ -317,7 +382,7 @@
       "layout": "carousel"
     }
   },
-  "networkPreference": "ethernet",
+  "networkPreference": "wifi",
   "iconThemeDark": "Papirus",
   "cursorSettings": {
     "theme": "Bibata-Original-Ice",
@@ -375,6 +440,7 @@
   "matugenTemplateZed": false,
   "notificationOverlayEnabled": true,
   "notificationPopupPrivacyMode": true,
+  "lockScreenShowPasswordField": false,
   "lockScreenNotificationMode": 1,
   "notificationShowTimeoutBar": true,
   "notificationPopupPosition": 3,
@@ -484,7 +550,7 @@
           "showVpnIcon": true,
           "showBrightnessIcon": false,
           "showBrightnessPercent": false,
-          "showMicIcon": false,
+          "showMicIcon": true,
           "showMicPercent": false,
           "showBatteryIcon": false,
           "showPrinterIcon": true,
@@ -492,15 +558,15 @@
           "showDoNotDisturbIcon": false
         },
         {
-          "id": "privacyIndicator",
+          "id": "battery",
           "enabled": true,
-          "privacyShowMicIcon": true,
-          "privacyShowCameraIcon": true,
-          "privacyShowScreenShareIcon": true
-        },
-        {
-          "id": "batteryPlus",
-          "enabled": true
+          "showBatteryPercentOnlyOnBattery": false,
+          "showBatteryTime": true,
+          "showBatteryTimeOnlyOnBattery": true,
+          "showBatteryPowerCharging": false,
+          "showBatteryPowerDischarging": false,
+          "batteryStyle": "solid",
+          "showBatteryPercent": true
         }
       ],
       "spacing": 0,
@@ -613,5 +679,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 31
+  "configVersion": 36
 }

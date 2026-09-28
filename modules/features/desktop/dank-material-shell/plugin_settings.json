@@ -1,13 +1,4 @@
 {
-  "batteryPlus": {
-    "enabled": true
-  },
-  "dockerManager": {
-    "enabled": true,
-    "dockerBinary": "podman",
-    "terminalApp": "kitty",
-    "shellPath": "/home/@USERNAME@/.nix-profile/bin/fish"
-  },
   "dankKDEConnect": {
     "enabled": true,
     "selectedDeviceId": "e100d420_afce_4f41_bb37_58887ccfc478"

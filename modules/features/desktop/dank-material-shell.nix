@@ -42,10 +42,6 @@
       config =
         let
           dankPlugins = {
-            batteryPlus = {
-              rev = "4e653d09174e1edc260f279c42ec2477b6fb2e24";
-              hash = "sha256-XEAvnTisFTPs55+uVCDeHXSJthtkE0CU6No29TDyAYY=";
-            };
             calculator = {
               rev = "1db5865419a40a33171a475855a59e0b8bf7187f";
               hash = "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=";
@@ -53,10 +49,6 @@
             commandRunner = {
               rev = "35277695de06beadaba701cb94cc8b096b233319";
               hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
-            };
-            dockerManager = {
-              rev = "9e6a01283e169c46eff7a157202b1b8ab48577b1";
-              hash = "sha256-tJjJaevs4iKfiGMIA05fmNtCCKrH+r+QZyvQRo9Okqg=";
             };
             emojiLauncher = {
               rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
@@ -75,8 +67,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "bb90a1db7d540e64ae049c5906afba9b24baa865";
-            hash = "sha256-NYmw2wCZYAKNU1xcodKMDXs5wwtAguOUNazRxcLjsUE=";
+            rev = "e774a9756f2a50499c37a5513f28bee4ebe81d73";
+            hash = "sha256-92NjKVTslsbSVJMnxV4SaL7o0vZ1/mxaKdcRJr7EoqI=";
           };
 
           officialDMSPlugins = [
@@ -137,15 +129,10 @@
               ;
           };
 
-          xdg.configFile =
-            let
-              vars.USERNAME = config.home.username;
-            in
-            {
-              "DankMaterialShell/settings.json".source = ./dank-material-shell/settings.json;
-              "DankMaterialShell/plugin_settings.json".source =
-                pkgs.replaceVars ./dank-material-shell/plugin_settings.json vars;
-            };
+          xdg.configFile = {
+            "DankMaterialShell/settings.json".source = ./dank-material-shell/settings.json;
+            "DankMaterialShell/plugin_settings.json".source = ./dank-material-shell/plugin_settings.json;
+          };
         };
     }
   );
