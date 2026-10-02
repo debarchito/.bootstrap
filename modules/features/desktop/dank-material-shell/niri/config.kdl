@@ -1,226 +1,365 @@
 // THIS CONFIG IS NOT PORTABLE OUTSIDE DANK-MATERIAL-SHELL!
-
-include optional=true "dms/alttab.kdl";
-include optional=true "dms/binds.kdl";
-include optional=true "dms/colors.kdl";
-include optional=true "dms/cursor.kdl";
-include optional=true "dms/layout.kdl";
-include optional=true "dms/input.kdl";
-include optional=true "dms/outputs.kdl";
-include optional=true "dms/wpblur.kdl";
-include optional=true "dms/windowrules.kdl";
-include optional=true "matugen/custom.kdl";
-
+include optional=true "dms/alttab.kdl"
+include optional=true "dms/binds.kdl"
+include optional=true "dms/colors.kdl"
+include optional=true "dms/cursor.kdl"
+include optional=true "dms/layout.kdl"
+include optional=true "dms/input.kdl"
+include optional=true "dms/outputs.kdl"
+include optional=true "dms/wpblur.kdl"
+include optional=true "dms/windowrules.kdl"
+include optional=true "matugen/custom.kdl"
 environment {
-  QT_QPA_PLATFORM "wayland;xcb";
-  QT_QPA_PLATFORMTHEME "qt6ct";
-  QT_QPA_PLATFORMTHEME_QT6 "qt6ct";
-  QT_ICON_THEME "Papirus";
+    QT_QPA_PLATFORM "wayland;xcb"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
+    QT_ICON_THEME "Papirus"
 }
-
-prefer-no-csd;
-
+prefer-no-csd
 overview {
     workspace-shadow {
-        off;
+        off
     }
-
     consolidated-carousel {
         reveal-zoom 0.48
         assembled-zoom 0.22
     }
 }
-
 input {
     keyboard {
         xkb {
-            layout "us";
-            options "caps:escape_shifted_capslock";
+            layout "us"
+            options "caps:escape_shifted_capslock"
         }
-        repeat-delay 200;
-        repeat-rate 25;
-        track-layout "global";
+        repeat-delay 200
+        repeat-rate 25
+        track-layout "global"
     }
     touchpad {
-        tap;
-        natural-scroll;
+        tap
+        natural-scroll
     }
 }
-
-screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png";
-
+screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 layout {
     border {
-        off;
+        off
     }
-
     focus-ring {
-        width 2;
+        width 2
     }
-
-    always-center-single-column;
-    center-focused-column "never";
-
-    default-column-display "tabbed";
+    always-center-single-column
+    center-focused-column "never"
+    default-column-display "tabbed"
     tab-indicator {
-        hide-when-single-tab;
-        place-within-column;
-        position "left";
-        width 4;
-        gap 4;
-        gaps-between-tabs 4;
-        corner-radius 4;
+        hide-when-single-tab
+        place-within-column
+        position "left"
+        width 4
+        gap 4
+        gaps-between-tabs 4
+        corner-radius 4
     }
 }
-
 hotkey-overlay {
-    skip-at-startup;
-    hide-not-bound;
+    skip-at-startup
+    hide-not-bound
 }
-
-spawn-at-startup "dms" "run";
-spawn-at-startup "dcal" "run" "-d" "--hidden";
-
+spawn-at-startup "dms" "run"
+spawn-at-startup "dcal" "run" "-d" "--hidden"
 binds {
-    Mod+H repeat=false hotkey-overlay-title="Focus Column Left"                   { focus-column-left;             }
-    Mod+J repeat=false hotkey-overlay-title="Focus Window Down"                   { focus-window-down;             }
-    Mod+K repeat=false hotkey-overlay-title="Focus Window Up"                     { focus-window-up;               }
-    Mod+L repeat=false hotkey-overlay-title="Focus Column Right"                  { focus-column-right;            }
-    Mod+Home repeat=false hotkey-overlay-title="Focus Column First"               { focus-column-first;            }
-    Mod+End repeat=false hotkey-overlay-title="Focus Column Last"                 { focus-column-last;             }
-    Mod+D repeat=false hotkey-overlay-title="Focus Workspace Down"                { focus-workspace-down;          }
-    Mod+U repeat=false hotkey-overlay-title="Focus Workspace Up"                  { focus-workspace-up;            }
-    Mod+Shift+H repeat=false hotkey-overlay-title="Move Column Left"              { move-column-left;              }
-    Mod+Shift+J repeat=false hotkey-overlay-title="Move Window Down"              { move-window-down;              }
-    Mod+Shift+K repeat=false hotkey-overlay-title="Move Window Up"                { move-window-up;                }
-    Mod+Shift+L repeat=false hotkey-overlay-title="Move Column Right"             { move-column-right;             }
-    Mod+Shift+Home repeat=false hotkey-overlay-title="Move Column to First"       { move-column-to-first;          }
-    Mod+Shift+End repeat=false hotkey-overlay-title="Move Column to Last"         { move-column-to-last;           }
-    Mod+Shift+D repeat=false hotkey-overlay-title="Move Column to Workspace Down" { move-column-to-workspace-down; }
-    Mod+Shift+U repeat=false hotkey-overlay-title="Move Column to Workspace Up"   { move-column-to-workspace-up;   }
-
-    Mod+Up repeat=false hotkey-overlay-title="Change Focus to Up Monitor"            { focus-monitor-up;              }
-    Mod+Right repeat=false hotkey-overlay-title="Change Focus to Right Monitor"      { focus-monitor-right;           }
-    Mod+Down repeat=false hotkey-overlay-title="Change Focus to Down Monitor"        { focus-monitor-down;            }
-    Mod+Left repeat=false hotkey-overlay-title="Change Focus to Left Monitor"        { focus-monitor-left;            }
-    Mod+Shift+Up repeat=false hotkey-overlay-title="Move Column to Up Monitor"       { move-column-to-monitor-up;     }
-    Mod+Shift+Right repeat=false hotkey-overlay-title="Move Column to Right Monitor" { move-column-to-monitor-right;  }
-    Mod+Shift+Down repeat=false hotkey-overlay-title="Move Column to Down Monitor"   { move-column-to-monitor-down;   }
-    Mod+Shift+Left repeat=false hotkey-overlay-title="Move Column to Left Monitor"   { move-column-to-monitor-left;   }
-
-    Mod+F repeat=false hotkey-overlay-title="Expand Column"                               { expand-column-to-available-width;         }
-    Mod+O repeat=false hotkey-overlay-title="Toggle Overview"                             { toggle-overview;                          }
-    Mod+Q repeat=false hotkey-overlay-title="Quit Current Window"                         { close-window;                             }
-    Mod+R repeat=false hotkey-overlay-title="Switch Preset Column Width"                  { switch-preset-column-width;               }
-    Mod+Minus repeat=false hotkey-overlay-title="Decrease Column Width"                   { set-column-width "-10%";                  }
-    Mod+Equal repeat=false hotkey-overlay-title="Increase Column Width"                   { set-column-width "+10%";                  }
-    Mod+BracketLeft repeat=false hotkey-overlay-title="Consume or Expel Window Left"      { consume-or-expel-window-left;             }
-    Mod+BracketRight repeat=false hotkey-overlay-title="Consume or Expel Window Right"    { consume-or-expel-window-right;            }
-    Mod+S repeat=false hotkey-overlay-title="Toggle Sticky Windows"                       { toggle-window-sticky;                     }
-    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace"                 { toggle-workspace-visibility "scratch";    }
-    Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window"                     { fullscreen-window;                        }
-    Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating"                 { toggle-window-floating;                   }
-    Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Floating and Tiling"              { switch-focus-between-floating-and-tiling; }
-    Mod+Ctrl+Shift+F repeat=false hotkey-overlay-title="Toggle Windowed Fullscreen"       { toggle-windowed-fullscreen;               }
-    Mod+Shift+R repeat=false hotkey-overlay-title="Switch Preset Window Height"           { switch-preset-window-height;              }
-    Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height"                    { reset-window-height;                      }
-    Mod+Shift+T repeat=false hotkey-overlay-title="Toggle Column Tabbed Display"          { toggle-column-tabbed-display;             }
-    Mod+Shift+Minus repeat=false hotkey-overlay-title="Decrease Window Width"             { set-window-height "-10%";                 }
-    Mod+Shift+Equal repeat=false hotkey-overlay-title="Increase Window Width"             { set-window-height "+10%";                 }
-    Mod+Shift+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace and Focus" { move-column-to-workspace "scratch";       }
-    Mod+Ctrl+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace and Focus"  { toggle-workspace-visibility "scratch";
-                                                                                            focus-workspace "scratch";                }
-
-    Mod+1 repeat=false hotkey-overlay-title="Move to Workspace 1"              { focus-workspace 1;          }
-    Mod+2 repeat=false hotkey-overlay-title="Move to Workspace 2"              { focus-workspace 2;          }
-    Mod+3 repeat=false hotkey-overlay-title="Move to Workspace 3"              { focus-workspace 3;          }
-    Mod+4 repeat=false hotkey-overlay-title="Move to Workspace 4"              { focus-workspace 4;          }
-    Mod+5 repeat=false hotkey-overlay-title="Move to Workspace 5"              { focus-workspace 5;          }
-    Mod+6 repeat=false hotkey-overlay-title="Move to Workspace 6"              { focus-workspace 6;          }
-    Mod+7 repeat=false hotkey-overlay-title="Move to Workspace 7"              { focus-workspace 7;          }
-    Mod+8 repeat=false hotkey-overlay-title="Move to Workspace 8"              { focus-workspace 8;          }
-    Mod+9 repeat=false hotkey-overlay-title="Move to Workspace 9"              { focus-workspace 9;          }
-    Mod+Shift+1 repeat=false hotkey-overlay-title="Move Column to Workspace 1" { move-column-to-workspace 1; }
-    Mod+Shift+2 repeat=false hotkey-overlay-title="Move Column to Workspace 2" { move-column-to-workspace 2; }
-    Mod+Shift+3 repeat=false hotkey-overlay-title="Move Column to Workspace 3" { move-column-to-workspace 3; }
-    Mod+Shift+4 repeat=false hotkey-overlay-title="Move Column to Workspace 4" { move-column-to-workspace 4; }
-    Mod+Shift+5 repeat=false hotkey-overlay-title="Move Column to Workspace 5" { move-column-to-workspace 5; }
-    Mod+Shift+6 repeat=false hotkey-overlay-title="Move Column to Workspace 6" { move-column-to-workspace 6; }
-    Mod+Shift+7 repeat=false hotkey-overlay-title="Move Column to Workspace 7" { move-column-to-workspace 7; }
-    Mod+Shift+8 repeat=false hotkey-overlay-title="Move Column to Workspace 8" { move-column-to-workspace 8; }
-    Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" { move-column-to-workspace 9; }
-
-    Mod+T repeat=false hotkey-overlay-title="Open Terminal"                   { spawn "kitty";                                  }
-    Mod+B repeat=false hotkey-overlay-title="Open Browser"                    { spawn "wlr-which-key" "--initial-keys" "b";     }
-    Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";     }
-    Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";     }
-    Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";     }
-    Ctrl+Print repeat=false hotkey-overlay-title="Take Screenshot"            { screenshot; /* A backup */                      }
-
-    Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                      { spawn "dms" "ipc" "notepad" "toggle";       }
-    Mod+N repeat=false hotkey-overlay-title="Toggle Notifications"                { spawn "dms" "ipc" "notifications" "toggle"; }
-    Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard"                    { spawn "dms" "ipc" "clipboard" "toggle";     }
-    Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                   { spawn "dms" "ipc" "powermenu" "toggle";     }
-    Mod+Space repeat=false hotkey-overlay-title="Toggle Spotlight Bar Launcher"   { spawn "dms" "ipc" "spotlight-bar" "toggle"; }
-    Mod+Alt+Space repeat=false hotkey-overlay-title="Toggle Application Launcher" { spawn "dms" "ipc" "spotlight" "toggle";     }
-    Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"             { spawn "dms" "ipc" "lock" "lock";            }
-    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Light/Dark Theme"       { spawn "dms" "ipc" "call" "theme" "toggle";  }
-    Mod+Shift+N repeat=false hotkey-overlay-title="Toggle Night Mode"             { spawn "dms" "ipc" "night" "toggle";         }
-
-    XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
-    XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }
-    XF86AudioMute allow-when-locked=true repeat=false         { spawn "dms" "ipc" "audio" "mute";                  }
-    XF86AudioRaiseVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "increment" "5";         }
-    XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn "dms" "ipc" "brightness" "decrement" "5" ""; }
-    XF86MonBrightnessUp allow-when-locked=true repeat=false   { spawn "dms" "ipc" "brightness" "increment" "5" ""; }
+    Mod+H repeat=false hotkey-overlay-title="Focus Column Left" {
+        focus-column-left
+    }
+    Mod+J repeat=false hotkey-overlay-title="Focus Window Down" {
+        focus-window-down
+    }
+    Mod+K repeat=false hotkey-overlay-title="Focus Window Up" {
+        focus-window-up
+    }
+    Mod+L repeat=false hotkey-overlay-title="Focus Column Right" {
+        focus-column-right
+    }
+    Mod+Home repeat=false hotkey-overlay-title="Focus Column First" {
+        focus-column-first
+    }
+    Mod+End repeat=false hotkey-overlay-title="Focus Column Last" {
+        focus-column-last
+    }
+    Mod+D repeat=false hotkey-overlay-title="Focus Workspace Down" {
+        focus-workspace-down
+    }
+    Mod+U repeat=false hotkey-overlay-title="Focus Workspace Up" {
+        focus-workspace-up
+    }
+    Mod+Shift+H repeat=false hotkey-overlay-title="Move Column Left" {
+        move-column-left
+    }
+    Mod+Shift+J repeat=false hotkey-overlay-title="Move Window Down" {
+        move-window-down
+    }
+    Mod+Shift+K repeat=false hotkey-overlay-title="Move Window Up" {
+        move-window-up
+    }
+    Mod+Shift+L repeat=false hotkey-overlay-title="Move Column Right" {
+        move-column-right
+    }
+    Mod+Shift+Home repeat=false hotkey-overlay-title="Move Column to First" {
+        move-column-to-first
+    }
+    Mod+Shift+End repeat=false hotkey-overlay-title="Move Column to Last" {
+        move-column-to-last
+    }
+    Mod+Shift+D repeat=false hotkey-overlay-title="Move Column to Workspace Down" {
+        move-column-to-workspace-down
+    }
+    Mod+Shift+U repeat=false hotkey-overlay-title="Move Column to Workspace Up" {
+        move-column-to-workspace-up
+    }
+    Mod+Up repeat=false hotkey-overlay-title="Change Focus to Up Monitor" {
+        focus-monitor-up
+    }
+    Mod+Right repeat=false hotkey-overlay-title="Change Focus to Right Monitor" {
+        focus-monitor-right
+    }
+    Mod+Down repeat=false hotkey-overlay-title="Change Focus to Down Monitor" {
+        focus-monitor-down
+    }
+    Mod+Left repeat=false hotkey-overlay-title="Change Focus to Left Monitor" {
+        focus-monitor-left
+    }
+    Mod+Shift+Up repeat=false hotkey-overlay-title="Move Column to Up Monitor" {
+        move-column-to-monitor-up
+    }
+    Mod+Shift+Right repeat=false hotkey-overlay-title="Move Column to Right Monitor" {
+        move-column-to-monitor-right
+    }
+    Mod+Shift+Down repeat=false hotkey-overlay-title="Move Column to Down Monitor" {
+        move-column-to-monitor-down
+    }
+    Mod+Shift+Left repeat=false hotkey-overlay-title="Move Column to Left Monitor" {
+        move-column-to-monitor-left
+    }
+    Mod+F repeat=false hotkey-overlay-title="Expand Column" {
+        expand-column-to-available-width
+    }
+    Mod+O repeat=false hotkey-overlay-title="Toggle Overview" {
+        toggle-overview
+    }
+    Mod+Q repeat=false hotkey-overlay-title="Quit Current Window" {
+        close-window
+    }
+    Mod+R repeat=false hotkey-overlay-title="Switch Preset Column Width" {
+        switch-preset-column-width
+    }
+    Mod+Minus repeat=false hotkey-overlay-title="Decrease Column Width" {
+        set-column-width "-10%"
+    }
+    Mod+Equal repeat=false hotkey-overlay-title="Increase Column Width" {
+        set-column-width "+10%"
+    }
+    Mod+BracketLeft repeat=false hotkey-overlay-title="Consume or Expel Window Left" {
+        consume-or-expel-window-left
+    }
+    Mod+BracketRight repeat=false hotkey-overlay-title="Consume or Expel Window Right" {
+        consume-or-expel-window-right
+    }
+    Mod+S repeat=false hotkey-overlay-title="Toggle Sticky Windows" {
+        toggle-window-sticky
+    }
+    Mod+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace" {
+        toggle-workspace-visibility "scratch"
+    }
+    Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window" {
+        fullscreen-window
+    }
+    Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating" {
+        toggle-window-floating
+    }
+    Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Floating and Tiling" {
+        switch-focus-between-floating-and-tiling
+    }
+    Mod+Ctrl+Shift+F repeat=false hotkey-overlay-title="Toggle Windowed Fullscreen" {
+        toggle-windowed-fullscreen
+    }
+    Mod+Shift+R repeat=false hotkey-overlay-title="Switch Preset Window Height" {
+        switch-preset-window-height
+    }
+    Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height" {
+        reset-window-height
+    }
+    Mod+Shift+T repeat=false hotkey-overlay-title="Toggle Column Tabbed Display" {
+        toggle-column-tabbed-display
+    }
+    Mod+Shift+Minus repeat=false hotkey-overlay-title="Decrease Window Width" {
+        set-window-height "-10%"
+    }
+    Mod+Shift+Equal repeat=false hotkey-overlay-title="Increase Window Width" {
+        set-window-height "+10%"
+    }
+    Mod+Shift+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace and Focus" {
+        move-column-to-workspace "scratch"
+    }
+    Mod+Ctrl+Z repeat=false hotkey-overlay-title="Toggle Scratchpad Workspace and Focus" {
+        toggle-workspace-visibility "scratch"
+        focus-workspace "scratch"
+    }
+    Mod+1 repeat=false hotkey-overlay-title="Move to Workspace 1" {
+        focus-workspace 1
+    }
+    Mod+2 repeat=false hotkey-overlay-title="Move to Workspace 2" {
+        focus-workspace 2
+    }
+    Mod+3 repeat=false hotkey-overlay-title="Move to Workspace 3" {
+        focus-workspace 3
+    }
+    Mod+4 repeat=false hotkey-overlay-title="Move to Workspace 4" {
+        focus-workspace 4
+    }
+    Mod+5 repeat=false hotkey-overlay-title="Move to Workspace 5" {
+        focus-workspace 5
+    }
+    Mod+6 repeat=false hotkey-overlay-title="Move to Workspace 6" {
+        focus-workspace 6
+    }
+    Mod+7 repeat=false hotkey-overlay-title="Move to Workspace 7" {
+        focus-workspace 7
+    }
+    Mod+8 repeat=false hotkey-overlay-title="Move to Workspace 8" {
+        focus-workspace 8
+    }
+    Mod+9 repeat=false hotkey-overlay-title="Move to Workspace 9" {
+        focus-workspace 9
+    }
+    Mod+Shift+1 repeat=false hotkey-overlay-title="Move Column to Workspace 1" {
+        move-column-to-workspace 1
+    }
+    Mod+Shift+2 repeat=false hotkey-overlay-title="Move Column to Workspace 2" {
+        move-column-to-workspace 2
+    }
+    Mod+Shift+3 repeat=false hotkey-overlay-title="Move Column to Workspace 3" {
+        move-column-to-workspace 3
+    }
+    Mod+Shift+4 repeat=false hotkey-overlay-title="Move Column to Workspace 4" {
+        move-column-to-workspace 4
+    }
+    Mod+Shift+5 repeat=false hotkey-overlay-title="Move Column to Workspace 5" {
+        move-column-to-workspace 5
+    }
+    Mod+Shift+6 repeat=false hotkey-overlay-title="Move Column to Workspace 6" {
+        move-column-to-workspace 6
+    }
+    Mod+Shift+7 repeat=false hotkey-overlay-title="Move Column to Workspace 7" {
+        move-column-to-workspace 7
+    }
+    Mod+Shift+8 repeat=false hotkey-overlay-title="Move Column to Workspace 8" {
+        move-column-to-workspace 8
+    }
+    Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" {
+        move-column-to-workspace 9
+    }
+    Mod+T repeat=false hotkey-overlay-title="Open Terminal" {
+        spawn "kitty"
+    }
+    Mod+B repeat=false hotkey-overlay-title="Open Browser" {
+        spawn "wlr-which-key" "--initial-keys" "b"
+    }
+    Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" {
+        spawn "wlr-which-key" "--initial-keys" "c"
+    }
+    Mod+E repeat=false hotkey-overlay-title="Open Explorer" {
+        spawn "wlr-which-key" "--initial-keys" "e"
+    }
+    Print repeat=false hotkey-overlay-title="Take Screenshot" {
+        spawn "wlr-which-key" "--initial-keys" "s"
+    }
+    Ctrl+Print repeat=false hotkey-overlay-title="Take Screenshot" {
+        screenshot
+ /* A backup */
+    }
+    Mod+P repeat=false hotkey-overlay-title="Toggle Notepad" {
+        spawn "dms" "ipc" "notepad" "toggle"
+    }
+    Mod+N repeat=false hotkey-overlay-title="Toggle Notifications" {
+        spawn "dms" "ipc" "notifications" "toggle"
+    }
+    Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard" {
+        spawn "dms" "ipc" "clipboard" "toggle"
+    }
+    Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu" {
+        spawn "dms" "ipc" "powermenu" "toggle"
+    }
+    Mod+Space repeat=false hotkey-overlay-title="Toggle Spotlight Bar Launcher" {
+        spawn "dms" "ipc" "spotlight-bar" "toggle"
+    }
+    Mod+Alt+Space repeat=false hotkey-overlay-title="Toggle Application Launcher" {
+        spawn "dms" "ipc" "spotlight" "toggle"
+    }
+    Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen" {
+        spawn "dms" "ipc" "lock" "lock"
+    }
+    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" {
+        spawn "dms" "ipc" "call" "theme" "toggle"
+    }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Toggle Night Mode" {
+        spawn "dms" "ipc" "night" "toggle"
+    }
+    XF86AudioLowerVolume allow-when-locked=true repeat=false {
+        spawn "dms" "ipc" "audio" "decrement" "5"
+    }
+    XF86AudioMicMute allow-when-locked=true repeat=false {
+        spawn "dms" "ipc" "audio" "micmute"
+    }
+    XF86AudioMute allow-when-locked=true repeat=false {
+        spawn "dms" "ipc" "audio" "mute"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true repeat=false {
+        spawn "dms" "ipc" "audio" "increment" "5"
+    }
+    XF86MonBrightnessDown allow-when-locked=true repeat=false {
+        spawn "dms" "ipc" "brightness" "decrement" "5" ""
+    }
+    XF86MonBrightnessUp allow-when-locked=true repeat=false {
+        spawn "dms" "ipc" "brightness" "increment" "5" ""
+    }
 }
-
 workspace "scratch" {
-    hidden true;
+    hidden true
 }
-
 window-rule {
     match app-id="librewolf$" title="^Picture-in-Picture$"
     open-sticky true
     float-above-fullscreen true
 }
-
 output "sunshine" {
     isolated
 }
-
 blur {
-    offset 6.0;
-    noise 0.05;
+    offset 6.0
+    noise 0.05
 }
-
 window-rule {
-    opacity 0.85;
-
+    opacity 0.85
     background-effect {
-        blur true;
-        xray false;
+        blur true
+        xray false
     }
-
     popups {
-        opacity 0.85;
-        geometry-corner-radius 15;
-
+        opacity 0.85
+        geometry-corner-radius 15
         background-effect {
-            blur true;
-            xray false;
-            saturation 2;
-        }  
+            blur true
+            xray false
+            saturation 2
+        }
     }
 }
-
 layer-rule {
-    match layer="top";
-    match layer="overlay";
-
-    opacity 0.85;
-
+    match layer="top"
+    match layer="overlay"
+    opacity 0.85
     background-effect {
-        xray false;
+        xray false
     }
 }
+

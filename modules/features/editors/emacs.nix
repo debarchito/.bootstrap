@@ -30,7 +30,7 @@
             }
             ++ builtins.attrValues {
               inherit (epkgs)
-                astro-ts-mode
+                # astro-ts-mode
                 cape
                 consult
                 corfu

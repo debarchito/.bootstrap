@@ -14,6 +14,10 @@
       url = lib.mkDefault "github:emilien-jegou/oyui";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
+    tuios = {
+      url = lib.mkDefault "github:Gaurav-Gosain/tuios";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
   };
 
   flake.modules.homeManager.options-terminal = moduleWithSystem (
@@ -30,6 +34,7 @@
           options = {
             common.enable = lib.mkEnableOption "terminal-based tools that i need everywhere";
             lsp.enable = lib.mkEnableOption "enable the default set of LSPs";
+            formatters.enable = lib.mkEnableOption "enable the default set of formatters";
           };
         };
         default = { };
@@ -41,6 +46,7 @@
             inputs.lumen.overlays.default
             (_: _: {
               oyui = inputs.oyui.packages.${system}.default;
+              tuios = inputs.tuios.packages.${system}.default;
             })
           ];
 
@@ -202,6 +208,18 @@
               tinymist
               vscode-langservers-extracted
               yaml-language-server
+              ;
+          };
+        })
+
+        (lib.mkIf config.terminal.formatters.enable {
+          home.packages = builtins.attrValues {
+            inherit (pkgs)
+              deno
+              kdlfmt
+              nixfmt
+              taplo
+              typstyle
               ;
           };
         })

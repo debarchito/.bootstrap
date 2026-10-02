@@ -26,7 +26,7 @@ in
         "libvirtd"
         "networkmanager"
         "wheel"
-        "wireshark"
+        # "wireshark"
       ];
     };
 
@@ -45,8 +45,8 @@ in
         endlessh.port = 22;
         settings.AllowUsers = [ username ];
       };
-      openvpn.enable = true;
-      wireshark.enable = true;
+      # openvpn.enable = true;
+      # wireshark.enable = true;
     };
 
     media = {
@@ -76,7 +76,7 @@ in
         runAsRoot = true;
         manager.enable = true;
       };
-      waydroid.enable = true;
+      # waydroid.enable = true;
     };
 
     desktop = {
@@ -153,6 +153,7 @@ in
               duckdb
               ffmpeg
               generate
+              gimp
               gnome-network-displays
               krita
               libreoffice-qt-stable
@@ -165,6 +166,7 @@ in
               qbittorrent
               scrcpy
               trash-cli
+              tuios
               wl-mirror
               ;
           }
@@ -175,6 +177,7 @@ in
                 dolphin
                 filelight
                 gwenview
+                kdenlive
                 okular
                 ;
             }
@@ -199,6 +202,7 @@ in
       terminal = {
         common.enable = true;
         lsp.enable = true;
+        formatters.enable = true;
       };
 
       browsers = {
@@ -216,7 +220,7 @@ in
       packaging.flatpak.enableEssentials = true;
 
       programs = {
-        distrobox.enable = true;
+        # distrobox.enable = true;
 
         # terminal.common.enable -> git.enable
         git = {
@@ -314,7 +318,7 @@ in
           ];
         };
 
-        thunderbird.enable = true;
+        # thunderbird.enable = true;
 
         vesktop.enable = true;
       };
@@ -331,11 +335,11 @@ in
           genshin-impact.enable = true;
           honkai-star-rail.enable = true;
         };
-        emulators = {
-          wii.enable = true;
-          wiiu.enable = true;
-          switch.enable = true;
-        };
+        # emulators = {
+        #   wii.enable = true;
+        #   wiiu.enable = true;
+        #   switch.enable = true;
+        # };
       };
     };
 }

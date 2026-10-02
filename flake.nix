@@ -106,6 +106,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tuios = {
+      url = "github:Gaurav-Gosain/tuios";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     waydroid-script.url = "github:casualsnek/waydroid_script";
     wiiudownloader = {
       url = "github:Xpl0itU/WiiUDownloader";

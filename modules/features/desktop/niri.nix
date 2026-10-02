@@ -29,9 +29,12 @@
           inputs.xwayland-satellite.overlays.default
         ];
 
-        programs.niri = {
-          enable = true;
-          package = pkgs.niri-unstable;
+        programs = {
+          niri = {
+            enable = true;
+            package = pkgs.niri-unstable;
+          };
+          seahorse.enable = true;
         };
 
         services = {
@@ -39,7 +42,10 @@
             enable = true;
             package = pkgs.gnome.gvfs;
           };
+          gnome.gnome-keyring.enable = true;
         };
+
+        security.pam.services.login.enableGnomeKeyring = true;
 
         environment.systemPackages = builtins.attrValues {
           inherit (pkgs) nautilus xwayland-satellite;

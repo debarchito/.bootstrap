@@ -337,6 +337,23 @@
                 )
                 (
                   {
+                    name = "kdl";
+                    formatter = {
+                      command = "${lib.getExe pkgs.kdlfmt}";
+                      args = [
+                        "format"
+                        "-"
+                      ];
+                    };
+                    language-servers = [
+                      "spellcheck"
+                      "completion"
+                    ];
+                  }
+                  // common-options
+                )
+                (
+                  {
                     name = "typst";
                     formatter.command = "${lib.getExe pkgs.typstyle}";
                     language-servers = [

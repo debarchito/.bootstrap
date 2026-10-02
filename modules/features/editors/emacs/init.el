@@ -59,7 +59,7 @@
 
 (setq auto-mode-alist
       (append '(
-                ("\\.astro\\'"                       . astro-ts-mode)
+                ; ("\\.astro\\'"                       . astro-ts-mode)
                 ("\\.fish\\'"                        . fish-mode)
                 ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-mode)
                 ("\\.kdl\\'"                         . kdl-mode)
@@ -173,7 +173,7 @@
   :custom
   (eglot-sync-connect nil)
   :config
-  (add-to-list 'eglot-server-programs '(astro-ts-mode                 . ("astro-ls" "--stdio")))
+  ; (add-to-list 'eglot-server-programs '(astro-ts-mode                 . ("astro-ls" "--stdio")))
   (add-to-list 'eglot-server-programs '(coq-mode                      . ("coq-lsp")))
   (add-to-list 'eglot-server-programs '((elixir-ts-mode heex-ts-mode) . ("expert")))
   (add-to-list 'eglot-server-programs '(fish-mode                     . ("fish-lsp" "start" "--stdio")))
