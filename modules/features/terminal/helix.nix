@@ -1,10 +1,4 @@
-{ lib, inputs, ... }:
 {
-  flake-file.inputs.helix = {
-    url = lib.mkDefault "github:helix-editor/helix";
-    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-  };
-
   flake.modules.homeManager.options-terminal =
     {
       lib,
@@ -14,10 +8,6 @@
     }:
     {
       config = lib.mkIf config.terminal.common.enable {
-        nixpkgs.overlays = [
-          inputs.helix.overlays.default
-        ];
-
         programs.helix = {
           enable = true;
           settings = {
@@ -114,6 +104,7 @@
                 args = [ "serve" ];
               };
               completion.command = lib.getExe pkgs.simple-completion-language-server;
+              steel.command = "${pkgs.steel}/bin/steel-language-server";
               nix.command = lib.getExe pkgs.nixd;
               html = {
                 command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
@@ -156,8 +147,22 @@
               [
                 (
                   {
+                    name = "scheme";
+                    formatter.command = "${lib.getExe pkgs.schemat}";
+                    auto-format = true;
+                    language-servers = [
+                      "spellcheck"
+                      "steel"
+                      "completion"
+                    ];
+                  }
+                  // common-options
+                )
+                (
+                  {
                     name = "nix";
                     formatter.command = "${lib.getExe pkgs.nixfmt}";
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "nix"
@@ -178,6 +183,7 @@
                         "html"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "html"
@@ -198,6 +204,7 @@
                         "css"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "css"
@@ -218,6 +225,7 @@
                         "json"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "json"
@@ -238,6 +246,7 @@
                         "jsonc"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "json"
@@ -258,6 +267,7 @@
                         "yaml"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "yaml"
@@ -278,6 +288,7 @@
                         "md"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "markdown"
@@ -298,6 +309,7 @@
                         "sql"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "completion"
@@ -309,6 +321,7 @@
                   {
                     name = "fish";
                     formatter.command = "fish_indent";
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "fish"
@@ -327,6 +340,7 @@
                         "-"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "toml"
@@ -345,6 +359,7 @@
                         "-"
                       ];
                     };
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "completion"
@@ -356,6 +371,7 @@
                   {
                     name = "typst";
                     formatter.command = "${lib.getExe pkgs.typstyle}";
+                    auto-format = true;
                     language-servers = [
                       "spellcheck"
                       "typst"
@@ -368,6 +384,7 @@
                 # NOTE: These options exist just to inject the special LSPs.
                 {
                   name = "rust";
+                  auto-format = true;
                   language-servers = [
                     "spellcheck"
                     "rust-analyzer"
@@ -376,6 +393,7 @@
                 }
                 {
                   name = "ocaml";
+                  auto-format = true;
                   language-servers = [
                     "spellcheck"
                     "ocamllsp"
@@ -386,7 +404,17 @@
           };
         };
 
-        xdg.configFile."helix/snippets".source = ./helix/snippets;
+        xdg.configFile = {
+          "helix/helix.scm".source = ./helix/helix.scm;
+          "helix/init.scm".source = ./helix/init.scm;
+          "helix/snippets".source = ./helix/snippets;
+        };
+
+        home.packages = builtins.attrValues {
+          inherit (pkgs)
+            steel
+            ;
+        };
       };
     };
 }

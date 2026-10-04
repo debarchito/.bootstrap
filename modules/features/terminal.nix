@@ -220,6 +220,7 @@
               nixfmt
               taplo
               typstyle
+              schemat
               ;
           };
         })

@@ -33,6 +33,7 @@
             calculate-hash-section
             generate
             helium
+            helix
             neuralrack
             obs-studio
             papirus-folders
