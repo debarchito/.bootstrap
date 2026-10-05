@@ -1,4 +1,84 @@
 {
+  "lockScreenWidgetInstances": [
+    {
+      "id": "lock_clock",
+      "widgetType": "desktopClock",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "syncPositionAcrossScreens": true,
+        "style": "overlap",
+        "transparency": 0,
+        "weight": 100,
+        "twoTone": true,
+        "showDate": false,
+        "showDigitalSeconds": false,
+        "showAnalogNumbers": true,
+        "showAnalogSeconds": true,
+        "autoPosition": false,
+        "colorMode": "default",
+        "customColor": "#ffffff",
+        "fontFamily": ""
+      },
+      "name": "Clock"
+    },
+    {
+      "id": "lock_date",
+      "widgetType": "lockDate",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "syncPositionAcrossScreens": true,
+        "format": "long",
+        "colorMode": "default",
+        "customColor": "#ffffff"
+      }
+    },
+    {
+      "id": "lock_auth",
+      "widgetType": "lockAuth",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "syncPositionAcrossScreens": true,
+        "style": "expressive",
+        "profileVisibility": "typing",
+        "passwordVisibility": "typing"
+      }
+    },
+    {
+      "id": "lock_notifications",
+      "widgetType": "lockNotifications",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "syncPositionAcrossScreens": true,
+        "mode": 1
+      }
+    },
+    {
+      "id": "lock_status",
+      "widgetType": "lockStatus",
+      "enabled": true,
+      "config": {
+        "displayPreferences": [
+          "all"
+        ],
+        "syncPositionAcrossScreens": true,
+        "showMediaPlayer": false,
+        "showWeather": false,
+        "background": false
+      }
+    }
+  ],
   "currentThemeName": "dynamic",
   "radiusStrength": 25,
   "fixedRadius": 15,
@@ -11,7 +91,6 @@
   "fontFamily": "Poppins",
   "monoFontFamily": "Maple Mono NF",
   "displayFontFamily": "Poppins",
-  "lockScreenShowProfileImage": false,
   "lockScreenShowWeather": false,
   "lockScreenFontFamily": "Poppins",
   "powerActionHoldDuration": 0.25,
@@ -32,7 +111,7 @@
     {
       "id": "dock",
       "name": "Dock",
-      "enabled": true,
+      "enabled": false,
       "screenPreferences": [
         "all"
       ],
@@ -53,7 +132,7 @@
       "useOverlayLayer": false,
       "editOnRightClick": false,
       "showOnFullscreen": false,
-      "openOnOverview": true,
+      "openOnOverview": false,
       "groupByApp": true,
       "separatePinnedAndRunningApps": true,
       "restoreSpecialWorkspaceOnClick": false,
@@ -79,6 +158,7 @@
       "magnification": false,
       "magnificationScale": 130,
       "magnificationProfile": "parabolic",
+      "magnificationExpand": false,
       "order": [],
       "widgets": [
         {
@@ -299,6 +379,7 @@
     }
   ],
   "bluetoothMprisEnabled": true,
+  "centeringMode": "geometric",
   "clockDateFormat": "ddd, MMM d",
   "browserPickerViewMode": "list",
   "sortAppsAlphabetically": true,
@@ -479,8 +560,7 @@
   "matugenTemplateZed": false,
   "notificationOverlayEnabled": true,
   "notificationPopupPrivacyMode": true,
-  "lockScreenShowPasswordField": false,
-  "lockScreenNotificationMode": 1,
+  "lockPamExternallyManaged": true,
   "notificationShowTimeoutBar": true,
   "notificationPopupPosition": 3,
   "notificationAnimationDuration": 300,
@@ -552,10 +632,11 @@
         {
           "id": "music",
           "enabled": true,
-          "mediaSize": 1,
+          "mediaSize": 2,
           "mediaShowCoverArt": true,
           "mediaShowLyrics": true,
-          "mediaAdaptiveWidthEnabled": true
+          "mediaAdaptiveWidthEnabled": true,
+          "overflowMode": "section"
         },
         {
           "id": "clock",
@@ -668,7 +749,11 @@
       "followInterfaceStyle": false,
       "widgetFollowInterfaceStyle": false,
       "attachToScreenEdge": false,
-      "dot": false
+      "dot": false,
+      "islandPalette": "default",
+      "widgetStyle": "segments",
+      "centerOverflowMode": "auto",
+      "centerOverflowPosition": 2
     },
     {
       "id": "dot1790934412503",
@@ -822,7 +907,6 @@
       "widgetFollowInterfaceStyle": false,
       "attachToScreenEdge": false,
       "dot": true,
-      "island": false,
       "islandPalette": "default"
     }
   ],
@@ -890,5 +974,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 37
+  "configVersion": 38
 }
