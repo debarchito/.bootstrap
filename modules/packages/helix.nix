@@ -1,7 +1,7 @@
 { lib, inputs, ... }:
 {
   flake-file.inputs.helix = {
-    url = lib.mkDefault "github:mattwparas/helix/steel-event-system";
+    url = lib.mkDefault "github:debarchito/helix/steel-event-system";
     inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 

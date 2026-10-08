@@ -39,7 +39,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
     helix = {
-      url = "github:mattwparas/helix/steel-event-system";
+      url = "github:debarchito/helix/steel-event-system";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -100,10 +100,6 @@
     };
     starship-jj = {
       url = "gitlab:lanastara_foss/starship-jj";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    steel = {
-      url = "github:mattwparas/steel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix = {

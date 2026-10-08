@@ -47,8 +47,8 @@
               hash = "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=";
             };
             commandRunner = {
-              rev = "35277695de06beadaba701cb94cc8b096b233319";
-              hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
+              rev = "ea59490eede60d7dc87697b670f1eccc6ad54593";
+              hash = "sha256-EmYYvPvSwG7ELTgRS6tcVEqFgyk8uYiB491Gp7nkPvs=";
             };
             emojiLauncher = {
               rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
@@ -67,8 +67,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "e774a9756f2a50499c37a5513f28bee4ebe81d73";
-            hash = "sha256-92NjKVTslsbSVJMnxV4SaL7o0vZ1/mxaKdcRJr7EoqI=";
+            rev = "a8a508bc371e7c3f2c7862d8840b88cf5c63978f";
+            hash = "sha256-3nHfkGzmmq8JpN7bmO8Z5zIumvx8dzwS1GtQ6V0XgMg=";
           };
 
           officialDMSPlugins = [

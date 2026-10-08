@@ -20,7 +20,7 @@
         "autoPosition": false,
         "colorMode": "default",
         "customColor": "#ffffff",
-        "fontFamily": ""
+        "fontFamily": "Poppins Thin"
       },
       "name": "Clock"
     },
@@ -101,7 +101,7 @@
         "autoPosition": false,
         "colorMode": "default",
         "customColor": "#ffffff",
-        "fontFamily": ""
+        "fontFamily": "Poppins Thin"
       },
       "name": "Clock"
     },
@@ -285,11 +285,12 @@
   "blurredWallpaperLayer": true,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,
+  "controlCenterFooterPosition": "top",
   "controlCenterWidgets": [
     {
       "id": "user",
       "enabled": true,
-      "w": 5,
+      "w": 5.5,
       "h": 1,
       "col": 0,
       "row": 0,
@@ -423,21 +424,12 @@
       "footerW": 7
     },
     {
-      "id": "power",
+      "id": "quickTiles",
       "enabled": true,
-      "w": 1,
+      "w": 2.5,
       "h": 1,
-      "small": true,
-      "col": 7,
-      "row": 0
-    },
-    {
-      "id": "lock",
-      "enabled": true,
-      "w": 1,
-      "h": 1,
-      "small": true,
-      "col": 6,
+      "instanceId": "mv2c86f5bggy2tqqt4pshh9q8wd6o",
+      "col": 5.5,
       "row": 0
     },
     {
@@ -446,8 +438,23 @@
       "w": 1,
       "h": 1,
       "small": true,
-      "col": 5,
-      "row": 0
+      "group": "mv2c86f5bggy2tqqt4pshh9q8wd6o"
+    },
+    {
+      "id": "lock",
+      "enabled": true,
+      "w": 1,
+      "h": 1,
+      "small": true,
+      "group": "mv2c86f5bggy2tqqt4pshh9q8wd6o"
+    },
+    {
+      "id": "power",
+      "enabled": true,
+      "w": 1,
+      "h": 1,
+      "small": true,
+      "group": "mv2c86f5bggy2tqqt4pshh9q8wd6o"
     },
     {
       "id": "edit",
@@ -456,6 +463,7 @@
       "h": 1,
       "small": true,
       "footer": true,
+      "footerW": 1,
       "footerEnd": true
     }
   ],
@@ -812,7 +820,7 @@
       "popupGapsManual": 4,
       "maximizeDetection": true,
       "scrollEnabled": false,
-      "scrollXBehavior": "column",
+      "scrollXBehavior": "focusWindow",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
       "shadowColorMode": "surface",
@@ -969,7 +977,7 @@
       "popupGapsManual": 4,
       "maximizeDetection": true,
       "scrollEnabled": false,
-      "scrollXBehavior": "column",
+      "scrollXBehavior": "focusWindow",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
       "shadowColorMode": "surface",
@@ -1054,5 +1062,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 38
+  "configVersion": 40
 }
