@@ -142,7 +142,7 @@
           file = {
             ".clap/NeuralRack.clap".source = "${pkgs.neuralrack}/lib/clap";
             ".clap/Ratatouille.clap".source = "${pkgs.ratatouille}/lib/clap";
-            ".clap/Plugdata.clap".source = "${pkgs.plugdata}/lib/clap";
+            # ".clap/Plugdata.clap".source = "${pkgs.plugdata}/lib/clap";
             ".clap/Cardinal.clap".source = "${pkgs.cardinal}/lib/clap/Cardinal.clap";
             ".clap/DragonflyReverb.clap".source = "${pkgs.dragonfly-reverb}/lib/clap";
             ".clap/LSPPlugins.clap".source = "${pkgs.lsp-plugins}/lib/clap";
@@ -155,10 +155,10 @@
 
         xdg.configFile = {
           "TONE3000/Presets/Factory".source = "${pkgs.tone3000}/presets";
-          "REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
-            "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
-          "REAPER/UserPlugins/reaper_sws-x86_64.so".source =
-            "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
+          # "REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
+          #   "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
+          # "REAPER/UserPlugins/reaper_sws-x86_64.so".source =
+          #   "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
         };
       };
     };
