@@ -90,8 +90,8 @@ in
     };
 
     gaming = {
-      steam.enable = true;
-      gamescope.enable = true;
+      # steam.enable = true;
+      # gamescope.enable = true;
       gamemode.enable = true;
     };
   };
@@ -149,6 +149,7 @@ in
               aseprite
               bibata-cursors
               blender
+              bottles
               calculate-hash-section
               duckdb
               ffmpeg

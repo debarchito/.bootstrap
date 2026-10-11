@@ -48,7 +48,7 @@
         ],
         "syncPositionAcrossScreens": true,
         "style": "expressive",
-        "profileVisibility": "typing",
+        "profileVisibility": "never",
         "passwordVisibility": "typing"
       }
     },
@@ -129,7 +129,7 @@
         ],
         "syncPositionAcrossScreens": true,
         "style": "expressive",
-        "profileVisibility": "typing",
+        "profileVisibility": "never",
         "passwordVisibility": "typing"
       }
     },
@@ -285,15 +285,14 @@
   "blurredWallpaperLayer": true,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,
-  "controlCenterFooterPosition": "top",
   "controlCenterWidgets": [
     {
       "id": "user",
       "enabled": true,
-      "w": 5.5,
+      "w": 5,
       "h": 1,
       "col": 0,
-      "row": 0,
+      "row": 1,
       "hostname": true,
       "background": false
     },
@@ -305,7 +304,7 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 1
+      "row": 2
     },
     {
       "id": "idleInhibitor",
@@ -313,7 +312,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 1
+      "row": 2
     },
     {
       "id": "volumeSlider",
@@ -321,7 +320,7 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 2
+      "row": 3
     },
     {
       "id": "inputVolumeSlider",
@@ -329,7 +328,7 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 3
+      "row": 4
     },
     {
       "id": "audioOutput",
@@ -337,7 +336,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 2
+      "row": 3
     },
     {
       "id": "audioInput",
@@ -345,7 +344,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 3
+      "row": 4
     },
     {
       "id": "wifi",
@@ -353,7 +352,7 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 4
+      "row": 5
     },
     {
       "id": "builtin_vpn",
@@ -361,7 +360,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 4
+      "row": 5
     },
     {
       "id": "bluetooth",
@@ -369,7 +368,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 5
+      "row": 6
     },
     {
       "id": "doNotDisturb",
@@ -377,7 +376,7 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 5
+      "row": 6
     },
     {
       "id": "darkMode",
@@ -385,7 +384,7 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 6
+      "row": 7
     },
     {
       "id": "nightMode",
@@ -393,7 +392,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 6
+      "row": 7
     },
     {
       "id": "colorPicker",
@@ -401,7 +400,7 @@
       "w": 4,
       "h": 1,
       "col": 4,
-      "row": 7
+      "row": 8
     },
     {
       "id": "builtin_display_profiles",
@@ -409,28 +408,24 @@
       "w": 4,
       "h": 1,
       "col": 0,
-      "row": 7
-    },
-    {
-      "id": "runningApps",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "small": true,
-      "col": 4,
-      "row": 0,
-      "showCount": true,
-      "footer": true,
-      "footerW": 7
+      "row": 8
     },
     {
       "id": "quickTiles",
       "enabled": true,
-      "w": 2.5,
+      "w": 3,
       "h": 1,
       "instanceId": "mv2c86f5bggy2tqqt4pshh9q8wd6o",
-      "col": 5.5,
-      "row": 0
+      "col": 5,
+      "row": 1
+    },
+    {
+      "id": "edit",
+      "enabled": true,
+      "w": 1,
+      "h": 1,
+      "small": true,
+      "group": "mv2c86f5bggy2tqqt4pshh9q8wd6o"
     },
     {
       "id": "settings",
@@ -457,14 +452,14 @@
       "group": "mv2c86f5bggy2tqqt4pshh9q8wd6o"
     },
     {
-      "id": "edit",
+      "id": "runningApps",
       "enabled": true,
-      "w": 1,
+      "w": 8,
       "h": 1,
       "small": true,
-      "footer": true,
-      "footerW": 1,
-      "footerEnd": true
+      "col": 0,
+      "row": 0,
+      "showCount": true
     }
   ],
   "bluetoothMprisEnabled": true,
@@ -706,7 +701,9 @@
           "workspaceIndicatorStyle": "cards",
           "workspaceFollowFocus": false,
           "groupActiveWorkspaceApps": false,
-          "workspaceActiveAppHighlightEnabled": false
+          "workspaceActiveAppHighlightEnabled": false,
+          "workspaceIndicatorCompact": false,
+          "workspaceIndicatorRoundness": -1
         },
         {
           "id": "focusedWindow",
@@ -1062,5 +1059,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 40
+  "configVersion": 41
 }

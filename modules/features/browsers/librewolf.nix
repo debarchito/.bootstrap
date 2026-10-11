@@ -211,28 +211,37 @@
               "sidebar.verticalTabs" = true;
               "sidebar.position_start" = true;
               "sidebar.visibility" = "hide-sidebar";
+              "browser.tabs.inTitlebar" = 0;
+              # parfait specific settings
+              # general
               "parfait.animations.enabled" = true;
-              "parfait.blur.enabled" = false;
-              "parfait.bg.accent-color" = false;
-              "parfait.bg.contrast" = 2;
-              "parfait.bg.gradient" = false;
-              "parfait.bg.opacity" = 4;
-              "parfait.bg.transparent" = false;
-              "parfait.tabs.groups.color" = false;
-              "parfait.sidebar.width.preset" = 2;
-              "parfait.theme.lwt.alt" = false;
-              "parfait.theme.roundness.preset" = 1;
+              # theme
+              "parfait.theme.borderless" = false;
+              "parfait.theme.blur.enabled" = true;
+              "parfait.theme.roundness.preset" = 0;
+              # background
+              "parfait.background.accent-color" = true;
+              "parfait.background.accent-color.contrast" = 2;
+              "parfait.background.accent-color.gradient" = false;
+              "parfait.background.accent-color.opacity" = 4;
+              "parfait.background.transparent" = false;
+              # tabs
+              "parfait.tabs.groups.fx-color-on-folders" = true;
+              # layout
+              "parfait.layout.unified-sidebar" = true;
+              "parfait.layout.unified-sidebar.width.preset" = 2;
+              # toolbar
               "parfait.toolbar.sidebar-gutter" = true;
-              "parfait.toolbar.unified-sidebar" = true;
+              # traffic lights
               "parfait.traffic-lights.enabled" = false;
               "parfait.traffic-lights.mono" = false;
-              "parfait.urlbar.url.center" = false;
+              # url bar
+              "parfait.urlbar.center-url" = false;
               "parfait.urlbar.results.compact" = false;
               "parfait.urlbar.search-mode.glow" = true;
-              "parfait.window.borderless" = false;
-              "parfait.new-tab.logo" = 1;
-              "parfait.new-tab.bg.pattern" = false;
-              "browser.tabs.inTitlebar" = 0;
+              # new tab
+              "parfait.new-tab.logo.preset" = 1;
+              "parfait.new-tab.background.pattern" = false;
             };
           };
         };

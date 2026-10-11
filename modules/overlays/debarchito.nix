@@ -30,6 +30,7 @@
         (_: prev: {
           inherit (self'.packages)
             blender
+            bottles
             calculate-hash-section
             generate
             helium
@@ -43,7 +44,6 @@
             ratatouille
             reaper
             sioyek
-            starship-jj
             tone3000
             wiiudownloader
             ;
