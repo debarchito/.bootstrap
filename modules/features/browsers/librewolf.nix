@@ -153,7 +153,7 @@
                 }
                 {
                   name = "Nitter";
-                  url = "https://xcancel.com";
+                  url = "https://nitter.meowing.monster";
                 }
                 {
                   name = "Invidious";
