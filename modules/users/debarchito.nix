@@ -167,7 +167,6 @@ in
               qbittorrent
               scrcpy
               trash-cli
-              tuios
               wl-mirror
               ;
           }

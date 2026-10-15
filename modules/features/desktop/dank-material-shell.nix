@@ -43,16 +43,16 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "1db5865419a40a33171a475855a59e0b8bf7187f";
-              hash = "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=";
+              rev = "c9fbbe921e9afeb92f4e92390e9fc05f006f0373";
+              hash = "sha256-dqFTvNogWsqK82EhgMIbJB70R5TgcRiA3Elx1LkSia8=";
             };
             commandRunner = {
               rev = "ea59490eede60d7dc87697b670f1eccc6ad54593";
               hash = "sha256-EmYYvPvSwG7ELTgRS6tcVEqFgyk8uYiB491Gp7nkPvs=";
             };
             emojiLauncher = {
-              rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
-              hash = "sha256-NQ14YenDiNK2VqXQ3z7jAkatbSRtYJHhOhvv7AJlUD8=";
+              rev = "35ea4d653417840b9045c77a9adb0188a4900086";
+              hash = "sha256-c81Jh/0sxAsLbIyy86Ikqr7uU3zzanMUsM9sWHccBMg=";
             };
             niriWindows = {
               rev = "411d5ee9f7707029f4c12c824ec3b24ca6756a0d";
