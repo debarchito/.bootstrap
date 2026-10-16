@@ -157,7 +157,6 @@ in
               gimp
               gnome-network-displays
               krita
-              libreoffice-qt-stable
               nix-alien
               nix-output-monitor
               nix-prefetch-github

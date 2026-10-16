@@ -59,7 +59,7 @@
 
 (setq auto-mode-alist
       (append '(
-                ; ("\\.astro\\'"                       . astro-ts-mode)
+                ("\\.astro\\'"                       . astro-ts-mode)
                 ("\\.fish\\'"                        . fish-mode)
                 ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-mode)
                 ("\\.kdl\\'"                         . kdl-mode)
