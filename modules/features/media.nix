@@ -54,7 +54,7 @@
               wireplumber.enable = true;
             };
 
-            programs.mfctl.enable = true;
+            # programs.mfctl.enable = true;
           }
 
           (lib.mkIf config.media.bluetooth.enable {

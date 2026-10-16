@@ -421,7 +421,7 @@
     "flake-parts_3": {
       "inputs": {
         "nixpkgs-lib": [
-          "mfctl",
+          "minework",
           "nixpkgs-lib"
         ]
       },
@@ -441,27 +441,6 @@
     },
     "flake-parts_4": {
       "inputs": {
-        "nixpkgs-lib": [
-          "minework",
-          "nixpkgs-lib"
-        ]
-      },
-      "locked": {
-        "lastModified": 1778716662,
-        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "flake-parts_5": {
-      "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
@@ -478,7 +457,7 @@
         "type": "github"
       }
     },
-    "flake-parts_6": {
+    "flake-parts_5": {
       "inputs": {
         "nixpkgs-lib": [
           "nur",
@@ -499,7 +478,7 @@
         "type": "github"
       }
     },
-    "flake-parts_7": {
+    "flake-parts_6": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_2"
       },
@@ -671,36 +650,11 @@
         "type": "github"
       }
     },
-    "mfctl": {
-      "inputs": {
-        "flake-parts": "flake-parts_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-lib": [
-          "mfctl",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1782137954,
-        "narHash": "sha256-ku8YxXjHdplh5OFFcL2QX2TMywLp9OdT0cuaKbrq7Pg=",
-        "owner": "~debarchito",
-        "repo": "mfctl",
-        "rev": "5d0b0933bc552afd0413869ac4cdf09dc4f2c3a7",
-        "type": "sourcehut"
-      },
-      "original": {
-        "owner": "~debarchito",
-        "repo": "mfctl",
-        "type": "sourcehut"
-      }
-    },
     "minework": {
       "inputs": {
         "advisory-db": "advisory-db",
         "crane": "crane",
-        "flake-parts": "flake-parts_4",
+        "flake-parts": "flake-parts_3",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -851,7 +805,7 @@
     "nix-cachyos-kernel": {
       "inputs": {
         "flake-compat": "flake-compat_5",
-        "flake-parts": "flake-parts_5",
+        "flake-parts": "flake-parts_4",
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
@@ -1088,7 +1042,7 @@
     },
     "nur": {
       "inputs": {
-        "flake-parts": "flake-parts_6",
+        "flake-parts": "flake-parts_5",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -1131,7 +1085,7 @@
     },
     "pinentry-dms": {
       "inputs": {
-        "flake-parts": "flake-parts_7",
+        "flake-parts": "flake-parts_6",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -1186,7 +1140,6 @@
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "lumen": "lumen",
-        "mfctl": "mfctl",
         "minework": "minework",
         "musnix": "musnix",
         "niri": "niri",
