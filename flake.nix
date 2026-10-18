@@ -80,6 +80,10 @@
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-output-monitor = {
+      url = "github:maralorn/nix-output-monitor/202f940f96360548dedfb3b9234f6f6f08a9a2ba";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {

@@ -15,6 +15,7 @@
       nixpkgs.overlays = [
         (_: prev: {
           inherit (self'.packages)
+            nix-output-monitor
             waydroid-choose-gpu
             waydroid-script
             ;
@@ -36,6 +37,7 @@
             helium
             helix
             neuralrack
+            nix-output-monitor
             obs-studio
             papirus-folders
             pinentry-dms
