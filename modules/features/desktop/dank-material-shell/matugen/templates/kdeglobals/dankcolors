@@ -1,5 +1,9 @@
 [Icons]
-Theme=Papirus
+<* if {{ is_dark_mode }} *>
+Theme=Papirus-Dark
+<* else *>
+Theme=Papirus-Light
+<* endif *>
 
 [UiSettings]
 ColorScheme=DankMatugen

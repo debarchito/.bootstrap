@@ -201,7 +201,7 @@
       "mode": "compact",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
-      "iconSize": 30,
+      "iconSize": 26,
       "spacing": 5,
       "itemSpacing": 5,
       "margin": 4,
@@ -253,9 +253,7 @@
           "enabled": true,
           "runningAppsCurrentWorkspace": false,
           "appsDockHideIndicators": false,
-          "appsDockColorizeActive": true,
-          "appsDockEnlargeOnHover": false,
-          "appsDockIconSizePercentage": 85
+          "appsDockColorizeActive": true
         },
         {
           "id": "dock_trash",
@@ -586,9 +584,11 @@
     }
   },
   "networkPreference": "wifi",
-  "iconThemeDark": "Papirus",
+  "iconThemeDark": "Papirus-Dark",
+  "iconThemeLight": "Papirus-Light",
+  "iconThemePerMode": true,
   "cursorSettings": {
-    "theme": "Bibata-Original-Ice",
+    "theme": "System Default",
     "size": 24,
     "niri": {
       "hideWhenTyping": true,
@@ -1059,5 +1059,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "configVersion": 41
+  "configVersion": 42
 }

@@ -1,3 +1,10 @@
+environment {
+    <* if {{ is_dark_mode }} *>
+    QT_ICON_THEME "Papirus-Dark"
+    <* else *>
+    QT_ICON_THEME "Papirus-Light"
+    <* endif *>
+}
 window-rule {
     match is-window-cast-target=true
     focus-ring {

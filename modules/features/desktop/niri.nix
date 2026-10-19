@@ -82,10 +82,12 @@
             vars.USERNAME = config.home.username;
           in
           {
-            # TODO: Make matugen independent of dank-material-shell at some point
-            "matugen".source = ./dank-material-shell/matugen;
-            "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./qt5ct/qt5ct.conf vars;
-            "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./qt6ct/qt6ct.conf vars;
+            "matugen/templates".source = ./dank-material-shell/matugen/templates;
+            "matugen/config.toml".source = ./dank-material-shell/matugen/config.toml;
+            "matugen/pre-processed-templates/qt5ct/qt5ct.conf".source =
+              pkgs.replaceVars ./dank-material-shell/matugen/templates/pre-processed/qt5ct/qt5ct.conf vars;
+            "matugen/pre-processed-templates/qt6ct/qt6ct.conf".source =
+              pkgs.replaceVars ./dank-material-shell/matugen/templates/pre-processed/qt6ct/qt6ct.conf vars;
           };
 
         fonts.fontconfig = {
@@ -167,7 +169,7 @@
                   REPO_REV='bf539287ef5dc18529424a02cccee76175920a6f'
                   GIT='${lib.getExe pkgs.git}'
 
-                  if [ -d "$OUTPUT_DIR/Papirus" ]; then
+                  if [ -n "$(find "$OUTPUT_DIR" -maxdepth 1 -type d -name "Papirus-*" 2>/dev/null)" ]; then
                     echo "[?] Papirus icon theme already exists. Skipping."
                   else
                     echo '[-*-] Fetching and installing Papirus icon theme...'
@@ -182,9 +184,11 @@
                       --depth=1 \
                       --filter=blob:none \
                       --sparse "$REPO_URL" "$TMP_DIR"
-                    "$GIT" -C "$TMP_DIR" sparse-checkout set Papirus
+                    "$GIT" -C "$TMP_DIR" sparse-checkout set Papirus Papirus-Dark Papirus-Light
 
-                    cp -r "$TMP_DIR/Papirus" "$OUTPUT_DIR/Papirus"
+                    cp -r "$TMP_DIR"/Papirus "$OUTPUT_DIR"/Papirus
+                    cp -r "$TMP_DIR"/Papirus-Dark "$OUTPUT_DIR"/Papirus-Dark
+                    cp -r "$TMP_DIR"/Papirus-Light "$OUTPUT_DIR"/Papirus-Light
 
                     echo "[+] Successfully installed Papirus icon theme."
                   fi

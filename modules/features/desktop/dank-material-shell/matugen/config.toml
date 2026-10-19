@@ -37,7 +37,6 @@ colors_to_compare = [
   { name = "Grey", color = "#c7ccd6" },
   { name = "Slate", color = "#708090" },
   { name = "Noir", color = "#8c8c8c" },
-  { name = "Noir", color = "#5a5a8b" },
   { name = "Midnight", color = "#6d8c5a" },
   { name = "Charcoal", color = "#7591a3" },
 ]
@@ -65,8 +64,8 @@ input_path = "~/.config/matugen/templates/kitty/dankcolors.conf"
 output_path = "~/.config/kitty/themes/dankcolors.conf"
 
 [templates.niri]
-input_path = "~/.config/matugen/templates/niri/custom.kdl"
-output_path = "~/.config/niri/matugen/custom.kdl"
+input_path = "~/.config/matugen/templates/niri/base.kdl"
+output_path = "~/.config/niri/matugen/base.kdl"
 
 [templates.obs-studio]
 input_path = "~/.config/matugen/templates/obs-studio/dankcolors.obt"
@@ -107,7 +106,15 @@ colors_to_compare = [
   { name = "violet", color = "#5a5a8b" },
 ]
 compare_to = "{{colors.primary.default.hex}}"
-post_hook = "papirus-folders -C {{closest_color}} --theme Papirus"
+post_hook = "if [ '{{mode}}' = 'dark' ]; then papirus-folders -C {{closest_color}} --theme Papirus-Dark; else papirus-folders -C {{closest_color}} --theme Papirus-Light; fi"
+
+[templates.qt5ct]
+input_path = "~/.config/matugen/pre-processed-templates/qt5ct/qt5ct.conf"
+output_path = "~/.config/qt5ct/qt5ct.conf"
+
+[templates.qt6ct]
+input_path = "~/.config/matugen/pre-processed-templates/qt6ct/qt6ct.conf"
+output_path = "~/.config/qt6ct/qt6ct.conf"
 
 [templates.tridactyl]
 input_path = "~/.config/matugen/templates/tridactyl/dankcolors.css"
