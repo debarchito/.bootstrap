@@ -147,7 +147,6 @@ in
             inherit (pkgs)
               android-tools
               aseprite
-              bibata-cursors
               blender
               bottles
               calculate-hash-section
@@ -157,6 +156,7 @@ in
               gimp
               gnome-network-displays
               krita
+              niri-bibata-cursor-writer
               nix-alien
               nix-output-monitor
               nix-prefetch-github

@@ -5,6 +5,45 @@ input_path = "~/.config/matugen/templates/syntect/dankcolors.tmTheme"
 output_path = "~/.config/bat/themes/dankcolors.tmTheme"
 post_hook = "bat cache --build"
 
+[templates.bibata-material-cursors]
+input_path = "~/.config/matugen/templates/matugen/placeholder"
+output_path = "~/.cache/matugen/cursor-theme"
+colors_to_compare = [
+  { name = "Classic", color = "#ffffff" },
+  { name = "Ice-Blue", color = "#a8cbe2" },
+  { name = "Sky-Blue", color = "#8dcdff" },
+  { name = "Deep-Blue", color = "#00b4d8" },
+  { name = "Soft-Blue", color = "#b2c5ff" },
+  { name = "Mint", color = "#65dac4" },
+  { name = "Seafoam", color = "#85dfcf" },
+  { name = "Teal", color = "#008080" },
+  { name = "Peach", color = "#ffb59a" },
+  { name = "Apricot", color = "#ffc9a8" },
+  { name = "Sunset", color = "#ffb785" },
+  { name = "Blush", color = "#ffb4a8" },
+  { name = "Salmon", color = "#fa8072" },
+  { name = "Pink-Pastel", color = "#ffb0cb" },
+  { name = "Pink-Rose", color = "#ffbade" },
+  { name = "Lilac", color = "#ccbeff" },
+  { name = "Violet", color = "#edb8ff" },
+  { name = "Sage", color = "#c7f69a" },
+  { name = "Lime", color = "#d5f6b8" },
+  { name = "Moss", color = "#98971a" },
+  { name = "Sand", color = "#d7c4b6" },
+  { name = "Beige", color = "#f5e6ca" },
+  { name = "Beige", color = "#d9c588" },
+  { name = "Brown", color = "#cb824d" },
+  { name = "Cloud", color = "#abb2bf" },
+  { name = "Grey", color = "#c7ccd6" },
+  { name = "Slate", color = "#708090" },
+  { name = "Noir", color = "#8c8c8c" },
+  { name = "Noir", color = "#5a5a8b" },
+  { name = "Midnight", color = "#6d8c5a" },
+  { name = "Charcoal", color = "#7591a3" },
+]
+compare_to = "{{colors.primary.default.hex}}"
+post_hook = "niri-bibata-cursor-writer {{closest_color}} {{mode}}"
+
 [templates.emacs]
 input_path = "~/.config/matugen/templates/emacs/dankcolors-theme.el"
 output_path = "~/.cache/emacs/themes/dankcolors-theme.el"
@@ -35,7 +74,7 @@ output_path = "~/.config/obs-studio/themes/dankcolors.obt"
 
 [templates.papirus-folders]
 input_path = "~/.config/matugen/templates/matugen/placeholder"
-output_path = "~/.cache/matugen/placeholder"
+output_path = "~/.cache/matugen/primary"
 colors_to_compare = [
   { name = "adwaita", color = "#93C0EA" },
   { name = "blue", color = "#5294E2" },

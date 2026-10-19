@@ -213,9 +213,9 @@
               deno
               kdlfmt
               nixfmt
+              schemat
               taplo
               typstyle
-              schemat
               ;
           };
         })

@@ -157,37 +157,79 @@
             inherit (pkgs.kdePackages) breeze;
             inherit (pkgs.libsForQt5) qt5ct;
           };
-          activation.papirus-install =
-            lib.hm.dag.entryAfter [ "writeBoundary" ]
-              # bash
-              ''
-                ICON_DIR="$HOME/.local/share/icons"
-                REPO_URL='https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git'
-                REPO_REV='bf539287ef5dc18529424a02cccee76175920a6f'
-                GIT='${lib.getExe pkgs.git}'
+          activation = {
+            papirus-install =
+              lib.hm.dag.entryAfter [ "writeBoundary" ]
+                # bash
+                ''
+                  OUTPUT_DIR="$HOME/.local/share/icons"
+                  REPO_URL='https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git'
+                  REPO_REV='bf539287ef5dc18529424a02cccee76175920a6f'
+                  GIT='${lib.getExe pkgs.git}'
 
-                if [ -d "$ICON_DIR/Papirus" ]; then
-                  echo "[?] Papirus icon theme already exists at: $ICON_DIR/Papirus. Skipping."
-                else
-                  echo '[-*-] Fetching and installing Papirus icon theme...'
+                  if [ -d "$OUTPUT_DIR/Papirus" ]; then
+                    echo "[?] Papirus icon theme already exists. Skipping."
+                  else
+                    echo '[-*-] Fetching and installing Papirus icon theme...'
 
-                  mkdir -p "$ICON_DIR"
+                    mkdir -p "$OUTPUT_DIR"
 
-                  TMP_DIR=$(mktemp -d)
-                  trap 'rm -rf "$TMP_DIR"' EXIT
+                    TMP_DIR=$(mktemp -d)
+                    trap 'rm -rf "$TMP_DIR"' EXIT
 
-                  "$GIT" -c advice.detachedHead=false clone \
-                    --revision="$REPO_REV" \
-                    --depth=1 \
-                    --filter=blob:none \
-                    --sparse "$REPO_URL" "$TMP_DIR"
-                  "$GIT" -C "$TMP_DIR" sparse-checkout set Papirus
+                    "$GIT" -c advice.detachedHead=false clone \
+                      --revision="$REPO_REV" \
+                      --depth=1 \
+                      --filter=blob:none \
+                      --sparse "$REPO_URL" "$TMP_DIR"
+                    "$GIT" -C "$TMP_DIR" sparse-checkout set Papirus
 
-                  cp -r "$TMP_DIR/Papirus" "$ICON_DIR/Papirus"
+                    cp -r "$TMP_DIR/Papirus" "$OUTPUT_DIR/Papirus"
 
-                  echo "[+] Successfully installed Papirus icon theme."
-                fi
-              '';
+                    echo "[+] Successfully installed Papirus icon theme."
+                  fi
+                '';
+            bibata-material-cursors =
+              lib.hm.dag.entryAfter [ "writeBoundary" ]
+                # bash
+                ''
+                  OUTPUT_DIR="$HOME/.local/share/icons"
+                  DARK_THEME='https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-dark-v1.5.0.tar.gz'
+                  LIGHT_THEME='https://github.com/SakibShahariar/material-bibata-cursor/releases/download/v1.5.0/bibata-material-light-v1.5.0.tar.gz'
+                  CURL="${lib.getExe pkgs.curl}"
+                  TAR="${lib.getExe pkgs.gnutar}"
+
+                  export PATH="${
+                    lib.makeBinPath [
+                      pkgs.curl
+                      pkgs.gnutar
+                      pkgs.gzip
+                    ]
+                  }:$PATH"
+
+                  if [ -n "$(find "$OUTPUT_DIR" -maxdepth 1 -type d -name "Bibata-Material-*" 2>/dev/null)" ]; then
+                    echo "[?] bibata-material-cursors are already installed. Skipping."
+                  else
+                    echo '[-*-] Fetching and installing bibata-material-cursors...'
+                    
+                    mkdir -p "$OUTPUT_DIR"
+
+                    TMP_DIR=$(mktemp -d)
+                    trap 'rm -rf "$TMP_DIR"' EXIT
+
+                    "$CURL" -sSL "$DARK_THEME" -o "$TMP_DIR/DARK_THEME.tar.gz"
+                    "$TAR" -xzf "$TMP_DIR/DARK_THEME.tar.gz" -C "$TMP_DIR"
+                    
+                    "$CURL" -sSL "$LIGHT_THEME" -o "$TMP_DIR/LIGHT_THEME.tar.gz"
+                    "$TAR" -xzf "$TMP_DIR/LIGHT_THEME.tar.gz" -C "$TMP_DIR"
+                    
+                    mv "$TMP_DIR"/bibata-material-dark-v1.5.0/* "$OUTPUT_DIR/"
+                    mv "$TMP_DIR"/bibata-material-light-v1.5.0/* "$OUTPUT_DIR/"
+
+                    echo "[+] Successfully installed bibata-material-cursors."
+                  fi
+                '';
+          };
         };
       };
     };

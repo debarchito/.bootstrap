@@ -224,7 +224,7 @@
               "parfait.background.accent-color.contrast" = 2;
               "parfait.background.accent-color.gradient" = true;
               "parfait.background.accent-color.opacity" = 4;
-              "parfait.background.transparent" = true;
+              "parfait.background.transparent" = false;
               # tabs
               "parfait.tabs.groups.fx-color-on-folders" = true;
               # layout

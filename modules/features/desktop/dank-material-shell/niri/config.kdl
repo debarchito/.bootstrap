@@ -9,6 +9,7 @@ include optional=true "dms/outputs.kdl"
 include optional=true "dms/wpblur.kdl"
 include optional=true "dms/windowrules.kdl"
 include optional=true "matugen/custom.kdl"
+include optional=true "matugen/cursor-theme.kdl"
 environment {
     QT_QPA_PLATFORM "wayland;xcb"
     QT_QPA_PLATFORMTHEME "qt6ct"
