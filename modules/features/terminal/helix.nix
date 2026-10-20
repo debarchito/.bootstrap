@@ -135,7 +135,7 @@
             };
             language =
               let
-                deno = "${lib.getExe pkgs.deno}";
+                biome = "${lib.getExe pkgs.biome}";
                 common-options = {
                   indent = {
                     tab-width = 2;
@@ -175,12 +175,10 @@
                   {
                     name = "html";
                     formatter = {
-                      command = deno;
+                      command = "${lib.getExe pkgs.superhtml}";
                       args = [
                         "fmt"
-                        "-"
-                        "--ext"
-                        "html"
+                        "--stdin"
                       ];
                     };
                     auto-format = true;
@@ -196,12 +194,11 @@
                   {
                     name = "css";
                     formatter = {
-                      command = deno;
+                      command = biome;
                       args = [
-                        "fmt"
-                        "-"
-                        "--ext"
-                        "css"
+                        "format"
+                        "--stdin-file-path"
+                        "placeholder.css"
                       ];
                     };
                     auto-format = true;
@@ -217,12 +214,11 @@
                   {
                     name = "json";
                     formatter = {
-                      command = deno;
+                      command = biome;
                       args = [
-                        "fmt"
-                        "-"
-                        "--ext"
-                        "json"
+                        "format"
+                        "--stdin-file-path"
+                        "placeholder.jsonc"
                       ];
                     };
                     auto-format = true;
@@ -238,12 +234,11 @@
                   {
                     name = "jsonc";
                     formatter = {
-                      command = deno;
+                      command = biome;
                       args = [
-                        "fmt"
-                        "-"
-                        "--ext"
-                        "jsonc"
+                        "format"
+                        "--stdin-file-path"
+                        "placeholder.jsonc"
                       ];
                     };
                     auto-format = true;
@@ -259,13 +254,8 @@
                   {
                     name = "yaml";
                     formatter = {
-                      command = deno;
-                      args = [
-                        "fmt"
-                        "-"
-                        "--ext"
-                        "yaml"
-                      ];
+                      command = "${lib.getExe pkgs.yamlfmt}";
+                      args = [ "-in" ];
                     };
                     auto-format = true;
                     language-servers = [
@@ -280,12 +270,11 @@
                   {
                     name = "markdown";
                     formatter = {
-                      command = deno;
+                      command = "${lib.getExe pkgs.mdformat}";
                       args = [
-                        "fmt"
+                        "--wrap"
+                        "80"
                         "-"
-                        "--ext"
-                        "md"
                       ];
                     };
                     auto-format = true;
@@ -300,15 +289,7 @@
                 (
                   {
                     name = "sql";
-                    formatter = {
-                      command = deno;
-                      args = [
-                        "fmt"
-                        "-"
-                        "--ext"
-                        "sql"
-                      ];
-                    };
+                    formatter.command = "${lib.getExe pkgs.sql-formatter}";
                     auto-format = true;
                     language-servers = [
                       "spellcheck"

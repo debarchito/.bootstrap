@@ -187,7 +187,7 @@
       '("pom.xml" "build.gradle" "build.sbt" "mvnw" "gradlew"
         "dune-project" "_CoqProject"
         "Cargo.toml"
-        "package.json" "deno.json"
+        "package.json"
         "Makefile" "CMakeLists.txt" "meson.build" "xmake.lua"
         "pyproject.toml" "requirements.txt"
         "flake.nix" "cabal.project" "stack.yaml"))

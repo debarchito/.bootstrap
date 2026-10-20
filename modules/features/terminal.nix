@@ -210,12 +210,16 @@
         (lib.mkIf config.terminal.formatters.enable {
           home.packages = builtins.attrValues {
             inherit (pkgs)
-              deno
+              biome
               kdlfmt
+              mdformat
               nixfmt
               schemat
+              sql-formatter
+              superhtml
               taplo
               typstyle
+              yamlfmt
               ;
           };
         })
