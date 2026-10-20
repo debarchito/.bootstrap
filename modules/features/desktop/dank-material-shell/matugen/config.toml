@@ -103,7 +103,6 @@ colors_to_compare = [
   { name = "red", color = "#FFB4AB" },
   { name = "violet", color = "#7E57C2" },
   { name = "violet", color = "#CEBDFF" },
-  { name = "violet", color = "#5a5a8b" },
 ]
 compare_to = "{{colors.primary.default.hex}}"
 post_hook = "if [ '{{mode}}' = 'dark' ]; then papirus-folders -C {{closest_color}} --theme Papirus-Dark; else papirus-folders -C {{closest_color}} --theme Papirus-Light; fi"

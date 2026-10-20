@@ -152,10 +152,10 @@
 
         xdg.configFile = {
           "TONE3000/Presets/Factory".source = "${pkgs.tone3000}/presets";
-          "REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
-            "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
-          "REAPER/UserPlugins/reaper_sws-x86_64.so".source =
-            "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
+          #   "REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
+          #     "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
+          #   "REAPER/UserPlugins/reaper_sws-x86_64.so".source =
+          #     "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
         };
       };
     };

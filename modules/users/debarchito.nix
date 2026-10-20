@@ -157,7 +157,7 @@ in
               gnome-network-displays
               krita
               niri-bibata-cursor-writer
-              nix-alien
+              # nix-alien
               nix-output-monitor
               nix-prefetch-github
               pear-desktop

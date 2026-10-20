@@ -36,12 +36,14 @@
             generate
             helium
             helix
+            khal
             neuralrack
             niri-bibata-cursor-writer
             nix-output-monitor
             obs-studio
             papirus-folders
             pinentry-dms
+            prismlauncher
             prismlauncher-unwrapped
             qt6ct
             ratatouille

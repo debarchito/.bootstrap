@@ -85,6 +85,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
+    nixpkgs-1.url = "github:nixos/nixpkgs/fe13242281a67641c0102cdb1087f0ebe586c7df";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
       url = "github:nix-community/NUR";

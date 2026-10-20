@@ -48,7 +48,7 @@
         ],
         "syncPositionAcrossScreens": true,
         "style": "expressive",
-        "profileVisibility": "never",
+        "profileVisibility": "typing",
         "passwordVisibility": "typing"
       }
     },
@@ -129,7 +129,7 @@
         ],
         "syncPositionAcrossScreens": true,
         "style": "expressive",
-        "profileVisibility": "never",
+        "profileVisibility": "typing",
         "passwordVisibility": "typing"
       }
     },
@@ -162,9 +162,11 @@
   ],
   "currentThemeName": "dynamic",
   "radiusStrength": 25,
+  "radiusMode": "scale",
   "fixedRadius": 15,
   "clockFormat": "24h",
   "animationDuration": 400,
+  "blurBorderEnabled": false,
   "blurBorderColor": "primary",
   "blurBorderOpacity": 0.85,
   "wallpaperFillMode": "Stretch",
@@ -172,6 +174,7 @@
   "fontFamily": "Poppins",
   "monoFontFamily": "Maple Mono NF",
   "displayFontFamily": "Poppins",
+  "textRenderType": 0,
   "lockScreenShowWeather": false,
   "lockScreenFontFamily": "Poppins",
   "powerActionHoldDuration": 0.25,
@@ -264,11 +267,13 @@
     }
   ],
   "currentThemeCategory": "dynamic",
-  "matugenSpec": "2025",
+  "matugenScheme": "scheme-tonal-spot",
+  "matugenSpec": "dms",
   "popupTransparency": 0.85,
   "dmsWindowsFloatingSeeded": [
     "niri"
   ],
+  "widgetColorMode": "default",
   "niriLayoutRadiusOverride": 5,
   "mouseAccelProfile": "adaptive",
   "touchpadAccelProfile": "adaptive",
@@ -495,6 +500,10 @@
     {
       "id": "notifications",
       "enabled": false
+    },
+    {
+      "id": "wellbeing",
+      "enabled": true
     }
   ],
   "dashCards": [
@@ -556,9 +565,8 @@
   "dashOptions": {
     "media": {
       "animatedArt": true,
-      "titleFont": "DM Serif Display",
-      "playerStyle": "material",
-      "artStyle": "slanted"
+      "artStyle": "cookie",
+      "titleFont": "Gochi Hand"
     },
     "clock": {
       "date": true,
@@ -649,6 +657,8 @@
   "notificationAnimationDuration": 300,
   "notificationFocusedMonitor": true,
   "osdAlwaysShowValue": true,
+  "osdPosition": 5,
+  "osdPositionOverrides": {},
   "osdMediaPlaybackEnabled": true,
   "osdPowerProfileEnabled": true,
   "osdWorkspaceEnabled": true,
@@ -659,6 +669,7 @@
       "all"
     ]
   },
+  "displayPreviousRefreshModes": {},
   "connectedFrameBarStyleBackups": {
     "default": {
       "shadowIntensity": 12,
@@ -696,14 +707,18 @@
           "maxWorkspaceIcons": 10,
           "workspaceAppIconSizeOffset": 2,
           "showOccupiedWorkspacesOnly": true,
-          "workspaceOccupiedColorMode": "secondaryContainer",
+          "workspaceOccupiedColorMode": "none",
           "workspaceFocusedBorderColor": "secondary",
-          "workspaceIndicatorStyle": "cards",
+          "workspaceIndicatorStyle": "pills",
           "workspaceFollowFocus": false,
           "groupActiveWorkspaceApps": false,
           "workspaceActiveAppHighlightEnabled": false,
           "workspaceIndicatorCompact": false,
-          "workspaceIndicatorRoundness": -1
+          "workspaceIndicatorRoundness": -1,
+          "workspaceUnfocusedMonitorSeparateAppearance": false,
+          "workspaceFocusedBorderEnabled": false,
+          "workspacePaddingCount": 3,
+          "groupWorkspaceApps": true
         },
         {
           "id": "focusedWindow",
@@ -995,6 +1010,7 @@
       "islandPalette": "default"
     }
   ],
+  "desktopWidgetInstances": [],
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
