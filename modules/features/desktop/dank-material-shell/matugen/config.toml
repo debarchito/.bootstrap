@@ -89,6 +89,7 @@ colors_to_compare = [
   { name = "teal", color = "#16A085" },
   { name = "white", color = "#E4E4E4" },
   { name = "yellow", color = "#F9BD30" },
+  { name = "yellow", color = "#ffe17b" },
   { name = "black", color = "#4F4F4F" },
   { name = "bluegrey", color = "#607D8B" },
   { name = "brown", color = "#AE8E6C" },

@@ -305,7 +305,10 @@ in
           };
         };
 
-        nushell.enable = true;
+        nushell = {
+          enable = true;
+          loadSessionVariables = true;
+        };
 
         nix-search-tv.enable = true;
 

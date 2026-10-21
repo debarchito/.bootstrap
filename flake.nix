@@ -9,12 +9,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dcal = {
-      url = "github:AvengeMedia/dankcalendar";
+      url = "github:duxlabs-dev/dux-calendar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+    dfiles = {
+      url = "github:duxlabs-dev/dux-files";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dgop = {
-      url = "github:AvengeMedia/dgop";
+      url = "github:duxlabs-dev/dux-gop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
@@ -22,11 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
+      url = "github:duxlabs-dev/dux-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dsearch = {
-      url = "github:AvengeMedia/danksearch";
+      url = "github:duxlabs-dev/dux-search";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay = {
@@ -81,7 +85,7 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-output-monitor = {
-      url = "github:maralorn/nix-output-monitor/202f940f96360548dedfb3b9234f6f6f08a9a2ba";
+      url = "github:maralorn/nix-output-monitor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";

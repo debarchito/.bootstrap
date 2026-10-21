@@ -165,6 +165,7 @@
   "radiusMode": "scale",
   "fixedRadius": 15,
   "clockFormat": "24h",
+  "showSeconds": false,
   "animationDuration": 400,
   "blurBorderEnabled": false,
   "blurBorderColor": "primary",
@@ -486,6 +487,10 @@
       "enabled": true
     },
     {
+      "id": "notifications",
+      "enabled": true
+    },
+    {
       "id": "media",
       "enabled": false
     },
@@ -496,10 +501,6 @@
     {
       "id": "weather",
       "enabled": true
-    },
-    {
-      "id": "notifications",
-      "enabled": false
     },
     {
       "id": "wellbeing",
@@ -570,10 +571,9 @@
     },
     "clock": {
       "date": true,
-      "style": "analog",
-      "tone": "",
       "seconds": true,
-      "numbers": true
+      "numbers": true,
+      "style": "analog"
     },
     "calendar": {
       "weekends": true
@@ -732,7 +732,7 @@
         {
           "id": "music",
           "enabled": true,
-          "mediaSize": 2,
+          "mediaSize": 1,
           "mediaShowCoverArt": true,
           "mediaShowLyrics": true,
           "mediaAdaptiveWidthEnabled": true,
@@ -742,7 +742,7 @@
           "id": "clock",
           "enabled": true,
           "clockDateOrder": "dateFirst",
-          "clockNotificationBadge": false,
+          "clockNotificationBadge": true,
           "clockCompactMode": false
         }
       ],
@@ -755,10 +755,6 @@
         },
         {
           "id": "dankKDEConnect",
-          "enabled": true
-        },
-        {
-          "id": "notificationButton",
           "enabled": true
         },
         {

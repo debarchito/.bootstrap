@@ -7,7 +7,7 @@
 {
   flake-file.inputs = {
     dms = {
-      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
+      url = lib.mkDefault "github:duxlabs-dev/dux-shell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     quickshell = {
@@ -15,15 +15,19 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dgop = {
-      url = lib.mkDefault "github:AvengeMedia/dgop";
+      url = lib.mkDefault "github:duxlabs-dev/dux-gop";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dsearch = {
-      url = lib.mkDefault "github:AvengeMedia/danksearch";
+      url = lib.mkDefault "github:duxlabs-dev/dux-search";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
+    dfiles = {
+      url = lib.mkDefault "github:duxlabs-dev/dux-files";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dcal = {
-      url = lib.mkDefault "github:AvengeMedia/dankcalendar";
+      url = lib.mkDefault "github:duxlabs-dev/dux-calendar";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };
@@ -36,6 +40,7 @@
         inputs.dms.homeModules.niri
         inputs.dms.homeModules.dank-material-shell
         inputs.dsearch.homeModules.default
+        inputs.dfiles.homeModules.default
         inputs.dcal.homeModules.default
       ];
 
@@ -117,6 +122,7 @@
                 }));
             };
             dsearch.enable = true;
+            dux-files.enable = true;
             dank-calendar = {
               enable = true;
               quickshell.package = pkgs.quickshell;

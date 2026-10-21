@@ -1,7 +1,7 @@
 { lib, inputs, ... }:
 {
   flake-file.inputs.nix-output-monitor = {
-    url = lib.mkDefault "github:maralorn/nix-output-monitor/202f940f96360548dedfb3b9234f6f6f08a9a2ba";
+    url = lib.mkDefault "github:maralorn/nix-output-monitor";
     inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
