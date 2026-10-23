@@ -29,29 +29,19 @@
           profiles.default = {
             isDefault = true;
             search = {
-              default = "DuckDuckGo NoAI";
+              default = "SearXNG";
               engines = {
-                "AUR" = {
-                  definedAliases = [ "@aur" ];
-                  icon = "https://wiki.archlinux.org/favicon.ico";
-                  updateInterval = 24 * 60 * 60 * 1000;
-                  urls = [
-                    {
-                      template = "https://aur.archlinux.org/packages?K={searchTerms}";
-                    }
-                  ];
-                };
-                "Arch Wiki" = {
-                  definedAliases = [ "@aw" ];
-                  icon = "https://wiki.archlinux.org/favicon.ico";
-                  updateInterval = 24 * 60 * 60 * 1000;
-                  urls = [ { template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; } ];
-                };
                 "DuckDuckGo NoAI" = {
-                  definedAliases = [ "@ddgna" ];
+                  definedAliases = [ "@dna" ];
                   icon = "https://noai.duckduckgo.com/favicon.ico";
                   updateInterval = 24 * 60 * 60 * 1000;
                   urls = [ { template = "https://noai.duckduckgo.com/?q={searchTerms}"; } ];
+                };
+                "SearXNG" = {
+                  definedAliases = [ "@sxng" ];
+                  icon = "https://searx.tiekoetter.com/static/themes/simple/img/favicon.png";
+                  updateInterval = 24 * 60 * 60 * 1000;
+                  urls = [ { template = "https://searx.tiekoetter.com/search?q={searchTerms}"; } ];
                 };
                 "Nix Search" = {
                   definedAliases = [ "@ns" ];
@@ -88,6 +78,22 @@
                       template = "https://melpa.org/#/?q={searchTerms}";
                     }
                   ];
+                };
+                "AUR" = {
+                  definedAliases = [ "@aur" ];
+                  icon = "https://wiki.archlinux.org/favicon.ico";
+                  updateInterval = 24 * 60 * 60 * 1000;
+                  urls = [
+                    {
+                      template = "https://aur.archlinux.org/packages?K={searchTerms}";
+                    }
+                  ];
+                };
+                "Arch Wiki" = {
+                  definedAliases = [ "@aw" ];
+                  icon = "https://wiki.archlinux.org/favicon.ico";
+                  updateInterval = 24 * 60 * 60 * 1000;
+                  urls = [ { template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; } ];
                 };
               };
               force = true;

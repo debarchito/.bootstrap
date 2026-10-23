@@ -48,8 +48,8 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "c9fbbe921e9afeb92f4e92390e9fc05f006f0373";
-              hash = "sha256-dqFTvNogWsqK82EhgMIbJB70R5TgcRiA3Elx1LkSia8=";
+              rev = "a27b80ad8c3dd42da11af83461674fb362817515";
+              hash = "sha256-fw5ySERKzK4iSzZhneIp06zFCP1FnxscbI/COzmPAGQ=";
             };
             commandRunner = {
               rev = "ea59490eede60d7dc87697b670f1eccc6ad54593";
@@ -72,8 +72,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "a8a508bc371e7c3f2c7862d8840b88cf5c63978f";
-            hash = "sha256-3nHfkGzmmq8JpN7bmO8Z5zIumvx8dzwS1GtQ6V0XgMg=";
+            rev = "4b5adf9a1d6c09f93831ebd99b447ad8cae0d6a2";
+            hash = "sha256-UX70fzgHTAZ4ULUvlRVCSP6WG+4EdHAut6jc5IUsj5Q=";
           };
 
           officialDMSPlugins = [

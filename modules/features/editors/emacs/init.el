@@ -60,20 +60,31 @@
 (setq auto-mode-alist
       (append '(
                 ("\\.astro\\'"                       . astro-ts-mode)
+                ("\\.cljc\\'"                        . clojure-ts-clojurec-mode)
+                ("\\.clj\\'"                         . clojure-ts-mode)
+                ("\\.cljs\\'"                        . clojure-ts-clojurescript-mode)
                 ("\\.fish\\'"                        . fish-mode)
                 ("\\.\\(?:hs\\|hs-boot\\|hsig\\)\\'" . haskell-mode)
                 ("\\.kdl\\'"                         . kdl-mode)
                 ("\\.lhs\\'"                         . haskell-literate-mode)
-                ("\\.ml\\|\\.mli\\'"                 . ocaml-ts-mode)
                 ("\\.nix\\'"                         . nix-ts-mode)
                 ("\\.nu\\'"                          . nu-ts-mode)
-                ("\\.scala\\|\\.sbt\\'"              . scala-ts-mode)
+                ("\\.\\(?:scala\\|sbt\\)\\'"         . scala-ts-mode)
                 ("\\.svelte\\'"                      . svelte-mode)
                 ("\\.[tj]sx\\'"                      . tsx-ts-mode)
                 ("\\.ts\\'"                          . typescript-ts-mode)
                 ("\\.v\\'"                           . coq-mode)
                )
               auto-mode-alist))
+
+;; Special OCaml setup.
+(use-package neocaml
+  :ensure t
+  :hook ((neocaml-base-mode . eglot-ensure)
+         (neocaml-base-mode . which-function-mode))
+  :custom
+  (neocaml-indent-offset 2)
+  (neocaml-format-on-save t))
 
 ;; Some other treesit config.
 (add-to-list 'warning-suppress-types '(treesit-font-lock-rules-mismatch))
@@ -173,7 +184,7 @@
   :custom
   (eglot-sync-connect nil)
   :config
-  ; (add-to-list 'eglot-server-programs '(astro-ts-mode                 . ("astro-ls" "--stdio")))
+  (add-to-list 'eglot-server-programs '(astro-ts-mode                 . ("astro-ls" "--stdio")))
   (add-to-list 'eglot-server-programs '(coq-mode                      . ("coq-lsp")))
   (add-to-list 'eglot-server-programs '((elixir-ts-mode heex-ts-mode) . ("expert")))
   (add-to-list 'eglot-server-programs '(fish-mode                     . ("fish-lsp" "start" "--stdio")))
@@ -181,7 +192,12 @@
   (add-to-list 'eglot-server-programs '(nu-ts-mode                    . ("nu" "--lsp")))
   (add-to-list 'eglot-server-programs '(python-ts-mode                . ("basedpyright-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs '(scala-ts-mode                 . ("metals")))
-  (add-to-list 'eglot-server-programs '(svelte-mode                . ("svelteserver" "--stdio"))))
+  (add-to-list 'eglot-server-programs '(svelte-mode                   . ("svelteserver" "--stdio"))))
+
+;; OCaml-specific eglot setup.
+(use-package ocaml-eglot
+  :ensure t
+  :hook (neocaml-base-mode . ocaml-eglot))
 
 (setq project-vc-extra-root-markers
       '("pom.xml" "build.gradle" "build.sbt" "mvnw" "gradlew"

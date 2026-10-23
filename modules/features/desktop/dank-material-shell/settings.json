@@ -217,7 +217,7 @@
       "useOverlayLayer": false,
       "editOnRightClick": false,
       "showOnFullscreen": false,
-      "openOnOverview": false,
+      "openOnOverview": true,
       "groupByApp": true,
       "separatePinnedAndRunningApps": true,
       "restoreSpecialWorkspaceOnClick": false,
@@ -467,6 +467,7 @@
     }
   ],
   "bluetoothMprisEnabled": true,
+  "centeringMode": "index",
   "clockDateFormat": "ddd, MMM d",
   "browserPickerViewMode": "list",
   "sortAppsAlphabetically": true,
@@ -573,7 +574,8 @@
       "date": true,
       "seconds": true,
       "numbers": true,
-      "style": "analog"
+      "style": "analog",
+      "tone": ""
     },
     "calendar": {
       "weekends": true
@@ -723,9 +725,10 @@
         {
           "id": "focusedWindow",
           "enabled": true,
-          "focusedWindowSize": 0,
+          "focusedWindowSize": 1,
           "focusedWindowCompactMode": true,
-          "focusedWindowShowIcon": false
+          "focusedWindowShowIcon": false,
+          "overflowMode": "section"
         }
       ],
       "centerWidgets": [
@@ -736,7 +739,8 @@
           "mediaShowCoverArt": true,
           "mediaShowLyrics": true,
           "mediaAdaptiveWidthEnabled": true,
-          "overflowMode": "section"
+          "overflowMode": "section",
+          "mediaStyle": "controls"
         },
         {
           "id": "clock",

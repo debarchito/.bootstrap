@@ -32,6 +32,7 @@
               inherit (epkgs)
                 astro-ts-mode
                 cape
+                clojure-ts-mode
                 consult
                 corfu
                 eat
@@ -42,9 +43,10 @@
                 indent-bars
                 kdl-mode
                 meow
+                neocaml
                 nix-ts-mode
                 nu-ts-mode
-                ocaml-ts-mode
+                ocaml-eglot
                 orderless
                 proof-general
                 scala-ts-mode

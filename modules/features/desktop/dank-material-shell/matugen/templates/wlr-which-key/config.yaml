@@ -53,6 +53,9 @@ menu:
   - key: e
     desc: Explorer
     submenu:
+      - key: f
+        desc: Dux Files
+        cmd: dfiles
       - key: d
         desc: Dolphin
         cmd: dolphin
