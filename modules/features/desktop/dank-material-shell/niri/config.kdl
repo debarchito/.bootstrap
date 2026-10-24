@@ -268,7 +268,7 @@ binds {
         spawn "wlr-which-key" "--initial-keys" "c"
     }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer" {
-        spawn "wlr-which-key" "--initial-keys" "e"
+        spawn "dfiles"
     }
     Print repeat=false hotkey-overlay-title="Take Screenshot" {
         spawn "wlr-which-key" "--initial-keys" "s"

@@ -49,16 +49,6 @@ menu:
       - key: M
         desc: Mirror focused output
         cmd: wl-mirror $(niri msg --json focused-output | jq -r .name)
-
-  - key: e
-    desc: Explorer
-    submenu:
-      - key: f
-        desc: Files
-        cmd: dfiles
-      - key: d
-        desc: Dolphin
-        cmd: dolphin
   - key: s
     desc: Screenshot
     submenu:

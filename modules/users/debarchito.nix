@@ -173,7 +173,6 @@ in
             builtins.attrValues {
               inherit (pkgs.kdePackages)
                 ark
-                dolphin
                 filelight
                 gwenview
                 kdenlive
