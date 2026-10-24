@@ -329,8 +329,8 @@ in
 
       services = {
         easyeffects.enable = true;
-
         kdeconnect.enable = true;
+        syncthing.enable = true;
       };
 
       gaming = {

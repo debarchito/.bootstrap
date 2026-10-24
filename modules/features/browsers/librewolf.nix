@@ -134,6 +134,10 @@
               force = true;
               settings = [
                 {
+                  name = "Syncthing";
+                  url = "http://localhost:8384";
+                }
+                {
                   name = "Cobalt Tools";
                   url = "https://cobalt.tools";
                 }
