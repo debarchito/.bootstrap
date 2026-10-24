@@ -48,7 +48,9 @@
         security.pam.services.login.enableGnomeKeyring = true;
 
         environment.systemPackages = builtins.attrValues {
-          inherit (pkgs) nautilus xwayland-satellite;
+          inherit (pkgs)
+            xwayland-satellite
+            ;
         };
       };
     };

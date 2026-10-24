@@ -294,9 +294,10 @@ in
               autoload
               ;
             inherit (pkgs.mpvScripts)
+              modernz
+              mpris
               sponsorblock
               thumbfast
-              uosc
               ;
             inherit (pkgs.mpvScripts.eisa01)
               simplebookmark

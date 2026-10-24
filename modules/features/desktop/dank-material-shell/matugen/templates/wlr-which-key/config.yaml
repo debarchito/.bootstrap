@@ -54,14 +54,11 @@ menu:
     desc: Explorer
     submenu:
       - key: f
-        desc: Dux Files
+        desc: Files
         cmd: dfiles
       - key: d
         desc: Dolphin
         cmd: dolphin
-      - key: n
-        desc: Nautilus
-        cmd: nautilus
   - key: s
     desc: Screenshot
     submenu:
