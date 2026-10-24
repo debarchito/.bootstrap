@@ -245,6 +245,8 @@ in
           };
         };
 
+        keepassxc.enable = true;
+
         kitty = {
           enable = true;
           settings = {
