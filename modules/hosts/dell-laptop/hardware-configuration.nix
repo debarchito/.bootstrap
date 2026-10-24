@@ -1,4 +1,4 @@
-# { inputs, ... }:
+{ inputs, ... }:
 let
   name = "dell-laptop";
 in
