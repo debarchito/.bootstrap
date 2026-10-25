@@ -67,6 +67,7 @@ hotkey-overlay {
 }
 spawn-at-startup "dms" "run"
 spawn-at-startup "dcal" "run" "-d" "--hidden"
+spawn-at-startup "dfiles" "run" "-d" "--hidden"
 binds {
     Mod+H repeat=false hotkey-overlay-title="Focus Column Left" {
         focus-column-left

@@ -36,7 +36,6 @@
             generate
             helium
             helix
-            khal
             neuralrack
             niri-bibata-cursor-writer
             nix-output-monitor

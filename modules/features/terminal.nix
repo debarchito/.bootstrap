@@ -1,23 +1,5 @@
 {
-  lib,
-  inputs,
-  moduleWithSystem,
-  ...
-}:
-{
-  flake-file.inputs = {
-    lumen = {
-      url = lib.mkDefault "github:jnsahaj/lumen";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
-    oyui = {
-      url = lib.mkDefault "github:emilien-jegou/oyui";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
-  };
-
-  flake.modules.homeManager.options-terminal = moduleWithSystem (
-    { system, ... }:
+  flake.modules.homeManager.options-terminal =
     {
       lib,
       config,
@@ -38,13 +20,6 @@
 
       config = lib.mkMerge [
         (lib.mkIf config.terminal.common.enable {
-          nixpkgs.overlays = [
-            inputs.lumen.overlays.default
-            (_: _: {
-              oyui = inputs.oyui.packages.${system}.default;
-            })
-          ];
-
           programs = {
             atuin = {
               enable = true;
@@ -224,6 +199,5 @@
           };
         })
       ];
-    }
-  );
+    };
 }

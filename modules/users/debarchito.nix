@@ -45,7 +45,7 @@ in
         endlessh.port = 22;
         settings.AllowUsers = [ username ];
       };
-      # openvpn.enable = true;
+      openvpn.enable = true;
       # wireshark.enable = true;
     };
 
@@ -157,7 +157,7 @@ in
               gnome-network-displays
               krita
               niri-bibata-cursor-writer
-              # nix-alien
+              nix-alien
               nix-output-monitor
               nix-prefetch-github
               pear-desktop
@@ -210,7 +210,7 @@ in
 
       editors = {
         emacs.enable = true;
-        zed-editor.enable = true;
+        # zed-editor.enable = true;
       };
 
       media.daw.enable = true;
@@ -218,7 +218,7 @@ in
       packaging.flatpak.enableEssentials = true;
 
       programs = {
-        # distrobox.enable = true;
+        distrobox.enable = true;
 
         # terminal.common.enable -> git.enable
         git = {

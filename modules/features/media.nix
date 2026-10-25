@@ -72,8 +72,8 @@
               enable = true;
               rtcqs.enable = true;
               # The kernel is managed in ../hosts/dell-laptop/hardware-configuration.nix
-              # kernel.packages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
-              kernel.packages = pkgs.linuxPackages_xanmod_latest;
+              kernel.packages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
+              # kernel.packages = pkgs.linuxPackages_xanmod_latest;
             };
 
             services.pipewire.extraConfig.jack = {

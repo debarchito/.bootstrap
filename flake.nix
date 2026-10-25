@@ -51,10 +51,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
-    lumen = {
-      url = "github:jnsahaj/lumen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     mfctl = {
       url = "sourcehut:~debarchito/mfctl";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +64,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:epireyn/niri-flake";
+      url = "github:epireyn/niri-flake/bad8bd7e18002069e744582b029107d570e82c36";
       inputs = {
         niri-unstable.follows = "niri-source";
         nixpkgs.follows = "nixpkgs";
@@ -89,14 +85,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-    nixpkgs-1.url = "github:nixos/nixpkgs/fe13242281a67641c0102cdb1087f0ebe586c7df";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    oyui = {
-      url = "github:emilien-jegou/oyui";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pinentry-dms = {
@@ -118,10 +109,6 @@
     };
     xwayland-satellite = {
       url = "github:Supreeeme/xwayland-satellite";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    yazi = {
-      url = "github:sxyazi/yazi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

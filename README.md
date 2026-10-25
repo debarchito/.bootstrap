@@ -93,9 +93,9 @@ run0 nixos-rebuild switch --flake .#<host> \
   --option experimental-features \
     'nix-command flakes' \
   --option extra-substituters \
-    'https://install.determinate.systems https://attic.xuyh0120.win/lantian' \
+    'https://install.determinate.systems https://cache.lantian.pub/lantian' \
   --option extra-trusted-public-keys \
-    'cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc='
+    'cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM= lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ='
 ```
 
 This configuration depends on
