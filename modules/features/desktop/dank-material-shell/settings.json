@@ -298,7 +298,10 @@
       "col": 0,
       "row": 1,
       "hostname": true,
-      "background": false
+      "background": false,
+      "compositor": true,
+      "uptime": true,
+      "badge": true
     },
     {
       "id": "brightnessSlider",
@@ -489,7 +492,7 @@
     },
     {
       "id": "notifications",
-      "enabled": true
+      "enabled": false
     },
     {
       "id": "media",
@@ -525,29 +528,29 @@
       "id": "cpu",
       "w": 2,
       "h": 2,
-      "col": 2,
+      "col": 4,
       "row": 0
     },
     {
       "id": "memory",
       "w": 2,
       "h": 2,
-      "col": 4,
-      "row": 1
+      "col": 2,
+      "row": 0
     },
     {
       "id": "disk",
       "w": 2,
-      "h": 1,
-      "col": 2,
+      "h": 2,
+      "col": 4,
       "row": 2
     },
     {
       "id": "network",
       "w": 2,
       "h": 1,
-      "col": 4,
-      "row": 0
+      "col": 2,
+      "row": 2
     },
     {
       "id": "calendar",
@@ -559,9 +562,16 @@
     {
       "id": "media",
       "w": 2,
-      "h": 3,
+      "h": 1,
       "col": 4,
-      "row": 3
+      "row": 5
+    },
+    {
+      "id": "wellbeing",
+      "w": 2,
+      "h": 1,
+      "col": 4,
+      "row": 4
     }
   ],
   "dashOptions": {
@@ -591,6 +601,9 @@
     },
     "wallpaper": {
       "layout": "carousel"
+    },
+    "user": {
+      "hostname": false
     }
   },
   "networkPreference": "wifi",
