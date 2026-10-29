@@ -508,7 +508,11 @@
     },
     {
       "id": "wellbeing",
-      "enabled": true
+      "enabled": false
+    },
+    {
+      "id": "settings",
+      "enabled": false
     }
   ],
   "dashCards": [

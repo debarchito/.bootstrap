@@ -792,11 +792,11 @@
     "niri-source": {
       "flake": false,
       "locked": {
-        "lastModified": 1791220465,
-        "narHash": "sha256-eD3DUsA81pBMUCssafeQW4fe14RHgHAGvfyCnWgA2eo=",
+        "lastModified": 1792432931,
+        "narHash": "sha256-O9nxOpd8LmPz12mODsJzbCrVd2Wz8MLfTnZ8OzbxNQ4=",
         "owner": "barrulus",
         "repo": "biri",
-        "rev": "2bf66ff8a951efadb5f58ed109e6ccdad899962f",
+        "rev": "0b94e5c6527826c33c83b08372c9240df4542eec",
         "type": "github"
       },
       "original": {
@@ -1118,11 +1118,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793257561,
-        "narHash": "sha256-q+qqvWh5FwS6azGyJ7PsRmvvtkVgBzmgPyhhVCGbD5k=",
+        "lastModified": 1793278207,
+        "narHash": "sha256-iCWADTAj5b9KbfmMjBhjnnGMORXwgRc6lB7bQkCW5Is=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "bda238f00957e662a670b66eec6fb09b87ae06c2",
+        "rev": "8372c57a2d90aa89b39f454905e21c1c93015a16",
         "type": "github"
       },
       "original": {
