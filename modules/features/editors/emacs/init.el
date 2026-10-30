@@ -26,10 +26,9 @@
 (use-package indent-bars
   :hook ((prog-mode text-mode conf-mode) . indent-bars-mode)
   :custom
-  (indent-bars-pattern "╎")
-  (indent-bars-width-frac 0.25)
-  (indent-bars-pad-frac 0.25)
-  (indent-bars-zigzag nil)
+  (indent-bars-prefer-character t)
+  (indent-bars-no-stipple-char ?╎)
+  (indent-bars-color '(vertical-border :face-bg nil :blend 1.0))
   (indent-bars-color-by-depth nil)
   (indent-bars-highlight-current-depth nil)
   (indent-bars-treesit-support t))
@@ -218,6 +217,25 @@
  '(flymake-warning-echo ((t (:height 1.0)))))
 
 ;; Meow keybindings setup.
+(defun my/meow-next-word ()
+  (interactive)
+  (let ((start (if (region-active-p) (region-end) (point))))
+    (when (< start (point-max))
+      (deactivate-mark)
+      (goto-char start)
+      (cond
+       ((looking-at "[ \t]")
+        (skip-chars-forward " \t"))
+       ((looking-at "\n")
+        (forward-char 1))
+       ((looking-at "[[:alnum:]_]")
+        (skip-chars-forward "[:alnum:]_")
+        (skip-chars-forward " \t"))
+       (t
+        (skip-chars-forward "^[:alnum:]_ \t\n")
+        (skip-chars-forward " \t")))
+      (set-mark start))))
+
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
 
@@ -227,19 +245,17 @@
    '("<escape>" . ignore))
 
   (meow-leader-define-key
-   '("d" . xref-find-definitions)
-   '("b" . xref-go-back)
-   '("r" . xref-find-references)
-   '("k" . eldoc-doc-buffer)
    '("a" . eglot-code-actions)
+   '("b" . xref-go-back)
+   '("d" . xref-find-definitions)
    '("e" . eglot-rename)
-   '("=" . eglot-format)
    '("f" . consult-fd)
+   '("k" . eldoc-doc-buffer)
    '("p" . consult-ripgrep)
+   '("r" . xref-find-references)
    '("s" . consult-buffer)
-   '("x" . kill-current-buffer)
-   '("g" . flash-jump)
    '("t" . eat)
+   '("x" . kill-current-buffer)
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
    '("3" . meow-digit-argument)
@@ -250,7 +266,8 @@
    '("8" . meow-digit-argument)
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
-   '("/" . meow-keypad-describe-key)
+   '("=" . eglot-format)
+   '("/" . flash-jump)
    '("?" . meow-cheatsheet))
 
   (meow-normal-define-key
@@ -305,8 +322,8 @@
    '("t" . meow-till)
    '("u" . meow-undo)
    '("U" . meow-undo-in-selection)
-   '("v" . meow-visit)
-   '("w" . meow-mark-word)
+   '("/" . meow-visit)
+   '("w" . my/meow-next-word)
    '("W" . meow-mark-symbol)
    '("x" . meow-line)
    '("X" . meow-goto-line)
