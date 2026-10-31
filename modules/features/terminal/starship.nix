@@ -11,36 +11,34 @@
             "$os"
             "$directory"
             "$pijul_channel"
-            "$\{custom.jj}"
             "$git_branch"
             "$git_state"
             "$git_status"
             "$cmd_duration"
-            "$line_break"
             "$nix_shell"
             "$python"
+            "$line_break"
             "$character"
           ];
           hostname.ssh_symbol = " ";
           os = {
             disabled = false;
             symbols = {
-              Arch = "󰣇 ";
-              Debian = " ";
-              Fedora = " ";
-              NixOS = "󱄅 ";
+              Arch = "╭ 󰣇 ";
+              Debian = "╭  ";
+              Fedora = "╭  ";
+              NixOS = "╭ 󱄅 ";
             };
             style = "bold cyan";
           };
           directory.style = "cyan";
-          line_break.disabled = true;
           character = {
-            success_symbol = "[ ](cyan)";
-            error_symbol = "[ ](red)";
-            vimcmd_symbol = "[ ](green)";
-            vimcmd_visual_symbol = "[󰼢 ](orange)";
-            vimcmd_replace_symbol = "[󰛔 * ](orange)";
-            vimcmd_replace_one_symbol = "[󰛔 1 ](orange)";
+            success_symbol = "[╰─❯](cyan)";
+            error_symbol = "[╰─❯](red)";
+            vimcmd_symbol = "[╰ ](green)";
+            vimcmd_visual_symbol = "[╰ 󰼢](#ff5c5c)";
+            vimcmd_replace_symbol = "[╰ 󰛔 *](#ff5c5c)";
+            vimcmd_replace_one_symbol = "[╰ 󰛔 1](#ff5c5c)";
           };
           pijul_channel = {
             disabled = false;
@@ -55,12 +53,12 @@
             format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead$behind$stashed$diverged)]($style)";
             style = "orange";
             conflicted = " ⚠";
-            untracked = " ?";
-            modified = " ✎";
+            untracked = " ";
+            modified = " 󰏫";
             staged = " ●";
             renamed = " »";
-            deleted = " ⌫";
-            stashed = " ≡";
+            deleted = " ";
+            stashed = " ";
             ahead = " ⇡";
             behind = " ⇣";
             diverged = " ⇕";
