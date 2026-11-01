@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dcal = {
-      url = "github:duxlabs-dev/dux-calendar";
+      url = "github:duxlabs-dev/dux-calendar/2f660ae75b792894c544cbfb80615a8ce3edbe9a";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dgop = {
-      url = "github:duxlabs-dev/dux-gop";
+      url = "github:duxlabs-dev/dux-gop/6a3489a8d9b5d8015e11557351804c3ccd07b99f";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
@@ -71,7 +71,7 @@
       };
     };
     niri-source = {
-      url = "github:barrulus/biri";
+      url = "github:barrulus/biri/0b94e5c6527826c33c83b08372c9240df4542eec";
       flake = false;
     };
     nix-alien = {

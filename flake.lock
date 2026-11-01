@@ -73,11 +73,11 @@
     "dank-qml-common": {
       "flake": false,
       "locked": {
-        "lastModified": 1793399959,
-        "narHash": "sha256-Hvhzll0FJ+2dYv4L1FGCuiY9RbbNjvLoi7lm3wcfAXI=",
+        "lastModified": 1793444058,
+        "narHash": "sha256-YL9pm7n++0r6uXMQDg4CmB0++JGUezXIlgmp87KiUxM=",
         "owner": "duxlabs-dev",
         "repo": "dux-qml-common",
-        "rev": "9a5e9a21c06f2b29718d8e6304ddcd672d419e07",
+        "rev": "934de22f3e246dff16ab06368582c5ae8cbdc304",
         "type": "github"
       },
       "original": {
@@ -89,11 +89,11 @@
     "dank-qml-common_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1793399959,
-        "narHash": "sha256-Hvhzll0FJ+2dYv4L1FGCuiY9RbbNjvLoi7lm3wcfAXI=",
+        "lastModified": 1793471402,
+        "narHash": "sha256-gJCBIHwoKYkr9ueOZCt78GeUXuVNhgaStcRRi5p7zRE=",
         "owner": "duxlabs-dev",
         "repo": "dux-qml-common",
-        "rev": "9a5e9a21c06f2b29718d8e6304ddcd672d419e07",
+        "rev": "ef4c8c2aeb87235cb2d253669309ce382b53a3ef",
         "type": "github"
       },
       "original": {
@@ -105,11 +105,11 @@
     "dank-qml-common_3": {
       "flake": false,
       "locked": {
-        "lastModified": 1793399959,
-        "narHash": "sha256-Hvhzll0FJ+2dYv4L1FGCuiY9RbbNjvLoi7lm3wcfAXI=",
+        "lastModified": 1793458706,
+        "narHash": "sha256-3knmPhn6zXbSzKA46Z93J+iaX4ha4OtgiKdg00qC6PA=",
         "owner": "duxlabs-dev",
         "repo": "dux-qml-common",
-        "rev": "9a5e9a21c06f2b29718d8e6304ddcd672d419e07",
+        "rev": "8ca55f0a40c4913e82d4fb063fd72de04086dd3b",
         "type": "github"
       },
       "original": {
@@ -126,16 +126,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1793400056,
-        "narHash": "sha256-Yjrz8mdVMvotqaIppRDta/jEt2H5x6gHsl9UHUPG6t8=",
+        "lastModified": 1793500853,
+        "narHash": "sha256-Th6QTMDlbuAJTubnlZkowkAAcDYji/qICi/7W8F16PA=",
         "owner": "duxlabs-dev",
         "repo": "dux-calendar",
-        "rev": "723d56ed5d97548e5d1bcbf94d8a334e009bb6e9",
+        "rev": "2f660ae75b792894c544cbfb80615a8ce3edbe9a",
         "type": "github"
       },
       "original": {
         "owner": "duxlabs-dev",
         "repo": "dux-calendar",
+        "rev": "2f660ae75b792894c544cbfb80615a8ce3edbe9a",
         "type": "github"
       }
     },
@@ -204,11 +205,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793400073,
-        "narHash": "sha256-83cgydRGbtn15Bm9MBsr5+ekD3luhDoZV5yA0a+wnWo=",
+        "lastModified": 1793471420,
+        "narHash": "sha256-vvRk/bAp3Hq/Fmn8OsF7Bv4UQKfoB1WaUV/JdtmrnNI=",
         "owner": "duxlabs-dev",
         "repo": "dux-files",
-        "rev": "26a30f4b4c74c9f64a32e22746b745db1a596ba2",
+        "rev": "c10402e501693c5052183ea454cb7b00e90b500f",
         "type": "github"
       },
       "original": {
@@ -234,6 +235,7 @@
       "original": {
         "owner": "duxlabs-dev",
         "repo": "dux-gop",
+        "rev": "6a3489a8d9b5d8015e11557351804c3ccd07b99f",
         "type": "github"
       }
     },
@@ -266,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793408879,
-        "narHash": "sha256-OU6io05ZXZW/mwL6Hrw2G06A8IFSFVMQbrjLnt8K4ic=",
+        "lastModified": 1793476991,
+        "narHash": "sha256-JUyCeG558koYcMLymFVjZAryV3wmLYyJf8MRbfea7Eg=",
         "owner": "duxlabs-dev",
         "repo": "dux-shell",
-        "rev": "1398bd8ef6b8b5565fd8dd7fe64ebd67c31a303a",
+        "rev": "c5cb0bebd97dc898207bb91a91fd02d014537f12",
         "type": "github"
       },
       "original": {
@@ -307,11 +309,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1793395202,
-        "narHash": "sha256-YAg5hvcmz/m6/PNknVNd+3GkdjGhbvJxq65kz3zCNhs=",
+        "lastModified": 1793458797,
+        "narHash": "sha256-71FXfwDYkfbp4DWPeFCGXyQOMG1Z2DBV8oY+tgi/C48=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "05ba475d7615c1904f7e4c9e7917d30b35af36db",
+        "rev": "14c5c32cdc5804f17390919e75d05962bc7def09",
         "type": "github"
       },
       "original": {
@@ -802,6 +804,7 @@
       "original": {
         "owner": "barrulus",
         "repo": "biri",
+        "rev": "0b94e5c6527826c33c83b08372c9240df4542eec",
         "type": "github"
       }
     },
@@ -1118,11 +1121,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793409457,
-        "narHash": "sha256-ZhfpPB+6LRYsrorMPvCNSCEzAULuIsfYyOd9SxjOtrY=",
+        "lastModified": 1793497777,
+        "narHash": "sha256-kdLM51F0XX7AKiLgy09eiYHlu8ZRbdJ5vZbc65iDLBo=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "09ec2487513fa43929fd0880a352eed2c6e1621b",
+        "rev": "949f2c62c14515a91705275900bc9fda1bfd54b9",
         "type": "github"
       },
       "original": {

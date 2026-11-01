@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dgop = {
-      url = lib.mkDefault "github:duxlabs-dev/dux-gop";
+      url = lib.mkDefault "github:duxlabs-dev/dux-gop/6a3489a8d9b5d8015e11557351804c3ccd07b99f";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dsearch = {
@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dcal = {
-      url = lib.mkDefault "github:duxlabs-dev/dux-calendar";
+      url = lib.mkDefault "github:duxlabs-dev/dux-calendar/2f660ae75b792894c544cbfb80615a8ce3edbe9a";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };

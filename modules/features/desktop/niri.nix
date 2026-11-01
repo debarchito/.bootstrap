@@ -2,7 +2,7 @@
 {
   flake-file.inputs = {
     niri-source = {
-      url = lib.mkDefault "github:barrulus/biri";
+      url = lib.mkDefault "github:barrulus/biri/0b94e5c6527826c33c83b08372c9240df4542eec";
       flake = false;
     };
     niri = {
