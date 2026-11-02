@@ -73,7 +73,7 @@
           "all"
         ],
         "syncPositionAcrossScreens": true,
-        "showMediaPlayer": false,
+        "showMediaPlayer": true,
         "showWeather": false,
         "background": false
       },
@@ -142,7 +142,7 @@
           "all"
         ],
         "syncPositionAcrossScreens": true,
-        "showMediaPlayer": false,
+        "showMediaPlayer": true,
         "showWeather": false,
         "background": false
       },
@@ -476,12 +476,16 @@
   "sortAppsAlphabetically": true,
   "closeNiriOverviewOnWindowFocus": false,
   "rememberLastQuery": true,
+  "launcherEnterAction": "focus",
   "spotlightSectionViewModes": {
     "apps": "list"
   },
+  "niriOverviewOverlayEnabled": true,
   "niriOverviewLauncherStyle": "spotlight",
+  "dankLauncherV2Size": "medium",
   "dankLauncherV2ShowSourceBadges": false,
   "dankLauncherV2ShowFooter": false,
+  "launcherUseOverlayLayer": true,
   "avatarRing": "primary",
   "spotlightBarShowModeChips": true,
   "dashTabPosition": "left",
@@ -757,7 +761,8 @@
           "mediaShowLyrics": true,
           "mediaAdaptiveWidthEnabled": true,
           "overflowMode": "section",
-          "mediaStyle": "controls"
+          "mediaStyle": "controls",
+          "mediaSmoothLyrics": true
         },
         {
           "id": "clock",

@@ -294,9 +294,6 @@ binds {
     Mod+Space repeat=false hotkey-overlay-title="Toggle Spotlight Bar Launcher" {
         spawn "dms" "ipc" "spotlight-bar" "toggle"
     }
-    Mod+Alt+Space repeat=false hotkey-overlay-title="Toggle Application Launcher" {
-        spawn "dms" "ipc" "spotlight" "toggle"
-    }
     Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen" {
         spawn "dms" "ipc" "lock" "lock"
     }
