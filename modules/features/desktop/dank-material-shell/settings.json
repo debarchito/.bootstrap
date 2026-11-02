@@ -283,6 +283,7 @@
   "defaultTaskCalendarId": "bbc366d5-af28-486f-b8eb-ae3a2e50887c",
   "audioShowStreamDevices": true,
   "motionEffect": 2,
+  "density": "comfortable",
   "blurEnabled": true,
   "foregroundLayerTransparency": 0.85,
   "blurLayerOutlineOpacity": 0.1,
@@ -821,7 +822,7 @@
           "showBatteryTimeOnlyOnBattery": true,
           "showBatteryPowerCharging": false,
           "showBatteryPowerDischarging": false,
-          "batteryStyle": "solid",
+          "batteryStyle": "outline",
           "showBatteryPercent": true,
           "overflowMode": "section"
         }
@@ -1029,7 +1030,9 @@
       "widgetFollowInterfaceStyle": false,
       "attachToScreenEdge": false,
       "dot": true,
-      "islandPalette": "default"
+      "islandPalette": "default",
+      "islandCompactThickness": 38,
+      "islandSatelliteGap": 12
     }
   ],
   "desktopWidgetInstances": [],
