@@ -47,7 +47,10 @@
                 nix-ts-mode
                 nu-ts-mode
                 ocaml-eglot
+                olivetti
                 orderless
+                org-appear
+                org-modern
                 proof-general
                 scala-ts-mode
                 svelte-mode

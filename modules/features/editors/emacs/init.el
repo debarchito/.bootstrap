@@ -86,6 +86,40 @@
   (neocaml-indent-offset 2)
   (neocaml-format-on-save t))
 
+;; Org mode.
+(use-package org
+  :custom
+  (org-directory "~/org")
+  (org-default-notes-file (expand-file-name "inbox.org" org-directory))
+  (org-agenda-files (list org-directory))
+  (org-hide-emphasis-markers t)
+  (org-pretty-entities t)
+  (org-ellipsis " ▾")
+  (org-return-follows-link t)
+  (org-log-done 'time)
+  (org-src-fontify-natively t)
+  (org-src-tab-acts-natively t)
+  (org-edit-src-content-indentation 0)
+  :hook (org-mode . visual-line-mode)
+  :config
+  (require 'org-tempo))
+
+(use-package org-modern
+  :hook ((org-mode . org-modern-mode)
+         (org-agenda-finalize . org-modern-agenda)))
+
+(use-package org-appear
+  :hook (org-mode . org-appear-mode))
+
+(use-package olivetti
+  :hook (org-mode . olivetti-mode)
+  :custom (olivetti-body-width 90))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (indent-bars-mode -1)
+            (display-line-numbers-mode -1)))
+
 ;; Some other treesit config.
 (add-to-list 'warning-suppress-types '(treesit-font-lock-rules-mismatch))
 
