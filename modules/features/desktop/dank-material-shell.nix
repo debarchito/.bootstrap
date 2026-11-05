@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dgop = {
-      url = lib.mkDefault "github:duxlabs-dev/dux-gop/6a3489a8d9b5d8015e11557351804c3ccd07b99f";
+      url = lib.mkDefault "github:duxlabs-dev/dux-gop";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dsearch = {
@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dcal = {
-      url = lib.mkDefault "github:duxlabs-dev/dux-calendar/2f660ae75b792894c544cbfb80615a8ce3edbe9a";
+      url = lib.mkDefault "github:duxlabs-dev/dux-calendar";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };
@@ -72,8 +72,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "a55bb40da2f70640600a520ea05eac9c3540f1af";
-            hash = "sha256-bwFkW+ki+CdjdpI5Pimuai3qMe7hnkp/N47YJfk24Y0=";
+            rev = "9508fe62b90bd761b0c1d367cef2f1efefdddcaa";
+            hash = "sha256-oJkJXnojB/I6zElHBOQskUDCxzOWzbXyUIyQEh8OIjM=";
           };
 
           officialDMSPlugins = [

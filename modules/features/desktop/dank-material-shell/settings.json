@@ -203,6 +203,7 @@
       "showOnLastDisplay": true,
       "position": 2,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 26,
@@ -284,6 +285,7 @@
   "audioShowStreamDevices": true,
   "motionEffect": 2,
   "density": "comfortable",
+  "interfaceStyle": "expressive",
   "blurEnabled": true,
   "foregroundLayerTransparency": 0.85,
   "blurLayerOutlineOpacity": 0.1,
@@ -537,20 +539,20 @@
       "id": "cpu",
       "w": 2,
       "h": 2,
-      "col": 4,
-      "row": 0
+      "col": 2,
+      "row": 1
     },
     {
       "id": "memory",
       "w": 2,
       "h": 2,
-      "col": 2,
+      "col": 4,
       "row": 0
     },
     {
       "id": "disk",
       "w": 2,
-      "h": 2,
+      "h": 1,
       "col": 4,
       "row": 2
     },
@@ -559,7 +561,7 @@
       "w": 2,
       "h": 1,
       "col": 2,
-      "row": 2
+      "row": 0
     },
     {
       "id": "calendar",
@@ -578,16 +580,16 @@
     {
       "id": "wellbeing",
       "w": 2,
-      "h": 1,
+      "h": 2,
       "col": 4,
-      "row": 4
+      "row": 3
     }
   ],
   "dashOptions": {
     "media": {
       "animatedArt": true,
-      "artStyle": "cookie",
-      "titleFont": "Gochi Hand"
+      "titleFont": "Gochi Hand",
+      "artStyle": "disc"
     },
     "clock": {
       "date": true,
@@ -608,11 +610,11 @@
     "weather": {
       "city": true
     },
-    "wallpaper": {
-      "layout": "carousel"
-    },
     "user": {
       "hostname": false
+    },
+    "wallpaper": {
+      "layout": "carousel"
     }
   },
   "networkPreference": "wifi",
@@ -713,13 +715,13 @@
   "barConfigs": [
     {
       "id": "default",
-      "name": "Main Bar",
+      "name": "Home Bar",
       "enabled": true,
       "position": 1,
       "screenPreferences": [
         "all"
       ],
-      "showOnLastDisplay": true,
+      "showOnLastDisplay": false,
       "leftWidgets": [
         {
           "id": "workspaceSwitcher",
@@ -733,16 +735,18 @@
           "showOccupiedWorkspacesOnly": true,
           "workspaceOccupiedColorMode": "none",
           "workspaceFocusedBorderColor": "secondary",
-          "workspaceIndicatorStyle": "pills",
+          "workspaceIndicatorStyle": "lines",
           "workspaceFollowFocus": false,
           "groupActiveWorkspaceApps": false,
           "workspaceActiveAppHighlightEnabled": false,
-          "workspaceIndicatorCompact": false,
+          "workspaceIndicatorCompact": true,
           "workspaceIndicatorRoundness": -1,
           "workspaceUnfocusedMonitorSeparateAppearance": false,
           "workspaceFocusedBorderEnabled": false,
-          "workspacePaddingCount": 3,
-          "groupWorkspaceApps": true
+          "workspacePaddingCount": 2,
+          "groupWorkspaceApps": true,
+          "workspaceUnfocusedMonitorBorderEnabled": false,
+          "workspaceUnfocusedAppsFullOpacity": false
         },
         {
           "id": "focusedWindow",
@@ -822,7 +826,7 @@
           "showBatteryTimeOnlyOnBattery": true,
           "showBatteryPowerCharging": false,
           "showBatteryPowerDischarging": false,
-          "batteryStyle": "outline",
+          "batteryStyle": "solid",
           "showBatteryPercent": true,
           "overflowMode": "section"
         }
@@ -876,7 +880,8 @@
       "islandPalette": "default",
       "widgetStyle": "segments",
       "centerOverflowMode": "auto",
-      "centerOverflowPosition": 2
+      "centerOverflowPosition": 2,
+      "hideOnLastDisplay": false
     },
     {
       "id": "dot1790934412503",
@@ -1098,7 +1103,8 @@
   "frameRounding": 5,
   "frameShowOnOverview": true,
   "frameCloseGaps": false,
-  "frameLauncherEmergeSide": "top",
+  "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": true,
+  "frameLauncherEdgeHover": false,
   "configVersion": 42
 }
