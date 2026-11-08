@@ -264,7 +264,8 @@ in
           extraConfig =
             # conf
             ''
-              include themes/dankcolors.conf
+              include dank-tabs.conf
+              include dank-theme.conf
               map ctrl+shift+t launch --type=tab --cwd=current fish
               map ctrl+shift+enter launch --type=window --cwd=current fish
             '';

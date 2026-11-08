@@ -72,8 +72,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "9508fe62b90bd761b0c1d367cef2f1efefdddcaa";
-            hash = "sha256-oJkJXnojB/I6zElHBOQskUDCxzOWzbXyUIyQEh8OIjM=";
+            rev = "0447626d749b40f275c002e469f367fb3c89cf2a";
+            hash = "sha256-fSRO/HOVV+ilpHfU9X8bKrcOcguD2X9xgChUZ1/XWpY=";
           };
 
           officialDMSPlugins = [

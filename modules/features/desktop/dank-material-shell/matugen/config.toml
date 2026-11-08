@@ -45,7 +45,7 @@ post_hook = "niri-bibata-cursor-writer {{closest_color}} {{mode}}"
 
 [templates.emacs]
 input_path = "~/.config/matugen/templates/emacs/dankcolors-theme.el"
-output_path = "~/.cache/emacs/themes/dankcolors-theme.el"
+output_path = "~/.config/emacs/themes/dankcolors-theme.el"
 
 [templates.fish]
 input_path = "~/.config/matugen/templates/fish/dankcolors.fish"
@@ -58,10 +58,6 @@ output_path = "~/.config/helix/themes/dankcolors.toml"
 [templates.kdeglobals]
 input_path = "~/.config/matugen/templates/kdeglobals/dankcolors"
 output_path = "~/.config/kdeglobals"
-
-[templates.kitty]
-input_path = "~/.config/matugen/templates/kitty/dankcolors.conf"
-output_path = "~/.config/kitty/themes/dankcolors.conf"
 
 [templates.niri]
 input_path = "~/.config/matugen/templates/niri/base.kdl"
@@ -119,10 +115,6 @@ output_path = "~/.config/qt6ct/qt6ct.conf"
 [templates.tridactyl]
 input_path = "~/.config/matugen/templates/tridactyl/dankcolors.css"
 output_path = "~/.config/tridactyl/themes/dankcolors.css"
-
-[templates.vesktop]
-input_path = "~/.config/matugen/templates/vesktop/dankcolors.css"
-output_path = "~/.config/vesktop/themes/dankcolors.css"
 
 [templates.wlr-which-key]
 input_path = "~/.config/matugen/templates/wlr-which-key/config.yaml"

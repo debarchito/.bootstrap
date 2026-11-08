@@ -167,6 +167,7 @@
   "clockFormat": "24h",
   "showSeconds": false,
   "animationDuration": 400,
+  "tooltipSurfaceColor": "s",
   "blurBorderEnabled": false,
   "blurBorderColor": "primary",
   "blurBorderOpacity": 0.85,
@@ -177,6 +178,7 @@
   "displayFontFamily": "Poppins",
   "textRenderType": 0,
   "lockScreenShowWeather": false,
+  "lockScreenWallpaperFillMode": "Fill",
   "lockScreenFontFamily": "Poppins",
   "powerActionHoldDuration": 0.25,
   "powerMenuActions": [
@@ -290,6 +292,7 @@
   "foregroundLayerTransparency": 0.85,
   "blurLayerOutlineOpacity": 0.1,
   "blurredWallpaperLayer": true,
+  "blurWallpaperOnOverview": false,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,
   "controlCenterWidgets": [
@@ -664,11 +667,11 @@
   "matugenTemplateQtengine": false,
   "matugenTemplateFirefox": false,
   "matugenTemplateZenBrowser": false,
-  "matugenTemplateVesktop": false,
+  "matugenTemplateVesktop": true,
   "matugenTemplateVencord": false,
   "matugenTemplateEquibop": false,
   "matugenTemplateGhostty": false,
-  "matugenTemplateKitty": false,
+  "matugenTemplateKitty": true,
   "matugenTemplateFoot": false,
   "matugenTemplateAlacritty": false,
   "matugenTemplateWezterm": false,
@@ -752,9 +755,9 @@
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 1,
-          "focusedWindowCompactMode": true,
           "focusedWindowShowIcon": false,
-          "overflowMode": "section"
+          "overflowMode": "section",
+          "focusedWindowShowAppName": false
         }
       ],
       "centerWidgets": [
@@ -914,8 +917,8 @@
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 0,
-          "focusedWindowCompactMode": true,
-          "focusedWindowShowIcon": false
+          "focusedWindowShowIcon": false,
+          "focusedWindowShowAppName": false
         }
       ],
       "centerWidgets": [
@@ -1106,5 +1109,5 @@
   "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": false,
-  "configVersion": 42
+  "configVersion": 43
 }
