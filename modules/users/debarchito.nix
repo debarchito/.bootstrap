@@ -147,7 +147,7 @@ in
             inherit (pkgs)
               android-tools
               aseprite
-              # blender
+              blender
               bottles
               calculate-hash-section
               duckdb

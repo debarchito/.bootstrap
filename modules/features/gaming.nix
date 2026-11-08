@@ -1,14 +1,9 @@
 { lib, inputs, ... }:
 {
-  flake-file.inputs = {
-    aagl = {
-      url = lib.mkDefault "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
-    minework = {
-      url = lib.mkDefault "sourcehut:~debarchito/minework";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
+
+  flake-file.inputs.aagl = {
+    url = lib.mkDefault "github:ezKEa/aagl-gtk-on-nix";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
   flake.modules.nixos.options-gaming =
@@ -114,14 +109,9 @@
 
       config = lib.mkMerge [
         (lib.mkIf config.gaming.games.minecraft.enable {
-          nixpkgs.overlays = [
-            inputs.minework.overlays.default
-          ];
-
           home.packages = builtins.attrValues {
             inherit (pkgs)
               prismlauncher
-              minework
               ;
           };
         })
