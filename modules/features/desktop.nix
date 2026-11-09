@@ -24,8 +24,8 @@
         type = lib.types.submodule {
           options = {
             niri.enable = lib.mkEnableOption "enable my niri setup";
-            niri.dms.enable = lib.mkEnableOption "enable my dank-material-shell setup for niri";
-            labwc.dms.enable = lib.mkEnableOption "enable my dank-material-shell setup for labwc";
+            niri.dms.enable = lib.mkEnableOption "enable my dux-modular-shell setup for niri";
+            labwc.dms.enable = lib.mkEnableOption "enable my dux-modular-shell setup for labwc";
           };
         };
         default = { };

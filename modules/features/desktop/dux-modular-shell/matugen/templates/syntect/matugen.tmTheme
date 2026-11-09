@@ -27,11 +27,11 @@ SOFTWARE. -->
 <plist version="1.0">
 <dict>
   <key>name</key>
-  <string>dankcolors</string>
+  <string>matugen</string>
   <key>semanticClass</key>
-  <string><* if {{ is_dark_mode }} *>theme.dark.dankcolors<* else *>theme.light.dankcolors<* endif *></string>
+  <string><* if {{ is_dark_mode }} *>theme.dark.matugen<* else *>theme.light.matugen<* endif *></string>
   <key>uuid</key>
-  <string>dankcolors-matugen-syntect</string>
+  <string>matugen-matugen-syntect</string>
   <key>colorSpaceName</key>
   <string>sRGB</string>
   <key>settings</key>

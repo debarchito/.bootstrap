@@ -1,5 +1,5 @@
-set smoothscroll false
-set theme dankcolors
+set smoothscroll true
+colorscheme matugen
 
 bind J tabnext
 bind K tabprev

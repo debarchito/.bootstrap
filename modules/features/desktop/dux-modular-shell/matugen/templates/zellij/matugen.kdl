@@ -1,6 +1,6 @@
 <* if {{ is_dark_mode }}*>
 themes {
-    dankcolors {
+    matugen {
         bg      {{colors.surface_variant.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
         fg      {{colors.on_surface.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
         red     {{colors.error.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
@@ -16,7 +16,7 @@ themes {
 }
 <* else *>
 themes {
-    dankcolors {
+    matugen {
         bg      {{colors.surface_variant.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
         fg      {{colors.on_surface.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
         red     {{colors.error.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}

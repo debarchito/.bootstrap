@@ -36,7 +36,7 @@
 
             bat = {
               enable = true;
-              config.theme = "dankcolors";
+              config.theme = "matugen";
             };
 
             direnv = {

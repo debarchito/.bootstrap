@@ -19,7 +19,7 @@
 
 ;;; Code:
 
-(deftheme dankcolors "Enhanced theme using Matugen variables with dank16 color integration.")
+(deftheme matugen "Enhanced theme using Matugen variables with dank16 color integration.")
 
 <* if {{ is_dark_mode }} *>
 (let* ((bg "{{colors.surface_container_low.dark.hex}}")
@@ -78,7 +78,7 @@
 <* endif *>
 
   (custom-theme-set-faces
-   'dankcolors
+   'matugen
    ;; Basic faces
    `(default ((t (:background ,bg :foreground ,fg))))
    `(cursor ((t (:background ,cursor-bg :foreground ,cursor-fg))))
@@ -399,5 +399,5 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'dankcolors)
-;;; dankcolors-theme.el ends here
+(provide-theme 'matugen)
+;;; matugen-theme.el ends here

@@ -11,7 +11,7 @@
         programs.helix = {
           enable = true;
           settings = {
-            theme = "dankcolors";
+            theme = "matugen";
             editor = {
               popup-border = "popup";
               bufferline = "multiple";

@@ -1,6 +1,6 @@
 show_startup_tips false
 show_release_notes false
-theme "dankcolors"
+theme "matugen"
 theme_dir "/home/@USERNAME@/.config/zellij/themes"
 simplified_ui true
 default_layout "compact"

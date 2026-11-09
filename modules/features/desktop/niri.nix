@@ -70,13 +70,12 @@
       config = lib.mkIf config.desktop.niri.enable {
         nixpkgs.overlays = [
           inputs.niri.overlays.niri
-          inputs.quickshell.overlays.default
         ];
 
         programs.niri = {
           package = pkgs.niri-unstable;
-          # NOTE: Inlining is fine since the dank-material-shell is the only niri config i've rn
-          config = builtins.readFile ./dank-material-shell/niri/config.kdl;
+          # NOTE: Inlining is fine since the dux-modular-shell is the only niri config i've rn
+          config = builtins.readFile ./dux-modular-shell/niri/config.kdl;
         };
 
         xdg.configFile =
@@ -84,12 +83,12 @@
             vars.USERNAME = config.home.username;
           in
           {
-            "matugen/templates".source = ./dank-material-shell/matugen/templates;
-            "matugen/config.toml".source = ./dank-material-shell/matugen/config.toml;
+            "matugen/templates".source = ./dux-modular-shell/matugen/templates;
+            "matugen/config.toml".source = ./dux-modular-shell/matugen/config.toml;
             "matugen/pre-processed-templates/qt5ct/qt5ct.conf".source =
-              pkgs.replaceVars ./dank-material-shell/matugen/templates/pre-processed/qt5ct/qt5ct.conf vars;
+              pkgs.replaceVars ./dux-modular-shell/matugen/templates/pre-processed/qt5ct/qt5ct.conf vars;
             "matugen/pre-processed-templates/qt6ct/qt6ct.conf".source =
-              pkgs.replaceVars ./dank-material-shell/matugen/templates/pre-processed/qt6ct/qt6ct.conf vars;
+              pkgs.replaceVars ./dux-modular-shell/matugen/templates/pre-processed/qt6ct/qt6ct.conf vars;
           };
 
         fonts.fontconfig = {

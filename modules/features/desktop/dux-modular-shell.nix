@@ -10,10 +10,6 @@
       url = lib.mkDefault "github:duxlabs-dev/dux-shell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
-    quickshell = {
-      url = lib.mkDefault "github:quickshell-mirror/quickshell";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
     dgop = {
       url = lib.mkDefault "github:duxlabs-dev/dux-gop";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
@@ -71,9 +67,9 @@
 
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
-            repo = "dms-plugins";
-            rev = "0447626d749b40f275c002e469f367fb3c89cf2a";
-            hash = "sha256-fSRO/HOVV+ilpHfU9X8bKrcOcguD2X9xgChUZ1/XWpY=";
+            repo = "dux-plugins";
+            rev = "747122377eede4e23552f35c24be22758ca99ce8";
+            hash = "sha256-bYrJFOSA1zdGP2USYDjuBcaTGv7U6UEIi8RdeWHLFDM=";
           };
 
           officialDMSPlugins = [
@@ -95,7 +91,6 @@
         in
         lib.mkIf (config.desktop.niri.enable && config.desktop.niri.dms.enable) {
           nixpkgs.overlays = [
-            inputs.quickshell.overlays.default
             (_: _: {
               dgop = inputs.dgop.packages.${system}.default;
             })
@@ -104,7 +99,6 @@
           programs = {
             dank-material-shell = {
               enable = true;
-              quickshell.package = pkgs.quickshell;
               niri.includes.enable = false;
               plugins =
                 (lib.mapAttrs (name: value: {
@@ -123,10 +117,7 @@
             };
             dsearch.enable = true;
             dux-files.enable = true;
-            dank-calendar = {
-              enable = true;
-              quickshell.package = pkgs.quickshell;
-            };
+            dank-calendar.enable = true;
           };
 
           home.packages = builtins.attrValues {
@@ -136,8 +127,8 @@
           };
 
           xdg.configFile = {
-            "DankMaterialShell/settings.json".source = ./dank-material-shell/settings.json;
-            "DankMaterialShell/plugin_settings.json".source = ./dank-material-shell/plugin_settings.json;
+            "DankMaterialShell/settings.json".source = ./dux-modular-shell/settings.json;
+            "DankMaterialShell/plugin_settings.json".source = ./dux-modular-shell/plugin_settings.json;
           };
         };
     }
