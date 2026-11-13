@@ -220,7 +220,7 @@
       "useOverlayLayer": false,
       "editOnRightClick": false,
       "showOnFullscreen": false,
-      "openOnOverview": true,
+      "openOnOverview": false,
       "groupByApp": true,
       "separatePinnedAndRunningApps": true,
       "restoreSpecialWorkspaceOnClick": false,
@@ -295,6 +295,7 @@
   "blurWallpaperOnOverview": false,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,
+  "controlCenterEditLayout": "docked",
   "controlCenterWidgets": [
     {
       "id": "user",
@@ -476,6 +477,16 @@
     }
   ],
   "bluetoothMprisEnabled": true,
+  "weatherProviders": [
+    {
+      "id": "openmeteo",
+      "enabled": false
+    },
+    {
+      "id": "metno",
+      "enabled": false
+    }
+  ],
   "centeringMode": "index",
   "clockDateFormat": "ddd, MMM d",
   "browserPickerViewMode": "list",
@@ -592,7 +603,7 @@
     "media": {
       "animatedArt": true,
       "titleFont": "Gochi Hand",
-      "artStyle": "disc"
+      "artStyle": "squircle"
     },
     "clock": {
       "date": true,
@@ -617,7 +628,7 @@
       "hostname": false
     },
     "wallpaper": {
-      "layout": "carousel"
+      "layout": "paged"
     }
   },
   "networkPreference": "wifi",
@@ -689,6 +700,8 @@
   "osdPosition": 5,
   "osdPositionOverrides": {},
   "osdMediaPlaybackEnabled": true,
+  "osdDoNotDisturbEnabled": true,
+  "osdKeyboardLayoutEnabled": true,
   "osdPowerProfileEnabled": true,
   "osdWorkspaceEnabled": true,
   "updaterCheckOnStart": true,
@@ -718,7 +731,7 @@
   "barConfigs": [
     {
       "id": "default",
-      "name": "Home Bar",
+      "name": "Main Bar",
       "enabled": true,
       "position": 1,
       "screenPreferences": [
@@ -730,7 +743,7 @@
           "id": "workspaceSwitcher",
           "enabled": true,
           "showWorkspaceIndex": true,
-          "showWorkspaceName": false,
+          "showWorkspaceName": true,
           "showWorkspacePadding": true,
           "showWorkspaceApps": true,
           "maxWorkspaceIcons": 10,
@@ -749,7 +762,8 @@
           "workspacePaddingCount": 2,
           "groupWorkspaceApps": true,
           "workspaceUnfocusedMonitorBorderEnabled": false,
-          "workspaceUnfocusedAppsFullOpacity": false
+          "workspaceUnfocusedAppsFullOpacity": false,
+          "showSpecialWorkspaces": false
         },
         {
           "id": "focusedWindow",
@@ -884,7 +898,8 @@
       "widgetStyle": "segments",
       "centerOverflowMode": "auto",
       "centerOverflowPosition": 2,
-      "hideOnLastDisplay": false
+      "hideOnLastDisplay": false,
+      "middleClickAction": "settings"
     },
     {
       "id": "dot1790934412503",
@@ -1106,8 +1121,8 @@
   "frameRounding": 5,
   "frameShowOnOverview": true,
   "frameCloseGaps": false,
-  "frameLauncherEmergeSide": "bottom",
+  "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": false,
-  "configVersion": 43
+  "configVersion": 44
 }

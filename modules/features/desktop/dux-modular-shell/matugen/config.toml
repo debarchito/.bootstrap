@@ -90,6 +90,7 @@ colors_to_compare = [
   { name = "bluegrey", color = "#607D8B" },
   { name = "brown", color = "#AE8E6C" },
   { name = "cyan", color = "#00BCD4" },
+  { name = "cyan", color = "#89e0fe" },
   { name = "deeporange", color = "#EB6637" },
   { name = "grey", color = "#8E8E8E" },
   { name = "magenta", color = "#CA71DF" },
