@@ -220,7 +220,7 @@
       "useOverlayLayer": false,
       "editOnRightClick": false,
       "showOnFullscreen": false,
-      "openOnOverview": true,
+      "openOnOverview": false,
       "groupByApp": true,
       "separatePinnedAndRunningApps": true,
       "restoreSpecialWorkspaceOnClick": false,
@@ -617,7 +617,7 @@
       "hostname": false
     },
     "wallpaper": {
-      "layout": "carousel"
+      "layout": "paged"
     }
   },
   "networkPreference": "wifi",
@@ -718,7 +718,7 @@
   "barConfigs": [
     {
       "id": "default",
-      "name": "Home Bar",
+      "name": "Main Bar",
       "enabled": true,
       "position": 1,
       "screenPreferences": [
