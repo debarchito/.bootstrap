@@ -90,8 +90,8 @@ in
     };
 
     gaming = {
-      # steam.enable = true;
-      # gamescope.enable = true;
+      steam.enable = true;
+      gamescope.enable = true;
       gamemode.enable = true;
     };
   };
