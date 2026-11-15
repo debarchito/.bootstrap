@@ -238,11 +238,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794722817,
-        "narHash": "sha256-5NGClbvSyxYdRYwJ9vV+KITs+NsYMt7BgASJNYcBoyI=",
+        "lastModified": 1794733211,
+        "narHash": "sha256-L2HXe2qTwVK5cho6dhxdd/7FhyiFMR6bv/cLudw+OnA=",
         "owner": "duxlabs-dev",
         "repo": "dux-shell",
-        "rev": "b610c9afe949ccb4d25b157abc578d02ce3a34ad",
+        "rev": "f42d9b7149cf32bac7fdb5a2622bd894fd1b2cf6",
         "type": "github"
       },
       "original": {
@@ -1072,11 +1072,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1794386569,
-        "narHash": "sha256-W60urNAgQVS8bhNWH0bQsYoiagds8m38oTDUjEOM9FE=",
-        "rev": "d4f25a3e562008648d45bcf2d70bcc7422cad84e",
+        "lastModified": 1794537146,
+        "narHash": "sha256-bTKSclXJAmo9qdxPedTBHUGr8awPr4BrbOoOutJsYIc=",
+        "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1117658.d4f25a3e5620/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1119549.d5cc68339997/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -1105,11 +1105,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794723435,
-        "narHash": "sha256-iFNggh0Kvq5+afIAB4JH57Or3MxRvRnyvLNJaYhW6Vk=",
+        "lastModified": 1794742488,
+        "narHash": "sha256-uy5dYZPWPbW6Kkoju7t5Zsu3X2wn3Xs4UszXTMqsJbs=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "dcd758a02632859380e1618dfc8d222d9cedf065",
+        "rev": "fb356e9ea31d13433f27a56324811101fec9077b",
         "type": "github"
       },
       "original": {
