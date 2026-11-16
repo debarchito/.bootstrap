@@ -52,8 +52,8 @@
               hash = "sha256-EmYYvPvSwG7ELTgRS6tcVEqFgyk8uYiB491Gp7nkPvs=";
             };
             emojiLauncher = {
-              rev = "fc385900e6df292f0a7e5bdda4e3e37169897d7c";
-              hash = "sha256-bIXdsoT3vKkrFI13G7tvRmhzJfjVmC3b3iuyRfafm9k=";
+              rev = "cd7bbba76c0d9b8da65337de5125659846e1ce5c";
+              hash = "sha256-pTXb+f5mHgRkfLHlXrp/QJXP8156VgzQ13kXv8a0rto=";
             };
             niriWindows = {
               rev = "411d5ee9f7707029f4c12c824ec3b24ca6756a0d";
