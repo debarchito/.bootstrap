@@ -208,10 +208,7 @@ in
         librewolf.enable = true;
       };
 
-      editors = {
-        emacs.enable = true;
-        # zed-editor.enable = true;
-      };
+      # editors.emacs.enable = true;
 
       media.daw.enable = true;
 

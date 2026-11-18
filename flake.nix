@@ -14,7 +14,7 @@
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
     dfiles = {
-      url = "github:duxlabs-dev/dux-files";
+      url = "github:duxlabs-dev/dux-files/c2a3642929bb7351da672e245f9f33b5365297d3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dgop = {
@@ -33,10 +33,7 @@
       url = "github:duxlabs-dev/dux-search";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     flake-file.url = "github:denful/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

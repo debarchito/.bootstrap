@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dfiles = {
-      url = lib.mkDefault "github:duxlabs-dev/dux-files";
+      url = lib.mkDefault "github:duxlabs-dev/dux-files/c2a3642929bb7351da672e245f9f33b5365297d3";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dcal = {
