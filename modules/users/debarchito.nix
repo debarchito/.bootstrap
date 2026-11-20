@@ -208,7 +208,7 @@ in
         librewolf.enable = true;
       };
 
-      # editors.emacs.enable = true;
+      editors.emacs.enable = true;
 
       media.daw.enable = true;
 

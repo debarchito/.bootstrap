@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dfiles = {
-      url = lib.mkDefault "github:duxlabs-dev/dux-files/c2a3642929bb7351da672e245f9f33b5365297d3";
+      url = lib.mkDefault "github:duxlabs-dev/dux-files";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dcal = {
@@ -99,6 +99,9 @@
           programs = {
             dank-material-shell = {
               enable = true;
+              package = (inputs.dms.lib.mkDmsShell pkgs).overrideAttrs {
+                vendorHash = "sha256-xbuXniDsdGZU41t34ar5tJvzK2LNgABwQJx5UIGSNkg=";
+              };
               niri.includes.enable = false;
               plugins =
                 (lib.mapAttrs (name: value: {

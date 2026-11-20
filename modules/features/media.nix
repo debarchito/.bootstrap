@@ -1,14 +1,9 @@
 { inputs, lib, ... }:
 {
-  flake-file.inputs = {
-    musnix = {
-      url = lib.mkDefault "github:musnix/musnix";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
-    mfctl = {
-      url = lib.mkDefault "sourcehut:~debarchito/mfctl";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
+
+  flake-file.inputs.musnix = {
+    url = lib.mkDefault "github:musnix/musnix";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
   flake.modules.nixos.options-media =
@@ -21,7 +16,6 @@
     {
       imports = [
         inputs.musnix.nixosModules.musnix
-        inputs.mfctl.nixosModules.default
       ];
 
       options.media = lib.mkOption {
@@ -53,8 +47,6 @@
               jack.enable = true;
               wireplumber.enable = true;
             };
-
-            # programs.mfctl.enable = true;
           }
 
           (lib.mkIf config.media.bluetooth.enable {

@@ -166,7 +166,7 @@
   "fixedRadius": 15,
   "clockFormat": "24h",
   "showSeconds": false,
-  "animationDuration": 400,
+  "motionDuration": 1,
   "tooltipSurfaceColor": "s",
   "blurBorderEnabled": false,
   "blurBorderColor": "primary",
@@ -219,10 +219,12 @@
       "smartAutoHide": true,
       "useOverlayLayer": false,
       "editOnRightClick": false,
+      "showEditWidgetsInContextMenu": true,
       "showOnFullscreen": false,
       "openOnOverview": false,
       "groupByApp": true,
       "separatePinnedAndRunningApps": true,
+      "showRunningApps": true,
       "restoreSpecialWorkspaceOnClick": false,
       "isolateDisplays": false,
       "indicatorStyle": "line",
@@ -272,6 +274,7 @@
   ],
   "currentThemeCategory": "dynamic",
   "matugenScheme": "scheme-tonal-spot",
+  "matugenSourceMode": "saturation",
   "matugenSpec": "dms",
   "popupTransparency": 0.85,
   "dmsWindowsFloatingSeeded": [
@@ -694,7 +697,6 @@
   "lockPamExternallyManaged": true,
   "notificationShowTimeoutBar": true,
   "notificationPopupPosition": 3,
-  "notificationAnimationDuration": 300,
   "notificationFocusedMonitor": true,
   "osdAlwaysShowValue": true,
   "osdPosition": 5,
@@ -1124,5 +1126,5 @@
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": false,
-  "configVersion": 44
+  "configVersion": 46
 }
