@@ -10,11 +10,20 @@
     {
       packages =
         let
-          db = pkgs.fetchurl {
-            url = "https://napi.v10lator.de/db?t=go";
-            curlOpts = "-HUser-Agent:NUSspliBuilder/2.1 --http1.1";
-            hash = "sha256-q3HzucxMfIGxbO+Vndah47AWrno+Jgsx9ggYqlfp8q0=";
-          };
+          db =
+            pkgs.runCommand "db.go"
+              {
+                nativeBuildInputs = [
+                  pkgs.curl
+                  pkgs.cacert
+                ];
+                outputHashAlgo = "sha256";
+                outputHashMode = "flat";
+                outputHash = "sha256-yR8fQOr5K9vM9PkGKX1Umikd6jfwNvslmgQyb2CrW7I=";
+              }
+              ''
+                curl --compressed -fsSL -A "NUSspliBuilder/2.2" "https://napi.v10lator.de/db?t=go" -o "$out"
+              '';
         in
         {
           wiiudownloader = pkgs.buildGoModule {
@@ -23,7 +32,7 @@
 
             src = inputs.wiiudownloader.outPath;
             modRoot = "cmd/WiiUDownloader";
-            vendorHash = "sha256-hwpHVGxwX+Lxbi3tAW/XAij5hya9cm+7XGDTjJsVS+k=";
+            vendorHash = "sha256-MwO+CgkqrW87cIEJe87mnfd52hTzpQxGc2dzJ4VoiGo=";
 
             nativeBuildInputs = with pkgs; [
               pkg-config

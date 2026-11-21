@@ -11,7 +11,7 @@
         type = lib.types.submodule {
           options = {
             helium.enable = lib.mkEnableOption "enable helium";
-            librewolf.enable = lib.mkEnableOption "enable my librewolf config";
+            librewolf.enable = lib.mkEnableOption "enable librewolf with my config";
           };
         };
         default = { };
@@ -19,7 +19,9 @@
 
       config = lib.mkIf config.browsers.helium.enable {
         home.packages = builtins.attrValues {
-          inherit (pkgs) helium;
+          inherit (pkgs)
+            helium
+            ;
         };
       };
     };
