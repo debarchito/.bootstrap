@@ -274,7 +274,7 @@
   ],
   "currentThemeCategory": "dynamic",
   "matugenScheme": "scheme-tonal-spot",
-  "matugenSourceMode": "saturation",
+  "matugenSourceMode": "dominant",
   "matugenSpec": "dms",
   "popupTransparency": 0.85,
   "dmsWindowsFloatingSeeded": [
