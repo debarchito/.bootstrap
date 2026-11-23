@@ -189,12 +189,9 @@ in
       xdg.configFile."menus/plasma-applications.menu".source =
         "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
-      desktop = {
-        niri = {
-          enable = true;
-          dms.enable = true;
-        };
-        labwc.dms.enable = true;
+      desktop.niri = {
+        enable = true;
+        dms.enable = true;
       };
 
       terminal = {

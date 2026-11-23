@@ -68,8 +68,8 @@
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dux-plugins";
-            rev = "2a1d1e802d4d3730484b0040a3cee6dd836ba2b4";
-            hash = "sha256-2jwmZNCacIqa1m4sDHDjyG53tjpzElwd3r/iZzqY7CU=";
+            rev = "a486ffcf15f81d578710fae31d6129b3a210d3f5";
+            hash = "sha256-9JQCQBKdGr+t1lzYttda/NUXdyGA2oq7CSE/3nHkWdE=";
           };
 
           officialDMSPlugins = [
