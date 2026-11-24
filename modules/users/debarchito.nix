@@ -158,12 +158,12 @@ in
               krita
               niri-bibata-cursor-writer
               nix-alien
-              nix-output-monitor
               nix-prefetch-github
               pear-desktop
               pika-backup
               proton-vpn
               qbittorrent
+              rom
               scrcpy
               trash-cli
               wl-mirror

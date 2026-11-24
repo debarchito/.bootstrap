@@ -2,11 +2,11 @@
 {
   flake-file.inputs = {
     niri-source = {
-      url = lib.mkDefault "github:barrulus/biri/0b94e5c6527826c33c83b08372c9240df4542eec";
+      url = lib.mkDefault "github:barrulus/biri";
       flake = false;
     };
     niri = {
-      url = lib.mkDefault "github:epireyn/niri-flake/bad8bd7e18002069e744582b029107d570e82c36";
+      url = lib.mkDefault "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
       inputs.niri-unstable.follows = lib.mkDefault "niri-source";
     };

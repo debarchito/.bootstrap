@@ -298,6 +298,7 @@
   "blurWallpaperOnOverview": false,
   "systemTrayIconTintMode": "primary",
   "systemTrayIconTintStrength": 200,
+  "controlCenterColumns": 8,
   "controlCenterEditLayout": "docked",
   "controlCenterWidgets": [
     {
@@ -372,62 +373,6 @@
       "row": 5
     },
     {
-      "id": "builtin_vpn",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 4,
-      "row": 5
-    },
-    {
-      "id": "bluetooth",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 4,
-      "row": 6
-    },
-    {
-      "id": "doNotDisturb",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 0,
-      "row": 6
-    },
-    {
-      "id": "darkMode",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 0,
-      "row": 7
-    },
-    {
-      "id": "nightMode",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 4,
-      "row": 7
-    },
-    {
-      "id": "colorPicker",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 4,
-      "row": 8
-    },
-    {
-      "id": "builtin_display_profiles",
-      "enabled": true,
-      "w": 4,
-      "h": 1,
-      "col": 0,
-      "row": 8
-    },
-    {
       "id": "quickTiles",
       "enabled": true,
       "w": 3,
@@ -477,6 +422,79 @@
       "col": 0,
       "row": 0,
       "showCount": true
+    },
+    {
+      "id": "quickTiles",
+      "enabled": true,
+      "w": 8,
+      "h": 1,
+      "instanceId": "mwx7nvmhq6xt575bfh665frbhv7czn",
+      "col": 0,
+      "row": 6
+    },
+    {
+      "id": "doNotDisturb",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "builtin_vpn",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "bluetooth",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "col": 4,
+      "row": 5
+    },
+    {
+      "id": "airplaneMode",
+      "enabled": true,
+      "w": 3.5,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "darkMode",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "nightMode",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "colorPicker",
+      "enabled": true,
+      "w": 4,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "plugin_dankKDEConnect",
+      "enabled": true,
+      "w": 2.5,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
+    },
+    {
+      "id": "builtin_cups",
+      "enabled": true,
+      "w": 3.5,
+      "h": 1,
+      "group": "mwx7nvmhq6xt575bfh665frbhv7czn"
     }
   ],
   "bluetoothMprisEnabled": true,
@@ -1126,5 +1144,5 @@
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": false,
-  "configVersion": 46
+  "configVersion": 47
 }

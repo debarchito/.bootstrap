@@ -56,14 +56,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-      url = "github:epireyn/niri-flake/bad8bd7e18002069e744582b029107d570e82c36";
+      url = "github:epireyn/niri-flake";
       inputs = {
         niri-unstable.follows = "niri-source";
         nixpkgs.follows = "nixpkgs";
       };
     };
     niri-source = {
-      url = "github:barrulus/biri/0b94e5c6527826c33c83b08372c9240df4542eec";
+      url = "github:barrulus/biri";
       flake = false;
     };
     nix-alien = {
@@ -72,10 +72,6 @@
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nix-output-monitor = {
-      url = "github:maralorn/nix-output-monitor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {

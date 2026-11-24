@@ -110,7 +110,7 @@
                 for pkg in $argv
                   set -a pkgs nixpkgs#$pkg
                 end
-                nom shell $pkgs --command fish
+                rom shell $pkgs --command fish
               '';
             shellu =
               # fish
@@ -123,7 +123,7 @@
                 for pkg in $argv
                   set -a pkgs nixpkgs#$pkg
                 end
-                NIXPKGS_ALLOW_UNFREE=1 nom shell --impure $pkgs --command fish
+                NIXPKGS_ALLOW_UNFREE=1 rom shell --impure $pkgs --command fish
               '';
           };
           interactiveShellInit =
