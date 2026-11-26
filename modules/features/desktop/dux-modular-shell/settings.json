@@ -168,6 +168,7 @@
   "showSeconds": false,
   "motionDuration": 1,
   "tooltipSurfaceColor": "s",
+  "switchStateIcons": true,
   "blurBorderEnabled": false,
   "blurBorderColor": "primary",
   "blurBorderOpacity": 0.85,
@@ -288,12 +289,16 @@
   "calendarBackend": "dankcal",
   "defaultTaskCalendarId": "bbc366d5-af28-486f-b8eb-ae3a2e50887c",
   "audioShowStreamDevices": true,
+  "reduceMotion": false,
   "motionEffect": 2,
   "density": "comfortable",
   "interfaceStyle": "expressive",
+  "screenCornersEnabled": false,
   "blurEnabled": true,
-  "foregroundLayerTransparency": 0.85,
-  "blurLayerOutlineOpacity": 0.1,
+  "blurBorderSeeded": true,
+  "blurForegroundLayers": true,
+  "foregroundLayerTransparency": 0.5,
+  "blurLayerOutlineOpacity": 0.2,
   "blurredWallpaperLayer": true,
   "blurWallpaperOnOverview": false,
   "systemTrayIconTintMode": "primary",
@@ -571,32 +576,101 @@
       "row": 0
     },
     {
-      "id": "cpu",
+      "id": "sysmon",
       "w": 2,
       "h": 2,
       "col": 2,
-      "row": 1
+      "row": 1,
+      "instanceId": "cpu-2",
+      "config": {
+        "layout": "tiles",
+        "style": "icon",
+        "graphInterval": 300,
+        "metrics": [
+          {
+            "device": "cpu",
+            "vals": [
+              "usage",
+              "temp"
+            ],
+            "graph": true,
+            "on": true
+          }
+        ]
+      }
     },
     {
-      "id": "memory",
+      "id": "sysmon",
       "w": 2,
       "h": 2,
       "col": 4,
-      "row": 0
+      "row": 0,
+      "instanceId": "memory-3",
+      "config": {
+        "layout": "tiles",
+        "style": "icon",
+        "graphInterval": 300,
+        "metrics": [
+          {
+            "device": "memory",
+            "vals": [
+              "used",
+              "swap"
+            ],
+            "graph": true,
+            "on": true
+          }
+        ]
+      }
     },
     {
-      "id": "disk",
+      "id": "sysmon",
       "w": 2,
       "h": 1,
       "col": 4,
-      "row": 2
+      "row": 2,
+      "instanceId": "disk-4",
+      "config": {
+        "layout": "tiles",
+        "style": "icon",
+        "graphInterval": 300,
+        "metrics": [
+          {
+            "device": "disk",
+            "vals": [
+              "space",
+              "read"
+            ],
+            "mount": "/",
+            "graph": true,
+            "on": true
+          }
+        ]
+      }
     },
     {
-      "id": "network",
+      "id": "sysmon",
       "w": 2,
       "h": 1,
       "col": 2,
-      "row": 0
+      "row": 0,
+      "instanceId": "network-5",
+      "config": {
+        "layout": "tiles",
+        "style": "icon",
+        "graphInterval": 300,
+        "metrics": [
+          {
+            "device": "net",
+            "vals": [
+              "down",
+              "up"
+            ],
+            "graph": true,
+            "on": true
+          }
+        ]
+      }
     },
     {
       "id": "calendar",
@@ -635,12 +709,6 @@
     },
     "calendar": {
       "weekends": true
-    },
-    "memory": {
-      "swap": true
-    },
-    "disk": {
-      "io": true
     },
     "weather": {
       "city": true
@@ -783,13 +851,13 @@
           "groupWorkspaceApps": true,
           "workspaceUnfocusedMonitorBorderEnabled": false,
           "workspaceUnfocusedAppsFullOpacity": false,
-          "showSpecialWorkspaces": false
+          "showSpecialWorkspaces": true
         },
         {
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowSize": 1,
-          "focusedWindowShowIcon": false,
+          "focusedWindowShowIcon": true,
           "overflowMode": "section",
           "focusedWindowShowAppName": false
         }
@@ -804,7 +872,8 @@
           "mediaAdaptiveWidthEnabled": true,
           "overflowMode": "section",
           "mediaStyle": "controls",
-          "mediaSmoothLyrics": true
+          "mediaSmoothLyrics": true,
+          "mediaScrollLyrics": true
         },
         {
           "id": "clock",
@@ -1144,5 +1213,5 @@
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": false,
-  "configVersion": 47
+  "configVersion": 48
 }
