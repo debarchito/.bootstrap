@@ -895,16 +895,33 @@
           "enabled": true
         },
         {
-          "id": "cpuUsage",
+          "id": "sysmon",
           "enabled": true,
-          "minimumWidth": true
-        },
-        {
-          "id": "memUsage",
-          "enabled": true,
-          "minimumWidth": true,
-          "showSwap": true,
-          "showInGb": true
+          "popout": "processes",
+          "metrics": [
+            {
+              "device": "cpu",
+              "graph": false,
+              "on": true,
+              "vals": [
+                "usage"
+              ]
+            },
+            {
+              "device": "memory",
+              "graph": false,
+              "on": true,
+              "percent": false,
+              "vals": [
+                "used",
+                "swap"
+              ]
+            }
+          ],
+          "separator": "gap",
+          "style": "graph",
+          "overflowMode": "section",
+          "label": "none"
         },
         {
           "id": "controlCenterButton",
@@ -927,14 +944,7 @@
         {
           "id": "battery",
           "enabled": true,
-          "showBatteryPercentOnlyOnBattery": false,
-          "showBatteryTime": true,
-          "showBatteryTimeOnlyOnBattery": true,
-          "showBatteryPowerCharging": false,
-          "showBatteryPowerDischarging": false,
-          "batteryStyle": "solid",
-          "showBatteryPercent": true,
-          "overflowMode": "section"
+          "batteryStyle": "solid"
         }
       ],
       "spacing": 0,
@@ -1054,16 +1064,32 @@
           "enabled": true
         },
         {
-          "id": "cpuUsage",
+          "id": "sysmon",
           "enabled": true,
-          "minimumWidth": true
+          "popout": "processes",
+          "metrics": [
+            {
+              "device": "cpu",
+              "vals": [
+                "usage"
+              ]
+            }
+          ]
         },
         {
-          "id": "memUsage",
+          "id": "sysmon",
           "enabled": true,
-          "minimumWidth": true,
-          "showSwap": true,
-          "showInGb": true
+          "popout": "processes",
+          "metrics": [
+            {
+              "device": "memory",
+              "vals": [
+                "used",
+                "swap"
+              ],
+              "percent": false
+            }
+          ]
         },
         {
           "id": "controlCenterButton",
@@ -1213,5 +1239,5 @@
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": false,
-  "configVersion": 48
+  "configVersion": 49
 }
